@@ -63,8 +63,8 @@ VXI-11の特徴を以下にあげます。
 
 # VXI-11.Netについて
 
-VXI-11.NET はクラスルームでの学習を対象とする、VXI-11通信ソフトです。VXI-11.Net は the GNU General Public License version2のもとで公開されます。
-(TODO)
+VXI-11.NET はクラスルームでの学習を対象とする、VXI-11通信ソフトウェアです。サーバアプリケーションとクライアントアプリケーションの２つがあります
+- https://github.com/mitakalab1/VXI-11.Net
 
 # VXI-11 の周辺規格について
 
