@@ -84,6 +84,6 @@ SCPI対応機器を制御するためのC++/C#のクラスライブラリ。[IVI
 
 # 参考文献
 
-本記事を作成する際に参考にした記事を挙げます。
+仕様をより深く理解するための参考記事を挙げます。
 
 - [GPIB通信の基礎知識と用語集](https://www.contec.com/jp/support/basic-knowledge/daq-control/gpib-communication/)
