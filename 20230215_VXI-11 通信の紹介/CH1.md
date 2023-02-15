@@ -1,83 +1,83 @@
-VXI-11�ʐM�v���g�R���̏Љ�
+VXI-11通信プロトコルの紹介
 C#
 
-VXI-11�i�Ԃ�����������������Ԃ�j�̓I�V���X�R�[�v���̓d�q�v����̐���Ɏg����C�[�T�l�b�g�ʐM�v���g�R���ł��BVXI-11 �𗝉�����ɂ́A�d�q�v����̒ʐM�C���^�t�F�[�X�Ƃ��Ďg���� GP-IB�i���[�ҁ[�����с[�j�ƁA�l�b�g���[�N�ʐM�v���g�R���� RPC�i���[��ҁ[���[�j �̒m����O��Ƃ��܂��B������ GP-IB �� RPC ��������A���� VXI-11 �̊T�v��������܂��B�Ώۓǎ҂Ƃ��ăC�[�T�l�b�g�̊�{�i�c�C�X�g�y�A�����AIP�A�h���X��TCP �|�[�g�ԍ��j��m���Ă���18�΂̐V�l�Z�p�҂�z�肵�Ă��܂��B
+VXI-11（ぶいえっくすあいいれぶん）はオシロスコープ等の電子計測器の制御に使われるイーサネット通信プロトコルです。VXI-11 を理解するには、電子計測器の通信インタフェースとして使われる GP-IB（じーぴーあいびー）と、ネットワーク通信プロトコルの RPC（あーるぴーしー） の知識を前提とします。そこで GP-IB と RPC を説明し、次に VXI-11 の概要を説明します。対象読者としてイーサネットの基本（ツイストペア結線、IPアドレスとTCP ポート番号）を知っている18歳の新人技術者を想定しています。
 
-## GP-IB �ɂ���
+## GP-IB について
 
-GP-IB �̓f�W�^���}���`���[�^��M��������𐧌䂷�邽�߂�1960�N��ɐ݌v���ꂽ�ʐM�K�i�ł��B�R�l�N�^��d�C�M�����K�肵�� [IEEE488.1](https://standards.ieee.org/ieee/488/6465/)(�����Ƃ�Ղ邢�[���͂��͂��ۂ���Ƃ��A�ʏ̂ۂ���Ƃ��) �ƁA�R�}���h�`���⋤�ʃR�}���h���K�肵�� [IEEE488.2](https://standards.ieee.org/ieee/488.2/717/)(�����Ƃ�Ղ邢�[���͂��͂��ۂ���Ƃ[�A�ʏ̂ۂ���Ƃ[)  �̂Q�̎d�l������܂��B�ŐV�ł� [IEEE/IEC 60488-1-2004](https://standards.ieee.org/ieee/60488-1/3686/) �� [IEEE/IEC 60488-2-2004](https://standards.ieee.org/ieee/60488-2/3632/) �ł��B
+GP-IB はデジタルマルチメータや信号発生器を制御するために1960年代に設計された通信規格です。コネクタや電気信号を規定した [IEEE488.1](https://standards.ieee.org/ieee/488/6465/)(あいとりぷるいーよんはちはちぽいんとわん、通称ぽいんとわん) と、コマンド形式や共通コマンドを規定した [IEEE488.2](https://standards.ieee.org/ieee/488.2/717/)(あいとりぷるいーよんはちはちぽいんとつー、通称ぽいんとつー)  の２つの仕様があります。最新版は [IEEE/IEC 60488-1-2004](https://standards.ieee.org/ieee/60488-1/3686/) と [IEEE/IEC 60488-2-2004](https://standards.ieee.org/ieee/60488-2/3632/) です。
 
-GP-IB ��24�s���̊��ȃR�l�N�^�ł˂��~�߂��邽�߁A�f���g���u������������g���u��������܂���B�܂�����M���̓O�����h���ƃc�C�X�g�؃A�Ŕz������Ă���d�q�m�C�Y�ɋ����A�O�����n���h�V�F�[�N�ɂ��g���u���������̌������肪�e�ՂȂ��߁A�����M�������K�v�ȍH��̐��Y���C���̒ʐM�����Ƃ��Ďg���܂��B
+GP-IB は24ピンの頑丈なコネクタでねじ止めするため、断線トラブルや引き抜きトラブルがありません。また制御信号はグランド線とツイストぺアで配線されており電子ノイズに強く、三線式ハンドシェークによりトラブル発生時の原因特定が容易なため、高い信頼性が必要な工場の生産ラインの通信方式として使われます。
 
-GP-IB �̓����I�ȗp���������܂��B
+GP-IB の特徴的な用語を説明します。
 
-### �����[�g�A���[�J���A���[�J�����b�N�A�E�g
+### リモート、ローカル、ローカルロックアウト
 (TODO)
-### �g���K�[
+### トリガー
 (TODO)
-### �f�o�C�X�N���A
+### デバイスクリア
 (TODO)
-### �T�[�r�X���N�G�X�g
+### サービスリクエスト
 (TODO)
-### �X�e�[�^�X�o�C�g
+### ステータスバイト
 (TODO)
-### *IDN?�R�}���h
+### *IDN?コマンド
 (TODO)
-### �C���^���v�g�G���[
-(TODO)
-
-## RPC�ɂ���
-
-RPC�� Remote Procedure Call�i����[�ƂՂ낵����[���[��j�̗��ŃC�[�T�l�b�g�o�R�ŉ��u�n�ɂ���R���s���[�^�𐧌䂷�邽�߂�1980�N��Ɏ��p�����ꂽ�ʐM�v���g�R���ł��B[RFC 1831](https://www.rfc-editor.org/rfc/rfc1831) �Ƃ����C���^�[�l�b�g�K�i�ɂȂ��Ă��܂��B
-
-RPC �̗p���������܂�
-### �T�[�o�A�N���C�A���g
-(TODO)
-### CALL�AREPLY
-(TODO)
-### �v���O�����ԍ��A�v���O�����o�[�W����
-(TODO)
-### �F�؋@�\�Aperf verif
-(TODO)
-### �X�e�[�^�X�A�G���[�R�[�h
-(TODO)
-### �|�[�g�}�b�p
-(TODO)
-### �C�Ӓ��f�[�^
+### インタラプトエラー
 (TODO)
 
-## VXI-11�ɂ���
+## RPCについて
 
-VXI-11 �́@GP-IB �̋@�\���C�[�T�l�b�g�ʐM�Ŏ������邽�߂̋K�i�ł��B[VXI-11 REVISION 1.0](https://www.vxibus.org/specifications.html) �Ƃ����ƊE�K�i�ł��B�����w�ɃC�[�T�l�b�g�A�g�����X�|�[�g�w�� TCP�A�Z�b�V�����w�� RPC ��p���A�v���[���e�[�V�����w�� VXI-11 ������܂��B
+RPC はイーサネット経由で遠隔地にあるコンピュータを制御するために1980年代に実用化された通信プロトコルです。[RFC 1831](https://www.rfc-editor.org/rfc/rfc1831) というインターネット規格になっています。
 
-VXI-11�̓������ȉ��ɂ����܂��B
-
-### �R�A�`���l���A�C���^���v�g�`���l��
+RPC の用語を説明します
+### サーバ、クライアント
 (TODO)
-### �v���O�����ԍ��A�v���O�����o�[�W����
+### CALL、REPLY
 (TODO)
-### ���b�N
+### プログラム番号、プログラムバージョン
 (TODO)
-### �֐��ꗗ�\
+### 認証機構、perf verif
+(TODO)
+### ステータス、エラーコード
+(TODO)
+### ポートマッパ
+(TODO)
+### 任意長データ
 (TODO)
 
-## VXI-11.Net�ɂ���
+## VXI-11について
 
-VXI-11.NET �̓N���X���[���ł̊w�K��ΏۂƂ���AVXI-11�ʐM�\�t�g�ł��BVXI-11.Net �� the GNU General Public License version2�̂��ƂŌ��J����܂��B
+VXI-11 は　GP-IB の機能をイーサネット通信で実現するために1990年代に策定された規格です。[VXI-11 REVISION 1.0](https://www.vxibus.org/specifications.html) という業界規格です。物理層にイーサネット、トランスポート層に TCP、セッション層に RPC を用い、プレゼンテーション層に VXI-11 があります。
+
+VXI-11の特徴を以下にあげます。
+
+### コアチャネル、インタラプトチャネル
+(TODO)
+### プログラム番号、プログラムバージョン
+(TODO)
+### ロック
+(TODO)
+### 関数一覧表
 (TODO)
 
-## VXI-11 �̎��ӋK�i�ɂ���
+## VXI-11.Netについて
 
-VXI-11 ��O��ɂ����K�i������������܂��B��ȋK�i����Z�ɏЉ�܂�
+VXI-11.NET はクラスルームでの学習を対象とする、VXI-11通信ソフトです。VXI-11.Net は the GNU General Public License version2のもとで公開されます。
+(TODO)
 
-### HiSLIP�v���g�R��
-VXI-11 �̌�p�̃C�[�T�l�b�g�ʐM�v���g�R���ł��B[IVI-6.1: High-Speed LAN Instrument Protocol](https://www.ivifoundation.org/specifications/)�Ƃ����ƊE�K�i�ł��B
+## VXI-11 の周辺規格について
 
-### VISA���C�u����
-GP-IB, VXI-11 �������ʂ̊֐��Ő��䂷�邽�߂̒ʐM���C�u�����B[VPP-4.3: The VISA Library](https://www.ivifoundation.org/specifications/)�Ƃ����ƊE�K�i�ł��B
+VXI-11 を前提にした規格がいくつかあります。主な規格を手短に紹介します
+
+### HiSLIPプロトコル
+2010年代に策定された VXI-11 の後継のイーサネット通信プロトコルです。[IVI-6.1: High-Speed LAN Instrument Protocol](https://www.ivifoundation.org/specifications/)という業界規格です。
+
+### VISAライブラリ
+GP-IB, VXI-11 等を共通の関数で制御するための通信ライブラリ。[VPP-4.3: The VISA Library](https://www.ivifoundation.org/specifications/)という業界規格です。
 
 ### SCPI
-�I�V���X�R�[�v�A�f�W�^���}���`���[�^�A�C�ӐM��������Ȃǂ̐��i�J�e�S���ʂ̋��ʃR�}���h�̋K��B[Standard Commands for Programmable Instruments-1999](https://www.ivifoundation.org/specifications/)�Ƃ����ƊE�K�i�ł��B
+オシロスコープ、デジタルマルチメータ、任意信号発生器などの製品カテゴリ別の共通コマンドの規定。[Standard Commands for Programmable Instruments-1999](https://www.ivifoundation.org/specifications/)という業界規格です。
 
-### IVI �h���C�o
-SCPI�Ή��@��𐧌䂷�邽�߂�C++/C#�̃N���X���C�u�����B[IVI Specifications](https://www.ivifoundation.org/specifications/)�Ƃ����ƊE�K�i�ł��B�����̉��z���ɑΉ����Ă��܂��B
+### IVI ドライバ
+SCPI対応機器を制御するためのC++/C#のクラスライブラリ。[IVI Specifications](https://www.ivifoundation.org/specifications/)という業界規格です。測定器の仮想化に対応しています。
