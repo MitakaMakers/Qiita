@@ -69,13 +69,13 @@ VXI-11.NET はクラスルームでの学習を目的とするVXI-11通信ソフ
 VXI-11 と関連するいくつかの規格があります。主な規格を手短に紹介します。
 
 ### VXI-1 から VXI-11.1
-1995年に Natinal Instruments が中心になって策定した、パソコンベースのモジュール型計測器の仕様です。VMEバスをモジュール間通信規格とし、筐体の大きさや搭載ソフト（DOS)を規定しています。今はVMEバス搭載パソコンが流通していないため、後継の [PXI Specifications](https://www.pxisa.org/) に置き換わっています。 
+1995年に Natinal Instruments が中心になって策定した、パソコンベースのモジュール型計測器の仕様です。VMEバスをモジュール間通信規格とし、筐体の大きさや搭載ソフト（DOS)を規定しています。今はVMEバス搭載パソコンが流通しておらず、後継の [PXI Specifications](https://www.pxisa.org/) に置き換わっています。 
 
 ### HiSLIPプロトコル
 2020年に測定器業界団体が策定した、VXI-11 の後継のイーサネット通信プロトコルです。10Gイーサネット等の高速通信を想定した非同期動作モードがあります。仕様書は [IVI-6.1: High-Speed LAN Instrument Protocol（HiSLIP)](https://www.ivifoundation.org/specifications/) です。
 
 ### VISA ライブラリ
-1995年に測定器業界団体が策定した、GP-IB, RS-232, USB, イーサネットといった異なる通信規格に対して抽象化した同一関数でアクセスするための通信ライブラリです。VMEバスや PCI バスを想定したメモリ読み書き関数群と、GP-IB や VXI-11 を対象とするメッセージ送受信関数群があります。仕様書は [VPP-4.3: The VISA Library](https://www.ivifoundation.org/specifications/) です。
+1995年に測定器業界団体が策定した、GP-IB, RS-232, USB, イーサネットといった異なる通信規格に対して同一関数でアクセスするための通信ライブラリです。VMEバスや PCI バスを想定したメモリ読み書き関数群と、GP-IB や VXI-11 を対象とするメッセージ送受信関数群があります。仕様書は [VPP-4.3: The VISA Library](https://www.ivifoundation.org/specifications/) です。
 
 ### SCPI コマンド
 1999年に測定器業界団体が策定した、オシロスコープ、デジタルマルチメータ、任意信号発生器などの製品カテゴリ毎の共通コマンドの書式や引数の仕様です。仕様書は [Standard Commands for Programmable Instruments-1999](https://www.ivifoundation.org/specifications/) です。
