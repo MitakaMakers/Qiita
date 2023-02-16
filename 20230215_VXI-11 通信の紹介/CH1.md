@@ -71,16 +71,16 @@ VXI-11.NET はクラスルームでの学習を対象とする、VXI-11通信ソ
 VXI-11 を前提にした規格がいくつかあります。主な規格を手短に紹介します
 
 ### HiSLIPプロトコル
-2010年代に測定器業界団体が策定した VXI-11 の後継のイーサネット通信プロトコルです。規格書番号は [IVI-6.1: High-Speed LAN Instrument Protocol](https://www.ivifoundation.org/specifications/)です。
+2010年代に測定器業界団体が策定した、VXI-11 の後継のイーサネット通信プロトコルです。規格書番号は [IVI-6.1: High-Speed LAN Instrument Protocol](https://www.ivifoundation.org/specifications/)です。
 
 ### VISAライブラリ
-1990年代に測定器業界団体が策定したGP-IB, VXI-11 等を共通の関数で制御するための通信ライブラリ仕様です。規格書番号は[VPP-4.3: The VISA Library](https://www.ivifoundation.org/specifications/)です。
+1990年代に測定器業界団体が策定した、GP-IB, VXI-11 等を共通の関数で制御するための通信ライブラリ仕様です。規格書番号は[VPP-4.3: The VISA Library](https://www.ivifoundation.org/specifications/)です。
 
 ### SCPI
-1990年代に測定器業界団体がオシロスコープ、デジタルマルチメータ、任意信号発生器などの製品カテゴリ別の共通コマンドの仕様です。規格書表題は[Standard Commands for Programmable Instruments-1999](https://www.ivifoundation.org/specifications/)です。
+1990年代に測定器業界団体が策定した、オシロスコープ、デジタルマルチメータ、任意信号発生器などの製品カテゴリ別の共通コマンドの仕様です。規格書表題は[Standard Commands for Programmable Instruments-1999](https://www.ivifoundation.org/specifications/)です。
 
 ### IVI ドライバ
-1990年代に測定器業界団体がSCPI対応機器を制御するC++/C#のクラスライブラリ仕様です。仮想測定器クラスによるシミュレーション動作に対応しています。規格書表題はは[IVI Specifications](https://www.ivifoundation.org/specifications/)です。
+1990年代に測定器業界団体が策定した、SCPI対応機器を制御するC++/C#のクラスライブラリ仕様です。仮想測定器クラスによるシミュレーション動作に対応しています。規格書表題はは[IVI Specifications](https://www.ivifoundation.org/specifications/)です。
 
 # 参考文献
 
