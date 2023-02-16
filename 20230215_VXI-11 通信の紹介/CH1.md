@@ -73,14 +73,14 @@ VXI-11 を前提にした複数の規格があります。主な規格を手短�
 ### HiSLIPプロトコル
 2010年代に測定器業界団体が策定した、VXI-11 の後継のイーサネット通信プロトコルです。10Gイーサネット等の高速通信を想定した非同期動作モードがあります。規格書表題は [IVI-6.1: High-Speed LAN Instrument Protocol（HiSLIP)](https://www.ivifoundation.org/specifications/)です。
 
-### VISAライブラリ
+### VISA ライブラリ
 1990年代に測定器業界団体が策定した、GP-IB, VXI-11, HiSLIP といった異なる通信インタフェースやプロトコルを抽象化し、共通の関数で扱うための通信ライブラリの仕様です。規格書表題は[VPP-4.3: The VISA Library](https://www.ivifoundation.org/specifications/)です。
 
-### SCPI
+### SCPI コマンド
 1990年代に測定器業界団体が策定した、オシロスコープ、デジタルマルチメータ、任意信号発生器などの製品カテゴリ別の共通コマンドの書式や引数の仕様です。規格書表題は[Standard Commands for Programmable Instruments-1999](https://www.ivifoundation.org/specifications/)です。
 
 ### IVI ドライバ
-1990年代に測定器業界団体が策定した、SCPI 準拠機器を制御するC言語/C++(COM)の関数ライブラリ仕様です。各社の測定器の振る舞いを抽象化し仮想測定器クラスによるPC上でのシミュレーション動作に対応しています。規格書表題はは[IVI Specifications](https://www.ivifoundation.org/specifications/)です。
+1990年代に測定器業界団体が策定した、SCPI 準拠機器を制御するC言語/C++(COM)の関数ライブラリ仕様です。各社の測定器の振る舞いを抽象化し仮想測定器クラスによるPC上でのシミュレーション動作に対応しています。規格書表題は [IVI Specifications](https://www.ivifoundation.org/specifications/)です。
 
 # 参考文献
 
