@@ -11,9 +11,9 @@ GP-IB は24ピンの頑丈なコネクタでねじ止めするため、断線ト
 
 GP-IB の特徴的な用語を説明します。
 
-### リモート、ローカル、ローカルロックアウト
+### リモート
 (TODO)
-### トリガー
+### トリガ
 (TODO)
 ### デバイスクリア
 (TODO)
@@ -28,7 +28,7 @@ GP-IB の特徴的な用語を説明します。
 
 # RPCについて
 
-RPC はイーサネット経由で遠隔地にあるコンピュータを制御するために1980年代に実用化された通信プロトコルです。[RFC 1831](https://www.rfc-editor.org/rfc/rfc1831) というインターネット規格になっています。
+RPC はイーサネット経由で遠隔地にあるコンピュータを制御するために1980年代に実用化された通信プロトコルです。トランスポート層に TCP と UDP を採用し、、セッション層として RPC を利用し、プ前提とし、[RFC 1831](https://www.rfc-editor.org/rfc/rfc1831) というインターネット規格になっています。
 
 RPC の用語を説明します
 ### サーバ、クライアント
@@ -48,7 +48,7 @@ RPC の用語を説明します
 
 # VXI-11について
 
-VXI-11 は　GP-IB の機能をイーサネット通信で実現するために1990年代に策定された規格です。[VXI-11 REVISION 1.0](https://www.vxibus.org/specifications.html) という業界規格です。物理層にイーサネット、トランスポート層に TCP、セッション層に RPC を用い、プレゼンテーション層に VXI-11 があります。
+VXI-11 は　GP-IB の機能をイーサネット通信で実現するために1990年代に策定された規格です。測定器業界団体が作った [VXI-11 REVISION 1.0](https://www.vxibus.org/specifications.html) という規格です。物理層にイーサネット、トランスポート層に TCP、セッション層に RPC を利用し、プレゼンテーション層に VXI-11 があります。
 
 VXI-11の特徴を以下にあげます。
 
@@ -71,16 +71,16 @@ VXI-11.NET はクラスルームでの学習を対象とする、VXI-11通信ソ
 VXI-11 を前提にした規格がいくつかあります。主な規格を手短に紹介します
 
 ### HiSLIPプロトコル
-2010年代に策定された VXI-11 の後継のイーサネット通信プロトコルです。[IVI-6.1: High-Speed LAN Instrument Protocol](https://www.ivifoundation.org/specifications/)という業界規格です。
+2010年代に測定器業界団体が策定した VXI-11 の後継のイーサネット通信プロトコルです。規格書番号は [IVI-6.1: High-Speed LAN Instrument Protocol](https://www.ivifoundation.org/specifications/)です。
 
 ### VISAライブラリ
-GP-IB, VXI-11 等を共通の関数で制御するための通信ライブラリ。[VPP-4.3: The VISA Library](https://www.ivifoundation.org/specifications/)という業界規格です。
+1990年代に測定器業界団体が策定したGP-IB, VXI-11 等を共通の関数で制御するための通信ライブラリ仕様です。規格書番号は[VPP-4.3: The VISA Library](https://www.ivifoundation.org/specifications/)です。
 
 ### SCPI
-オシロスコープ、デジタルマルチメータ、任意信号発生器などの製品カテゴリ別の共通コマンドの規定。[Standard Commands for Programmable Instruments-1999](https://www.ivifoundation.org/specifications/)という業界規格です。
+1990年代に測定器業界団体がオシロスコープ、デジタルマルチメータ、任意信号発生器などの製品カテゴリ別の共通コマンドの仕様です。規格書表題は[Standard Commands for Programmable Instruments-1999](https://www.ivifoundation.org/specifications/)です。
 
 ### IVI ドライバ
-SCPI対応機器を制御するためのC++/C#のクラスライブラリ。[IVI Specifications](https://www.ivifoundation.org/specifications/)という業界規格です。測定器の仮想化に対応しています。
+1990年代に測定器業界団体がSCPI対応機器を制御するC++/C#のクラスライブラリ仕様です。仮想測定器クラスによるシミュレーション動作に対応しています。規格書表題はは[IVI Specifications](https://www.ivifoundation.org/specifications/)です。
 
 # 参考文献
 
