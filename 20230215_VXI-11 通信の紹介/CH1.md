@@ -69,7 +69,7 @@ VXI-11.NET はクラスルームでの学習を目的とするVXI-11通信ソフ
 VXI-11 と関連するいくつかの規格があります。主な規格を手短に紹介します。
 
 ### VXI-1 から VXI-11.1
-1995年に Natinal Instruments が中心になって策定した、パソコンベースのモジュール型計測器の仕様です。VMEバスをモジュール間通信規格とし、筐体の大きさや搭載ソフト（DOS)を規定しています。今はVMEバス搭載パソコンが流通していないため、後継の [PXI Specifications](https://www.pxisa.org/) に置き換わっています。 
+1995年に Natinal Instruments が中心になって策定した、パソコンベースのモジュール型計測器の仕様です。VMEバスをモジュール間通信規格とし、筐体の大きさや搭載ソフト（DOS)を規定しています。今はVMEバス搭載パソコンが流通しておらず、後継の [PXI Specifications](https://www.pxisa.org/) に置き換わっています。 
 
 ### HiSLIPプロトコル
 2020年に測定器業界団体が策定した、VXI-11 の後継のイーサネット通信プロトコルです。10Gイーサネット等の高速通信を想定した非同期動作モードがあります。仕様書は [IVI-6.1: High-Speed LAN Instrument Protocol（HiSLIP)](https://www.ivifoundation.org/specifications/) です。
