@@ -48,7 +48,7 @@ RPC の用語を説明します
 
 # VXI-11について
 
-VXI-11 は　GP-IB の機能をイーサネット通信で実現するために1990年代に策定された規格です。測定器業界団体が作った [VXI-11 REVISION 1.0](https://www.vxibus.org/specifications.html) という規格です。トランスポート層に TCP、セッション層に RPC を利用し、プレゼンテーション層に VXI-11 があります。
+VXI-11 は　GP-IB の機能をイーサネット通信で実現するために1990年代に策定された規格です。測定器業界団体が作った [VXI-11 REVISION 1.0](https://www.vxibus.org/specifications.html) という規格です。トランスポート層に TCP、セッション層に RPC を利用し、プレゼンテーション層に VXI-11 があります。IEEE488.1 に相当する VXI-11.2、IEEE488.2 に相当する VXI-11.3 の２つがあります。
 
 VXI-11の特徴を以下にあげます。
 
@@ -70,17 +70,20 @@ VXI-11.NET はクラスルームでの学習を対象とする、VXI-11通信ソ
 
 VXI-11 と関連するいくつかの規格があります。主な規格を手短に紹介します。
 
+### VXI-1 から VXI-11.1
+1995年に Natinal Instruments が中心になって策定した、パソコンベースのモジュール型計測器の仕様です。VMEバスが搭載されたパソコンをベースに筐体の大きさや搭載ソフト（DOS)を規定していました。今は後継の [PXI Specifications](https://www.pxisa.org/) に置き換わっています。 
+
 ### HiSLIPプロトコル
 2010年代に測定器業界団体が策定した、VXI-11 の後継のイーサネット通信プロトコルです。10Gイーサネット等の高速通信を想定した非同期動作モードがあります。規格書表題は [IVI-6.1: High-Speed LAN Instrument Protocol（HiSLIP)](https://www.ivifoundation.org/specifications/)です。
 
-### VISA ライブラリ
-1990年代に測定器業界団体が策定した、GP-IB, RS-232, USB, VXI-11, HiSLIP といった異なる通信規格やプロトコルを、抽象化した共通の関数で扱うための通信ライブラリの仕様です。規格書表題は[VPP-4.3: The VISA Library](https://www.ivifoundation.org/specifications/)です。
-
 ### SCPI コマンド
-1990年代に測定器業界団体が策定した、オシロスコープ、デジタルマルチメータ、任意信号発生器などの製品カテゴリ別の共通コマンドの書式や引数の仕様です。規格書表題は[Standard Commands for Programmable Instruments-1999](https://www.ivifoundation.org/specifications/)です。
+1999年に測定器業界団体が策定した、オシロスコープ、デジタルマルチメータ、任意信号発生器などの製品カテゴリ毎の共通コマンドの書式や引数の仕様です。規格書表題は[Standard Commands for Programmable Instruments-1999](https://www.ivifoundation.org/specifications/)です。
+
+### VISA ライブラリ
+1990年代に測定器業界団体が策定した、GP-IB, RS-232, USB, VXI-11, HiSLIP といった異なる通信規格やプロトコルに対して抽象化した共通の関数でコマンドを送受信するための通信ライブラリです。規格書表題は[VPP-4.3: The VISA Library](https://www.ivifoundation.org/specifications/)です。
 
 ### IVI ドライバ
-1990年代に測定器業界団体が策定した、SCPI 準拠機器を制御するC言語/C++(COM)の関数ライブラリ仕様です。各社の測定器の振る舞いを抽象化し仮想測定器クラスによるPC上でのシミュレーション動作に対応しています。規格書表題は [IVI Specifications](https://www.ivifoundation.org/specifications/)です。
+2000年代に測定器業界団体が策定した、SCPI 準拠機器を制御するC言語/C++(COM)の関数ライブラリ仕様です。各社の測定器の振る舞いを抽象化し仮想測定器クラスによるPC上でのシミュレーション動作に対応しています。規格書表題は [IVI Specifications](https://www.ivifoundation.org/specifications/)です。
 
 # 参考文献
 
