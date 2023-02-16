@@ -80,7 +80,7 @@ VXI-11 を前提にした複数の規格があります。主な規格を手短�
 1990年代に測定器業界団体が策定した、オシロスコープ、デジタルマルチメータ、任意信号発生器などの製品カテゴリ別の共通コマンドの書式や引数の仕様です。規格書表題は[Standard Commands for Programmable Instruments-1999](https://www.ivifoundation.org/specifications/)です。
 
 ### IVI ドライバ
-1990年代に測定器業界団体が策定した、SCPI 準拠機器を制御するC++/C#のクラスライブラリ仕様です。仮想測定器クラスによるシミュレーション動作に対応しています。規格書表題はは[IVI Specifications](https://www.ivifoundation.org/specifications/)です。
+1990年代に測定器業界団体が策定した、SCPI 準拠機器を制御するC言語/C++(COM)　のクラスライブラリ仕様です。仮想測定器クラスによるPC上でのシミュレーション動作に対応しています。規格書表題はは[IVI Specifications](https://www.ivifoundation.org/specifications/)です。
 
 # 参考文献
 
