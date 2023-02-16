@@ -5,7 +5,7 @@ VXI-11（ぶいえっくすあいいれぶん）はオシロスコープ等の�
 
 # GP-IB について
 
-GP-IB はデジタルマルチメータや信号発生器を制御するために1960年代に設計された通信規格です。コネクタや電気信号のタイミングを規定した [IEEE488.1-1978](https://standards.ieee.org/ieee/488/6465/) (あいとりぷるいーよんはちはちぽいんとわん、通称ぽいんとわん)と、コマンド形式や共通コマンドを規定した [IEEE488.2-1987](https://standards.ieee.org/ieee/488.2/717/) (あいとりぷるいーよんはちはちぽいんとつー、通称ぽいんとつー)の２つの仕様があります。最新版は [IEEE/IEC 60488-1-2004](https://standards.ieee.org/ieee/60488-1/3686/) と [IEEE/IEC 60488-2-2004](https://standards.ieee.org/ieee/60488-2/3632/) です。
+GP-IB はデジタルマルチメータや信号発生器を制御するために1960年代に設計された通信規格です。コネクタや電気信号のタイミングを定義した [IEEE488.1-1978](https://standards.ieee.org/ieee/488/6465/) (あいとりぷるいーよんはちはちぽいんとわん、通称ぽいんとわん)と、コマンド形式や共通コマンドを定義した [IEEE488.2-1987](https://standards.ieee.org/ieee/488.2/717/) (あいとりぷるいーよんはちはちぽいんとつー、通称ぽいんとつー)の２つの規格があります。最新版は [IEEE/IEC 60488-1-2004](https://standards.ieee.org/ieee/60488-1/3686/) と [IEEE/IEC 60488-2-2004](https://standards.ieee.org/ieee/60488-2/3632/) です。
 
 GP-IB は24ピンの頑丈なコネクタでねじ止めするため、断線トラブルや引き抜きトラブルがほぼありません。また制御信号はグランド線とツイストぺアで配線されており電子ノイズに強く、三線式ハンドシェークによりトラブル発生時の原因の特定が容易なため、高い信頼性が必要な工場の生産ラインの通信方式として利用されます。
 
@@ -48,7 +48,7 @@ RPC の用語を説明します
 
 # VXI-11について
 
-VXI-11 は　GP-IB の機能をイーサネット通信で実現するために、1995年に測定器業界団体が作った [VXI-11 REVISION 1.0](https://www.vxibus.org/specifications.html) という規格です。トランスポート層に TCP、セッション層に RPC を利用し、プレゼンテーション層に VXI-11 が位置します。IEEE488.1 に相当する VXI-11.2、IEEE488.2 に相当する VXI-11.3 の２つの仕様書に分かれています。
+1995年に測定器業界団体が作った、GP-IB の機能をイーサネット通信で実現するために作った通信プロトコルです。仕様書は [VXI-11 REVISION 1.0](https://www.vxibus.org/specifications.html) で公開されています。トランスポート層に TCP、セッション層に RPC を利用し、プレゼンテーション層に VXI-11 が位置します。IEEE488.1 に相当する VXI-11.2、IEEE488.2 に相当する VXI-11.3 の２つの仕様書に分かれています。
 
 VXI-11の特徴を以下にあげます。
 
@@ -72,16 +72,16 @@ VXI-11 と関連するいくつかの規格があります。主な規格を手�
 1995年に Natinal Instruments が中心になって策定した、パソコンベースのモジュール型計測器の仕様です。VMEバスをモジュール間通信規格とし、筐体の大きさや搭載ソフト（DOS)を規定しています。今は後継の [PXI Specifications](https://www.pxisa.org/) に置き換わっています。 
 
 ### HiSLIPプロトコル
-2020年に測定器業界団体が策定した、VXI-11 の後継のイーサネット通信プロトコルです。10Gイーサネット等の高速通信を想定した非同期動作モードがあります。規格書は [IVI-6.1: High-Speed LAN Instrument Protocol（HiSLIP)](https://www.ivifoundation.org/specifications/) です。
+2020年に測定器業界団体が策定した、VXI-11 の後継のイーサネット通信プロトコルです。10Gイーサネット等の高速通信を想定した非同期動作モードがあります。仕様書は [IVI-6.1: High-Speed LAN Instrument Protocol（HiSLIP)](https://www.ivifoundation.org/specifications/) です。
 
 ### VISA ライブラリ
-1995年に測定器業界団体が策定した、GP-IB, RS-232, USB, イーサネットといった異なる通信規格に対して抽象化した同一関数でアクセスするための通信ライブラリです。VMEバスや PCI バスを想定したメモリ読み書き関数群と、GP-IB や VXI-11 を対象とするメッセージ送受信関数群があります。規格書は [VPP-4.3: The VISA Library](https://www.ivifoundation.org/specifications/) です。
+1995年に測定器業界団体が策定した、GP-IB, RS-232, USB, イーサネットといった異なる通信規格に対して抽象化した同一関数でアクセスするための通信ライブラリです。VMEバスや PCI バスを想定したメモリ読み書き関数群と、GP-IB や VXI-11 を対象とするメッセージ送受信関数群があります。仕様書は [VPP-4.3: The VISA Library](https://www.ivifoundation.org/specifications/) です。
 
 ### SCPI コマンド
-1999年に測定器業界団体が策定した、オシロスコープ、デジタルマルチメータ、任意信号発生器などの製品カテゴリ毎の共通コマンドの書式や引数の仕様です。規格書は [Standard Commands for Programmable Instruments-1999](https://www.ivifoundation.org/specifications/) です。
+1999年に測定器業界団体が策定した、オシロスコープ、デジタルマルチメータ、任意信号発生器などの製品カテゴリ毎の共通コマンドの書式や引数の仕様です。仕様書は [Standard Commands for Programmable Instruments-1999](https://www.ivifoundation.org/specifications/) です。
 
 ### IVI ドライバ
-1998年に測定器業界団体が策定した、SCPI 準拠機器を制御するC言語/C++(COM)の関数ライブラリ仕様です。各社の測定器の振る舞いを抽象化し仮想測定器クラスによるPC上でのシミュレーション動作に対応しています。規格書表題は [IVI Specifications](https://www.ivifoundation.org/specifications/) です。
+1998年に測定器業界団体が策定した、SCPI 準拠機器を制御するC言語/C++(COM)の関数ライブラリ仕様です。各社の測定器の振る舞いを抽象化し仮想測定器クラスによるPC上でのシミュレーション動作に対応しています。仕様群が [IVI Specifications](https://www.ivifoundation.org/specifications/) で公開されています。
 
 # 参考文献
 
