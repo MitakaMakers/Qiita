@@ -77,7 +77,7 @@ VXI-11 と関連するいくつかの規格があります。主な規格を手�
 2020年に測定器業界団体が策定した、VXI-11 の後継のイーサネット通信プロトコルです。10Gイーサネット等の高速通信を想定した非同期動作モードがあります。規格書表題は [IVI-6.1: High-Speed LAN Instrument Protocol（HiSLIP)](https://www.ivifoundation.org/specifications/)です。
 
 ### VISA ライブラリ
-1995年に測定器業界団体が策定した、GP-IB, RS-232, USB, VXI-11, HiSLIP といった異なる通信規格やプロトコルについて抽象化した共通の関数でコマンドを送受信するための通信ライブラリです。規格書表題は[VPP-4.3: The VISA Library](https://www.ivifoundation.org/specifications/)です。
+1995年に測定器業界団体が策定した、GP-IB, RS-232, USB, VXI-11, VXIバス, PCIバス といった異なる通信規格やプロトコルについて抽象化した共通の関数でコマンドを送受信するための通信ライブラリです。規格書表題は[VPP-4.3: The VISA Library](https://www.ivifoundation.org/specifications/)です。
 
 ### SCPI コマンド
 1999年に測定器業界団体が策定した、オシロスコープ、デジタルマルチメータ、任意信号発生器などの製品カテゴリ毎の共通コマンドの書式や引数の仕様です。規格書表題は[Standard Commands for Programmable Instruments-1999](https://www.ivifoundation.org/specifications/)です。
