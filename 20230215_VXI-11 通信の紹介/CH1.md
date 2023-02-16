@@ -48,7 +48,7 @@ RPC の用語を説明します
 
 # VXI-11について
 
-VXI-11 は　GP-IB の機能をイーサネット通信で実現するために1990年代に策定された規格です。測定器業界団体が作った [VXI-11 REVISION 1.0](https://www.vxibus.org/specifications.html) という規格です。トランスポート層に TCP、セッション層に RPC を利用し、プレゼンテーション層に VXI-11 があります。IEEE488.1 に相当する VXI-11.2、IEEE488.2 に相当する VXI-11.3 の２つがあります。
+VXI-11 は　GP-IB の機能をイーサネット通信で実現するために、1990年代に測定器業界団体が作った [VXI-11 REVISION 1.0](https://www.vxibus.org/specifications.html) という規格です。トランスポート層に TCP、セッション層に RPC を利用し、プレゼンテーション層に VXI-11 が位置します。IEEE488.1 に相当する VXI-11.2、IEEE488.2 に相当する VXI-11.3 の２つが残っています。
 
 VXI-11の特徴を以下にあげます。
 
