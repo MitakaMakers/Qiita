@@ -5,65 +5,108 @@ VXI-11（ぶいえっくすあいいれぶん）はオシロスコープ等の�
 
 # GP-IB について
 
-GP-IB は計測機器や制御機器などの間でデータ通信を行うために1960年代に設計された通信規格です。コネクタや電気信号のタイミングを定義した [IEEE488.1-1978](https://standards.ieee.org/ieee/488/6465/) (あいとりぷるいーよんはちはちぽいんとわん、通称ぽいんとわん)と、コマンド形式や共通コマンドを定義した [IEEE488.2-1987](https://standards.ieee.org/ieee/488.2/717/) (あいとりぷるいーよんはちはちぽいんとつー、通称ぽいんとつー)の２つの規格があります。最新版は [IEEE/IEC 60488-1-2004](https://standards.ieee.org/ieee/60488-1/3686/) と [IEEE/IEC 60488-2-2004](https://standards.ieee.org/ieee/60488-2/3632/) です。日本語版は [JIS C 1901:1987 計測器用インタフェースシステム](https://kikakurui.com/c1/C1901-1987-01.html) と[EIAJ TT-5004：計測器用インターフェースシステムのためのコード、フォーマット、プロトコル及び共通コマンド](日本電子機械工業会発行販売終了) です。
+GP-IB は1960年代に HP 社が計測機器や制御機器などの間でデータ通信を行うために設計した通信規格です。
+
+ JIS C 1901:1987 より引用
+
+![計測システムの一例](107_JIS_C_1901_Figure_A.png)
+
+コネクタや電気信号のタイミングを定義した [IEEE488.1-1978](https://standards.ieee.org/ieee/488/6465/) (あいとりぷるいーよんはちはちぽいんとわん、通称ぽいんとわん)と、コマンド形式や共通コマンドを定義した [IEEE488.2-1987](https://standards.ieee.org/ieee/488.2/717/) (あいとりぷるいーよんはちはちぽいんとつー、通称ぽいんとつー)の２つの規格があります。日本語版は [JIS C 1901:1987 計測器用インタフェースシステム](https://kikakurui.com/c1/C1901-1987-01.html) と　EIAJ TT-5004：計測器用インターフェースシステムのためのコード、フォーマット、プロトコル及び共通コマンド(日本電子機械工業会発行, 販売終了) です。最新版は [IEEE/IEC 60488-1-2004](https://standards.ieee.org/ieee/60488-1/3686/) と [IEEE/IEC 60488-2-2004](https://standards.ieee.org/ieee/60488-2/3632/) です。
 
 GP-IB は24ピンの頑丈なコネクタでねじ止めするため、断線トラブルや引き抜きトラブルがほぼありません。また制御信号はグランド線とツイストぺアで配線されており電子ノイズに強く、三線式ハンドシェークによりトラブル発生時の原因の特定が容易なため、高い信頼性が必要な工場の生産ラインの通信方式として利用されます。
+
+JIS C 1901:1987 より引用
+ 
+![装置用コネクタの取り付け方法](106_JIS_C_1901_Figure_17_1.png)
+
+![コネクタピン割付け](105_JIS_C_1901_Table40.png)
+
+![１個のトーカと複数のリスナ間のハンドシェークのタイミングチャート](108_JIS_C_1901_Figure_B.png)
 
 GP-IB の用語の内、VXI-11 に関係する用語を説明します。
 
 ### リモート
-計測機器を通信制御中に手動で機器のパネルキーを操作すると設定内容に齟齬が生じます。そのような事態を避けるために遠隔からパネルキーの操作を無効にする機構がリモート・ローカル機能です。
+計測機器を通信制御中に手動で機器のパネルキーを操作すると設定内容に齟齬が生じます。そのような事態を避けるために遠隔からパネルキーの操作を無効にする仕組みがリモート・ローカルです。
+
+JIS C 1901:1987 より引用
+ 
+![リモートローカルのステートダイヤグラム](103_JIS_C_1901_Figure_10.png)
 
 ### トリガ
-PCから複数台の計測機器に対し、一斉に測定開始や制御開始を指示する機能です。
+PCから複数台の計測機器に一斉に測定開始や制御開始を指示する仕組みです。
 
-### ステータスバイト
-計測機器の応答データの準備完了やエラーの発生を示す 8 ビットの数値です。
+ JIS C 1901:1987 より引用
+
+![デバイストリガのステートダイヤグラム](104_JIS_C_1901_Figure_13.png)
 
 ### サービスリクエスト
-計測機器からPCに動作の完了やエラーの発生を非同期で通知する機能です。
+計測機器からPCに動作の完了やエラーの発生を非同期で通知する仕組みです。
+
+ JIS C 1901:1987 より引用
+
+![サービスリクエストのステートダイヤグラム](102_JIS_C_1901_Figure_9.png)
+
+### ステータスバイト
+サービスリクエストの発生理由を示す 8 ビットの数値です。計測機器の応答データの準備完了やエラーの発生を示します。
+
+![Required Status Reporting Capabilities](203_IEC_60488_2_Figure_4_1.png)
 
 ### *IDN?コマンド
 計測機器の「メーカ名、型名、ファームウェアバージョン、シリアル番号」を問い合わせるコマンドです
 
-### インタラプトエラー
-PC が計測機器の送信中のデータを最後まで受信せずに次のコマンドを送った場合に、計測機器で発生するエラーです。
+![Response Semantics](210_IEC_60488_2_10.14.2.png)
+
+### インタラプト動作
+計測機器が送信中のデータを完了する前に次のコマンドを受信した場合に、計測機器で行うエラー動作です。
+
+![INTERRUPTED Action](206_IEC_60488_2_6.3.2.3.png)
+
+![Message Exchange Control Interface Functional Blocks](205_IEC_60488_2_Figure_6_2.png)
 
 ### デバイスクリア
-計測機器が送信中のデータをクリアする機能です。通信エラーが発生した場合に使用されます。
+計測機器が送信中のデータをクリアする機能です。上記インタラプト動作を解消する際によく使用されます。
+
+![Device Clear Requirements](204_IEC_60488_2_5.8.png)
 
 # VXI-11について
 
-1995年に測定器業界団体が、GP-IB の機能をイーサネット通信で実現するために作った通信プロトコルです。仕様書は [VXI-11 REVISION 1.0](https://www.vxibus.org/specifications.html) で公開されています。トランスポート層に TCP、セッション層に RPC、プレゼンテーション層に XDR を利用し、VXI-11 はアプリケーション層に相当します。基本関数の仕様を定義している VXI-11、IEEE488.2 の同じ動作を規定している VXI-11.3 の２つの仕様書があります。
+1995年に測定器業界団体が、イーサネット通信でGP-IB の機能を実現するために作った通信プロトコルです。仕様書は [VXI-11 REVISION 1.0](https://www.vxibus.org/specifications.html) で公開されています。トランスポート層に TCP、セッション層に RPC、プレゼンテーション層に XDR を利用し、VXI-11 はアプリケーション層に相当します。
 
-![Network instrument Protocol Stack](301_VXI_11_Figure_B_3.png)
+![Network instrument Protocol Stack](303_VXI_11_Figure_B_3.png)
 
 ## RPCについて
 
-RPC はイーサネット経由で遠隔地にあるコンピュータの関数を実行するための仕組みとして 1988 年に実用化された通信プロトコルです。トランスポート層に TCP と UDP を採用し、セッション層に RPC があります。広く使われている事例としてUnix のネットワークファイル共有システム(NFS) があります。また RPC のコンセプトはマイクロソフト社の MS-RPC や Google社 の gRPC に引き継がれています。RPCは [RFC 1057: RPC: Remote Procedure Call Protocol specification　Version 2](https://www.rfc-editor.org/rfc/rfc1057) というインターネット規格で定義されています。
+RPC はイーサネット経由で遠隔地にあるコンピュータの関数を実行するための仕組みとして 1988 年に実用化された通信プロトコルです。トランスポート層に TCP と UDP を採用し、セッション層に RPC があります。広く使われている事例としてUnix のネットワークファイル共有システム(NFS) があります。RPC は [RFC 1057: RPC: Remote Procedure Call Protocol specification Version 2](https://www.rfc-editor.org/rfc/rfc1057) のインターネット規格として定義されています。RPC の考え方はマイクロソフト社の MS-RPC や Google社 の gRPC に引き継がれています。
 
 RPC の用語を説明します
 ### CALL、REPLY
 (TODO)
 
 ### プログラム番号、プログラムバージョン
+
 ![Program Numbers](308_VXI_11_Table_B_3.png)
 
 ## VXI-11の特徴
+VXI-11の仕様書には基本関数の仕様を定義している VXI-11 と IEEE488.2 と同じ動作を規定している VXI-11.3 の２つの仕様書があります。ここでは主に基本仕様を説明します。
 
 ### コアチャネル、インタラプトチャネル、アボートチャネル
+
 ![Network instrument Channels](302_VXI_11_Figure_B_1.png)
 
 ### サーバ、クライアント
+
 ![Network instrument Channels](304_VXI_11_Figure_B_4.png)
 
 ### ロック
+
 ![Connection Model - Two Hosts, Single Device](305_VXI_11_Figure_B_8.png)
 
 ### 関数一覧表
+
 ![Network instrument Protocol](301_VXI_11_Table_B_1.png)
 
 ### エラーコード
+
 ![error Values](307_VXI_11_Table_B_2.png)
 
 # VXI-11.Netについて
@@ -72,17 +115,16 @@ VXI-11.NET はクラスルームでの学習を目的とするVXI-11通信ソフ
 - https://github.com/mitakalab1/VXI-11.Net
 
 # VXI-11 の周辺規格について
-
-VXI-11 と関連するいくつかの規格があります。主な規格を手短に紹介します。
-
-### VXI-1 から VXI-11.1
-1995年に Natinal Instruments が中心になって策定した、パソコンベースのモジュール型計測器の仕様です。VMEバスをモジュール間通信規格とし、筐体の大きさや搭載ソフト（DOS)を規定しています。今はVMEバス搭載パソコンが流通しておらず、後継の [PXI Specifications](https://www.pxisa.org/) に置き換わっています。 
+VXI-11 に関連する主な規格を紹介します。
 
 ### HiSLIPプロトコル
-2020年に計測器業界団体が策定した、VXI-11 の後継のイーサネット通信プロトコルです。RPC,XDR,Portmap を使わず TCP 上に独自の HiSLIP プロトコルを定義しています、10G以上の高速イーサネット通信を想定した非同期動作モードがあります。仕様書は [IVI-6.1: High-Speed LAN Instrument Protocol（HiSLIP)](https://www.ivifoundation.org/specifications/) です。
+2020年に計測器業界団体が策定した、VXI-11 の後継のイーサネット通信プロトコルです。10G以上の高速イーサネット通信を想定し RPC を使わず TCP 上に HiSLIP プロトコルを定義しています。より高速に転送するためインタラプト動作を省略したオーバーラップ動作を使うことができます。仕様書は [IVI-6.1: High-Speed LAN Instrument Protocol（HiSLIP)](https://www.ivifoundation.org/specifications/) です。
 
 ### VISA ライブラリ
 1995年に計測器業界団体が策定した、GP-IB, RS-232, USB, イーサネットといった異なる通信規格に対して同一関数で操作するための通信ライブラリです。VMEバスや PCI バスを想定したメモリ読み書き関数群と、GP-IB や VXI-11 を対象とするメッセージ送受信関数群があります。仕様書は [VPP-4.3: The VISA Library](https://www.ivifoundation.org/specifications/) です。
+
+### VXI-1 から VXI-11.1
+1995年に Natinal Instruments が中心になって策定した、パソコンベースのモジュール型計測器の仕様です。モジュール間通信規格としてVMEバスを採用し、筐体の大きさや搭載ソフト(DOS)を規定しています。今はVMEバス搭載パソコンが流通しておらず、後継の [PXI Specifications](https://www.pxisa.org/) に置き換わっています。 
 
 ### SCPI コマンド
 1999年に計測器業界団体が策定した、オシロスコープ、デジタルマルチメータ、任意信号発生器などの製品カテゴリ毎の共通コマンドの書式や引数の仕様です。仕様書は [Standard Commands for Programmable Instruments-1999](https://www.ivifoundation.org/specifications/) です。
