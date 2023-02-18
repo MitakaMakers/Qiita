@@ -116,19 +116,50 @@ RPC は遠隔にあるコンピュータの関数を実行するための仕組�
 
 ![RPC 応答のヘッダフォーマット](552_RPC_HeaderFormat.png)
 
-### プログラム番号、プログラムバージョン
+MSG_TYP の番号と意味
+|番号|定数名|意味|
+|--|--|--|
+|0|CALL|関数の呼び出し|
+|1|REPLY|関数の応答|
 
-|チャネル名|プログラム番号|バージョン番号|プロトコル|
-|---------|------------|-------------|--------|
-|コアチャネル|395183|1|TCP|
-|アボート|395184|1|TCP|
-|インタラプト|395185|1|TCP|
 
-### AUTHENTICATION
+AUTH_FLAVOR の番号と意味
+|番号|定数名|意味|
+|--|--|--|
+|0|AUTH_NULL|ユーザ認証の仕組みを使わない|
+|1|AUTH_UNIX|UNIX のユーザ認証の仕組みを使う|
+|2|AUTH_SHORT|独自 のユーザ認証の仕組みを使う|
+|3|AUTH_DES|DES のユーザ認証の仕組みを使う|
 
-### RPC のエラーコード
+REPLY_STAT の番号と意味
+|番号|定数名|意味|
+|--|--|--|
+|0|MSG_ACCEPTED|正常に実行された|
+|1|MSG_DENIED|エラーが発生した|
 
-### PORTMAP
+ACCEPT_STAT の番号と意味
+|番号|定数名|意味|
+|--|--|--|
+|0|SUCCESS|RPCが正常に実行された|
+|1|PROG_UNAVAIL|リモートがプログラムをエクスポートしていない|
+|2|PROG_MISMATCH|リモートがバージョン#をサポートできない|
+|3|MRPC_UNAVAIL|プログラムがプロシージャをサポートできません|
+|4|GARBAGE_ARGS|プロシージャはパラメータをデコードできません|
+
+### プログラム番号、プログラムバージョン、プロシージャ番号の例
+
+|プログラム名|プログラム番号|バージョン番号|プロトコル|
+|--|--|--|--|
+|Port Mapper Protocol|10000|2|TCP/UDP|
+
+|関数名|プロシージャ番号|引数|戻り値|説明|
+|--|--|--|--|--|
+|PMAPPROC_NULL|0|なし|なし|この手続きは何の役にも立ちません。|
+|PMAPPROC_SET|1|mapping|bool|ポートマッパープログラムにプログラムを登録する。|
+|PMAPPROC_UNSET|2|mapping|bool|ポートマッパープログラムに登録されているプログラムを解除する。|
+|PMAPPROC_GETPORT|3|mapping|unsigned int|ポートマッパープログラムに登録されているプログラムのポート番号を返す。|
+|PMAPPROC_DUMP|4|なし|pmaplist|ポートマッパーのデータベースの全エントリを列挙する。|
+|PMAPPROC_CALLIT|5|call_args|call_result|別のリモートプロシージャを呼び出す|
 
 ## XDR について
 XDR はネットワークを流れるデータの構造を明確にするために、1987 年にSun 社が作った仕様です。XDR は [RFC 1014 XDR: External Data Representation Standard](https://datatracker.ietf.org/doc/html/rfc1014) のインターネット規格として定義されています。
@@ -218,7 +249,7 @@ VXI-11 に関連する主な規格を紹介します。
 GP-IB のリモート機能やトリガ機能は不要で RS-232 のようにコマンドの送受信だけできればよい、という簡易用途でよく使われます。
 
 ### HiSLIPプロトコル
-2020年に計測器業界団体が策定した、VXI-11 の後継のイーサネット通信プロトコルです。10Gイーサネット以上の高速通信を想定し インタラプト動作を省略したオーバーラップ動作を使うことができます。RPC を使わず TCP 上に HiSLIP プロトコルを定義しています。仕様書は [IVI-6.1: High-Speed LAN Instrument Protocol（HiSLIP)](https://www.ivifoundation.org/specifications/) です。
+2020年に計測器業界団体が策定した、VXI-11 の後継のイーサネット通信プロトコルです。10Gイーサネット以上の高速通信を想定し インタラプト動作を省略したオーバーラップ動作を使うことができます。仕様書は [IVI-6.1: High-Speed LAN Instrument Protocol（HiSLIP)](https://www.ivifoundation.org/specifications/) です。
 
 ### VXI-1 から VXI-10
 1995年に Tektronix が中心になって策定した、パソコンベースのモジュール型計測器の仕様です。モジュール間通信規格として VME バスを拡張した VXI バスを採用し、筐体の大きさや搭載ソフト(DOS)を規定しています。今はVMEバス搭載パソコンが流通しておらず、後継の [PXI Specifications](https://www.pxisa.org/) に置き換わっています。 
