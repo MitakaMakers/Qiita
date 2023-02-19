@@ -1,7 +1,7 @@
 # VXI-11 通信プロトコルの概要
 タグ：C#
 
-VXI-11（ぶいえっくすあいいれぶん）はオシロスコープ等の計測器の制御に使われるイーサネット通信プロトコルです。VXI-11 を説明するには、電子計測器の通信インタフェースとして使われる GP-IB（じーぴーあいびー）と、インターネット通信プロトコルの RPC（あーるぴーしー） の知識を必要とします。そこでまず GP-IB を紹介し、次に VXI-11 と RPC の概要を説明します。対象読者としてイーサネットの基本（IPアドレスとTCP ポート番号）とプログラムの基本（関数、引数、戻り値）がわかる 18 歳の新人技術者を想定しています。
+VXI-11（ぶいえっくすあいいれぶん）はオシロスコープ等の計測器の制御に使われるイーサネット通信プロトコルです。VXI-11 を説明するには、電子計測器の通信インタフェースとして使われる GP-IB（じーぴーあいびー）と、インターネット通信プロトコルの RPC（あーるぴーしー） の知識を必要とします。そこでまず GP-IB を紹介し、次に VXI-11 と RPC の概要を説明します。対象読者としてイーサネットの基本（IPアドレスとTCP ポート番号）とプログラムの基本（関数、変数、引数、戻り値）がわかる 18 歳の新人技術者を想定しています。
 
 # GP-IB について
 
@@ -105,16 +105,16 @@ PCから複数台の計測機器に一斉に測定開始や制御開始を指示
 
 ## RPC について
 
-RPC は遠隔にあるコンピュータの関数を実行するための仕組みとして 1988 年にSun 社が設計した通信プロトコルです。トランスポート層として TCP と UDP を利用しています。RPC は [RFC 1057: RPC: Remote Procedure Call Protocol specification Version 2](https://datatracker.ietf.org/doc/html/rfc1057) のインターネット規格として定義されています。RPC の考え方はマイクロソフト社の MS-RPC や Google社 の gRPC に引き継がれています。
+RPC は遠隔にあるコンピュータの関数を実行するための仕組みとして 1988 年にSun 社が設計した通信プロトコルです。トランスポート層として TCP と UDP を利用しています。RPC は [RFC 1057: RPC: Remote Procedure Call Protocol specification Version 2](https://datatracker.ietf.org/doc/html/rfc1057) のインターネット規格として公開されています。RPC の考え方はマイクロソフト社の MS-RPC や Google社 の gRPC に引き継がれています。
 
 ### RPC のシーケンス
 (TODO)
 
 ### RPC のヘッダフォーマット
 
-![RPC 呼び出しのヘッダフォーマット](551_RPC_HeaderFormat.png)
+![RPC 呼び出しのヘッダフォーマット](361_RPC_Call_HeaderFormat.png)
 
-![RPC 応答のヘッダフォーマット](552_RPC_HeaderFormat.png)
+![RPC 応答のヘッダフォーマット](362_RPC_Reply_HeaderFormat.png)
 
 MSG_TYP の番号と意味
 |番号|定数名|意味|
@@ -162,28 +162,31 @@ ACCEPT_STAT の番号と意味
 |PMAPPROC_CALLIT|5|call_args|call_result|別のリモートプロシージャを呼び出す|
 
 ## XDR について
-XDR はネットワークを流れるデータの構造を明確にするために、1987 年にSun 社が作った仕様です。XDR は [RFC 1014 XDR: External Data Representation Standard](https://datatracker.ietf.org/doc/html/rfc1014) のインターネット規格として定義されています。
+XDR はネットワークを流れるデータの構造を明確にするために、1987 年にSun 社が作った仕様です。XDR は [RFC 1014 XDR: External Data Representation Standard](https://datatracker.ietf.org/doc/html/rfc1014) のインターネット規格として公開されています。
 
 ### XDR のデータ形式
 
-![XDR の整数値のデータ形式](651_XDR_Format.png)
+![XDR の整数値のデータ形式](451_XDR_Integer_Format.png)
 
-![XDR の文字列型のデータ形式](652_XDR_Format.png)
+![XDR の文字列型のデータ形式](452_XDR_String_Format.png)
 
 ## VXI-11 の特徴
 ここから VXI-11 の内容を説明します。
 
 ### コアチャネル、インタラプトチャネル、アボートチャネル
 
-![Network instrument Channels](302_VXI_11_Figure_B_1.png)
+![Network instrument Channels](503_VXI_11_Figure_B_1.png)
 
 ### サーバ、クライアント
 
-![Network instrument Channels](304_VXI_11_Figure_B_4.png)
+![Network instrument Channels](506_VXI_11_Figure_B_4.png)
 
 ### ロック
 
-![Connection Model - Two Hosts, Single Device](305_VXI_11_Figure_B_8.png)
+![Connection Model - Two Hosts, Single Device](507_VXI_11_Figure_B_8.png)
+
+### VXI-11 のシーケンス
+(TODO)
 
 ### VXI-11 のプログラム番号
 
@@ -249,19 +252,22 @@ VXI-11 に関連する主な規格を紹介します。
 GP-IB のリモート機能やトリガ機能は不要で RS-232 のようにコマンドの送受信だけできればよい、という簡易用途でよく使われます。
 
 ### HiSLIPプロトコル
-2020年に計測器業界団体が策定した、VXI-11 の後継のイーサネット通信プロトコルです。10Gイーサネット以上の高速通信を想定し インタラプト動作を省略したオーバーラップ動作を使うことができます。仕様書は [IVI-6.1: High-Speed LAN Instrument Protocol（HiSLIP)](https://www.ivifoundation.org/specifications/) です。
+2020年に計測器業界団体が策定した、VXI-11 の後継のイーサネット通信プロトコルです。10Gイーサネット以上の高速通信を想定し インタラプト動作を省略したオーバーラップ動作があります。仕様書は [IVI-6.1: High-Speed LAN Instrument Protocol（HiSLIP)](https://www.ivifoundation.org/downloads/Protocol%20Specifications/IVI-6.1_HiSLIP-2.0-2020-04-23.pdf) です。
 
 ### VXI-1 から VXI-10
-1995年に Tektronix が中心になって策定した、パソコンベースのモジュール型計測器の仕様です。モジュール間通信規格として VME バスを拡張した VXI バスを採用し、筐体の大きさや搭載ソフト(DOS)を規定しています。今はVMEバス搭載パソコンが流通しておらず、後継の [PXI Specifications](https://www.pxisa.org/) に置き換わっています。 
+1995年に計測器業界団体が策定したパソコンベースのモジュール型計測器の仕様です。モジュール間通信規格として VME バスに信号線を追加した VXI バスを採用し、筐体の大きさや電気信号、ソフトウェア(DOS)を規定しています。今はVMEバス搭載パソコンが流通しておらず、後継の [PXI Specifications](https://www.pxisa.org/) に置き換わっています。 
 
 ### VISA ライブラリ
-1995年に計測器業界団体が策定した、GP-IB, RS-232, USB, イーサネットといった異なる通信規格に対して同一関数で操作するための通信ライブラリです。VXI バスを想定したメモリ読み書き関数群と、GP-IB や VXI-11 を対象とするメッセージ送受信関数群があります。仕様書は [VPP-4.3: The VISA Library](https://www.ivifoundation.org/specifications/) です。
+1995年に計測器業界団体が策定した、GP-IB, RS-232, USB, イーサネットといった異なる通信規格に対して同一関数で操作するための通信ライブラリです。VXI バスを想定したメモリ読み書き関数群と、GP-IB や VXI-11 を対象とするメッセージ送受信関数群があります。C言語、LabView, C++(COM), C# を対象としています。最新の仕様書は [VPP-4.3: The VISA Library](https://www.ivifoundation.org/specifications/) で公開されています。
 
 ### SCPI コマンド
-1999年に計測器業界団体が策定した、オシロスコープ、デジタルマルチメータ、任意信号発生器などの製品カテゴリ毎の共通コマンドの書式や引数の仕様です。仕様書は [Standard Commands for Programmable Instruments-1999](https://www.ivifoundation.org/specifications/) です。
+1999年に計測器業界団体が策定した、オシロスコープ、デジタルマルチメータ、任意信号発生器などの製品カテゴリ毎の共通コマンドの書式や引数の仕様です。仕様書は [Standard Commands for Programmable Instruments-1999](https://www.ivifoundation.org/docs/scpi-99.pdf) です。
 
 ### IVI ドライバ
-1998年に計測器業界団体が策定した、SCPI 準拠機器を制御するC言語/C++(COM)の関数ライブラリ仕様です。各社の測定器の振る舞いを抽象化し仮想測定器クラスによるPC上でのシミュレーション動作に対応しています。製品カテゴリ毎の仕様が [IVI Specifications](https://www.ivifoundation.org/specifications/) で公開されています。
+1998年に計測器業界団体が策定した、SCPI 準拠機器を制御するC言語, C++(COM), C# の関数ライブラリ仕様です。各社の測定器の振る舞いを抽象化し仮想測定器クラスによるPC上でのシミュレーション動作に対応しています。最新の仕様が [IVI Specifications](https://www.ivifoundation.org/specifications/) で公開されています。
+
+### LXI 規格
+2005 年に計測器業界団体が策定した、LAN 接続可能な計測機器が搭載すべき機能の仕様です。接続状態を表示するインジケータ、LAN 設定のリセットボタン、VXI-11 プロトコル, IVI ドライバ, Web サーバが必須とされています。オプションとして、トリガコネクタ、IEEEE1588 時刻同期などが規定されています。最新の仕様書は [LXI Device Specification 2022](https://www.lxistandard.org/Specifications/Specifications.aspx) です。
 
 # 参考文献
 
