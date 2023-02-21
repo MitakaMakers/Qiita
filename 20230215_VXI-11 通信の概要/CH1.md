@@ -12,38 +12,7 @@ GP-IB は1960年代に HP 社が計測機器や制御機器などの間でデー
 
 ![計測システムの一例](108_JIS_C_1901_Figure_A.png)
 
-コネクタや電気信号のタイミングを定義した [IEEE488.1-1978](https://standards.ieee.org/ieee/488/6465/) (あいとりぷるいーよんはちはちぽいんとわん、通称ぽいんとわん)と、コマンド形式や共通コマンドを定義した [IEEE488.2-1987](https://standards.ieee.org/ieee/488.2/717/) (あいとりぷるいーよんはちはちぽいんとつー、通称ぽいんとつー)の２つの規格があります。日本語版は [JIS C 1901:1987 計測器用インタフェースシステム](https://kikakurui.com/c1/C1901-1987-01.html) と EIAJ TT-5004：計測器用インターフェースシステムのためのコード、フォーマット、プロトコル及び共通コマンド(日本電子機械工業会発行, 販売終了) です。最新版は [IEEE/IEC 60488-1-2004](https://standards.ieee.org/ieee/60488-1/3686/) と [IEEE/IEC 60488-2-2004](https://standards.ieee.org/ieee/60488-2/3632/) です。
-
-GP-IB は24ピンの頑丈なコネクタでねじ止めするため、断線トラブルや引き抜きトラブルがほぼありません。また制御信号はグランド線とツイストぺアで配線されており電子ノイズに強く、三線式ハンドシェークによりトラブル発生時の原因の特定が容易なため、高い信頼性が必要な工場の生産ラインの通信方式として利用されます。
-
-### コネクタの形状
-JIS C 1901:1987 より引用
- 
-![装置用コネクタの取り付け方法](107_JIS_C_1901_Figure_17_1.png)
-
-### コネクタピンの割付
-|ピン番号|信号線名|ピン番号|信号線名|
-|--|--|--|--|
-|1|DIO 1|13|DIO 5|
-|2|DIO 2|14|DIO 6|
-|3|DIO 3|15|DIO 7|
-|4|DIO 4|16|DIO 8|
-|5|EOI(24)|17|REN(24)|
-|6|DAV|18|Gnd,(6)|
-|7|NRFD|19|Gnd,(7)|
-|8|NDAC|20|Gnd,(8)|
-|9|IFC|21|Gnd,(9)|
-|10|SRQ|22|Gnd,(10)|
-|11|ATN|23|Gnd,(11)|
-|12|SHIELD|24|Gnd,LOGIC|
-
-備考：Gnd,(n)は、括弧内の数字で示した信号のリターン用グランドであることを示しています。また、EOI とREN のリターン用グランドは 24 番ピンです。
-
-### 三線式ハンドシェークのタイミングチャート
-JIS C 1901:1987 より引用
-
-![１個のトーカと複数のリスナ間のハンドシェークのタイミングチャート](109_JIS_C_1901_Figure_B.png)
-
+コネクタや電気信号のタイミングを定義した [IEEE488.1-1978](https://standards.ieee.org/ieee/488/6465/) (あいとりぷるいーよんはちはちぽいんとわん、通称ぽいんとわん)と、コマンド形式や共通コマンドを定義した [IEEE488.2-1987](https://standards.ieee.org/ieee/488.2/717/) (あいとりぷるいーよんはちはちぽいんとつー、通称ぽいんとつー)の２つの規格があります。
 GP-IB の用語の内、VXI-11 に関係する用語を説明します。
 
 ### リモートローカルファンクション
@@ -70,74 +39,51 @@ PCから複数台の計測機器に一斉に測定開始や制御開始を指示
 ### ステータスバイトファンクション
 サービスリクエストの発生理由を示す 8 ビットの数値です。計測機器の応答データの準備完了やエラーの発生を示します。
 
-![Required Status Reporting Capabilities](203_IEC_60488_2_Figure_4_1.png)
-
-### *IDN?コマンド
-計測機器の「メーカ名、型名、ファームウェアバージョン、シリアル番号」を問い合わせるコマンドです
-
-![Response Semantics](210_IEC_60488_2_10.14.2.png)
-
-### インタラプト動作
-計測機器が送信中のデータを完了する前に次のコマンドを受信した場合に、計測機器で行うエラー動作です。
-
-![INTERRUPTED Action](206_IEC_60488_2_6.3.2.3.png)
-
-![Message Exchange Control Interface Functional Blocks](205_IEC_60488_2_Figure_6_2.png)
+![Required Status Reporting Capabilities](204_TT_5004_Figure_4_1.png)
 
 ### デバイスクリアファンクション
-計測機器が送信中のデータをクリアする機能です。上記インタラプト動作を解消する際によく使用されます。
-
-![Device Clear Requirements](204_IEC_60488_2_5.8.png)
+計測機器のと通信機能を初期状態に戻し、通信の入力バッファと出力バッファをクリアする機能です。
 
 # VXI-11 について
 
-1995年に測定器業界団体が、イーサネット通信でGP-IB の機能を実現するために作った通信プロトコルです。仕様書は [VXI-11 REVISION 1.0](https://www.vxibus.org/specifications.html) で公開されています。トランスポート層に TCP、セッション層に RPC、プレゼンテーション層に XDR を利用し、VXI-11 はアプリケーション層に相当します。VXI-11 の仕様書は基本関数の仕様を定義している VXI-11 と IEEE488.2 の範囲を規定している VXI-11.3 の２つの仕様書があります。
+1995年に測定器業界団体がイーサネット通信でGP-IB の機能を実現するために作った通信プロトコルです。仕様書は [VXI-11 REVISION 1.0](https://www.vxibus.org/specifications.html) で公開されています。トランスポート層に TCP、セッション層に RPC、プレゼンテーション層に XDR を利用し、VXI-11 はアプリケーション層に相当します。
 
 |OSI階層|プロトコル|規格番号|
 |---------|----------|--------|
 |アプリケーション層|Network Instrument|VXI-11|
 |プレゼンテーション層|XDR|RFC 1014|
-|セッション層|RPC|RFC 1057|
+|セッション層|ONC RPC|RFC 1057|
 |トランスポート層|TCP|RFC 793|
 |ネットワーク層|IP|RFC 791|
 |データリンク層|Ethernet|IEEE 802.3|
 |物理層|10BASE-T|IEEE 802.3|
 
-## RPC について
+## ONC RPC について
 
-RPC は遠隔にあるコンピュータの関数を実行するための仕組みとして 1988 年にSun 社が設計した通信プロトコルです。トランスポート層として TCP と UDP を利用しています。RPC は [RFC 1057: RPC: Remote Procedure Call Protocol specification Version 2](https://datatracker.ietf.org/doc/html/rfc1057) のインターネット規格として公開されています。RPC の考え方はマイクロソフト社の MS-RPC や Google社 の gRPC に引き継がれています。
+RPC は遠隔にあるシステムの関数を実行するための仕組みです。ONC RPC は 1988 年にSun Microsystems 社が設計しました。トランスポート層として TCP と UDP を利用しています。ONC RPC は [RFC 1057: RPC: Remote Procedure Call Protocol specification Version 2](https://datatracker.ietf.org/doc/html/rfc1057) のインターネット標準として公開されています。
 
 ### RPC のシーケンス
 (TODO)
 
-### RPC のヘッダフォーマット
+### ONC RPC のヘッダフォーマット
 
-![RPC 呼び出しのヘッダフォーマット](361_RPC_Call_HeaderFormat.png)
+![RPC 呼び出しのヘッダフォーマット](362_RPC_Call_HeaderFormat.png)
 
-![RPC 応答のヘッダフォーマット](362_RPC_Reply_HeaderFormat.png)
+![RPC 応答のヘッダフォーマット](364_RPC_Reply_HeaderFormat.png)
 
-MSG_TYP の番号と意味
+mtype の番号と意味
 |番号|定数名|意味|
 |--|--|--|
 |0|CALL|関数の呼び出し|
 |1|REPLY|関数の応答|
 
-
-AUTH_FLAVOR の番号と意味
-|番号|定数名|意味|
-|--|--|--|
-|0|AUTH_NULL|ユーザ認証の仕組みを使わない|
-|1|AUTH_UNIX|UNIX のユーザ認証の仕組みを使う|
-|2|AUTH_SHORT|独自 のユーザ認証の仕組みを使う|
-|3|AUTH_DES|DES のユーザ認証の仕組みを使う|
-
-REPLY_STAT の番号と意味
+reply_stat の番号と意味
 |番号|定数名|意味|
 |--|--|--|
 |0|MSG_ACCEPTED|正常に実行された|
 |1|MSG_DENIED|エラーが発生した|
 
-ACCEPT_STAT の番号と意味
+accept_stat の番号と意味
 |番号|定数名|意味|
 |--|--|--|
 |0|SUCCESS|RPCが正常に実行された|
@@ -145,6 +91,24 @@ ACCEPT_STAT の番号と意味
 |2|PROG_MISMATCH|リモートがバージョン#をサポートできない|
 |3|MRPC_UNAVAIL|プログラムがプロシージャをサポートできません|
 |4|GARBAGE_ARGS|プロシージャはパラメータをデコードできません|
+
+### ONC RPC の認証機構
+ONC RPC では認証をクライアントとサーバの処理に任せるという方針をとっています。VXI-11 では認証を使いません。
+
+verf_flavor の番号と意味
+|番号|定数名|意味|
+|--|--|--|
+|0|AUTH_NONE|認証の仕組みを使わない|
+|1|AUTH_SYS|UNIX のシステム認証の仕組みを使う|
+|2|AUTH_SHORT|独自 のシステム認証の仕組みを使う|
+
+verf_flavor の番号と意味
+|番号|定数名|意味|
+|--|--|--|
+|0|AUTH_NULL|認証の仕組みを使わない|
+|1|AUTH_UNIX|UNIX のユーザ認証の仕組みを使う|
+|2|AUTH_SHORT|独自 のユーザ認証の仕組みを使う|
+|3|AUTH_DES|DES のユーザ認証の仕組みを使う|
 
 ### プログラム番号、プログラムバージョン、プロシージャ番号の例
 
@@ -162,7 +126,7 @@ ACCEPT_STAT の番号と意味
 |PMAPPROC_CALLIT|5|call_args|call_result|別のリモートプロシージャを呼び出す|
 
 ## XDR について
-XDR はネットワークを流れるデータの構造を明確にするために、1987 年にSun 社が作った仕様です。XDR は [RFC 1014 XDR: External Data Representation Standard](https://datatracker.ietf.org/doc/html/rfc1014) のインターネット規格として公開されています。
+XDR はネットワークを流れるデータの構造を明確にするために、1987 年にSun Microsystems 社が作った仕様です。XDR は [RFC 1014 XDR: External Data Representation Standard](https://datatracker.ietf.org/doc/html/rfc1014) として公開されています。
 
 ### XDR のデータ形式
 
