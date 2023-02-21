@@ -12,7 +12,38 @@ GP-IB は1960年代に HP 社が計測機器や制御機器などの間でデー
 
 ![計測システムの一例](108_JIS_C_1901_Figure_A.png)
 
-コネクタや電気信号のタイミングを定義した [IEEE488.1-1978](https://standards.ieee.org/ieee/488/6465/) (あいとりぷるいーよんはちはちぽいんとわん、通称ぽいんとわん)と、コマンド形式や共通コマンドを定義した [IEEE488.2-1987](https://standards.ieee.org/ieee/488.2/717/) (あいとりぷるいーよんはちはちぽいんとつー、通称ぽいんとつー)の２つの規格があります。
+コネクタや電気信号のタイミングを定義した [IEEE488.1-1978](https://standards.ieee.org/ieee/488/6465/) (あいとりぷるいーよんはちはちぽいんとわん、通称ぽいんとわん)と、コマンド形式や共通コマンドを定義した [IEEE488.2-1987](https://standards.ieee.org/ieee/488.2/717/) (あいとりぷるいーよんはちはちぽいんとつー、通称ぽいんとつー)の２つの規格があります。日本語版は [JIS C 1901:1987 計測器用インタフェースシステム](https://kikakurui.com/c1/C1901-1987-01.html) と EIAJ TT-5004：計測器用インターフェースシステムのためのコード、フォーマット、プロトコル及び共通コマンド(日本電子機械工業会発行, 販売終了) です。最新版は [IEEE/IEC 60488-1-2004](https://standards.ieee.org/ieee/60488-1/3686/) と [IEEE/IEC 60488-2-2004](https://standards.ieee.org/ieee/60488-2/3632/) です。
+
+GP-IB は24ピンの頑丈なコネクタでねじ止めするため、断線トラブルや引き抜きトラブルがほぼありません。また制御信号はグランド線とツイストぺアで配線されており電子ノイズに強く、三線式ハンドシェークによりトラブル発生時の原因の特定が容易なため、高い信頼性が必要な工場の生産ラインの通信方式として利用されます。
+
+### コネクタの形状
+JIS C 1901:1987 より引用
+ 
+![装置用コネクタの取り付け方法](107_JIS_C_1901_Figure_17_1.png)
+
+### コネクタピンの割付
+|ピン番号|信号線名|ピン番号|信号線名|
+|--|--|--|--|
+|1|DIO 1|13|DIO 5|
+|2|DIO 2|14|DIO 6|
+|3|DIO 3|15|DIO 7|
+|4|DIO 4|16|DIO 8|
+|5|EOI(24)|17|REN(24)|
+|6|DAV|18|Gnd,(6)|
+|7|NRFD|19|Gnd,(7)|
+|8|NDAC|20|Gnd,(8)|
+|9|IFC|21|Gnd,(9)|
+|10|SRQ|22|Gnd,(10)|
+|11|ATN|23|Gnd,(11)|
+|12|SHIELD|24|Gnd,LOGIC|
+
+備考：Gnd,(n)は、括弧内の数字で示した信号のリターン用グランドであることを示しています。また、EOI とREN のリターン用グランドは 24 番ピンです。
+
+### 三線式ハンドシェークのタイミングチャート
+JIS C 1901:1987 より引用
+
+![１個のトーカと複数のリスナ間のハンドシェークのタイミングチャート](109_JIS_C_1901_Figure_B.png)
+
 GP-IB の用語の内、VXI-11 に関係する用語を説明します。
 
 ### リモートローカルファンクション
@@ -42,7 +73,7 @@ PCから複数台の計測機器に一斉に測定開始や制御開始を指示
 ![Required Status Reporting Capabilities](204_TT_5004_Figure_4_1.png)
 
 ### デバイスクリアファンクション
-計測機器のと通信機能を初期状態に戻し、通信の入力バッファと出力バッファをクリアする機能です。
+計測機器の通信の入力バッファと出力キューをクリアし通信機能を初期状態に戻す機能です。
 
 # VXI-11 について
 
@@ -91,13 +122,13 @@ accept_stat の番号と意味
 |0|SUCCESS|RPCが正常に実行された|
 |1|PROG_UNAVAIL|リモートがプログラムをエクスポートしていない|
 |2|PROG_MISMATCH|リモートがバージョン#をサポートできない|
-|3|MRPC_UNAVAIL|プログラムがプロシージャをサポートできません|
+|3|PROC_UNAVAIL|プログラムがプロシージャをサポートできません|
 |4|GARBAGE_ARGS|プロシージャはパラメータをデコードできません|
 
 ### ONC RPC の認証機構
 VXI-11 では認証を使いません。AUTH_NONE / AUTH_NULL を設定します。
 
-verf_flavor の番号と意味
+cred_flavor の番号と意味
 |番号|定数名|意味|
 |--|--|--|
 |0|AUTH_NONE|認証の仕組みを使わない|
@@ -156,25 +187,25 @@ XDR はネットワークを流れるデータの構造を明確にするため�
 
 ### VXI-11 の関数とプロシージャ番号
 
-|関数名|チャネル|プロシージャ番号|引数|戻り値|説明|
-|------|-------|---------------|---|------|----|
-|create_link|コア|10|Create_LinkParms|Create_LinkResp|デバイスへのリンクを開く|
-|device_write|コア|11|Device_WriteParms|Device_WriteResp|デバイスがメッセージを受信する|
-|device_read|コア|12|Device_ReadParms|Device_ReadResp|デバイスが応答を送信する|
-|device_readstb|コア|13|Device_GenericParms|Device_ReadStbResp|デバイスがステータスバイトを送信する|
-|device_trigger|コア|14|Device_GenericParms|Device_Error|デバイストリガを実行する|
-|device_clear|コア|15|Device_GenericParms|Device_Error|デバイスクリアを実行する|
-|device_remote|コア|16|Device_GenericParms|Device_Error|デバイスをリモート状態にする|
-|device_local|コア|17|Device_GenericParms|Device_Error|デバイスをローカル状態にする|
-|device_lock|コア|18|Device_LockParms|Device_Error|デバイスをロックする|
-|device_unlock|コア|19|Device_Link|Device_Error|デバイスのロックを解除する|
-|device_enable_srq|コア|20|Device_EnableSrqParms|Device_Error|デバイスがサービス要求の送信を有効／無効にする|
-|device_docmd|コア|22|Device_DocmdParms|Device_DocmdResp|デバイスがコマンドを実行する|
-|destroy_link|コア|23|Device_Link|Device_Error|デバイスへのリンクのクローズ|
-|create_intr_chan|コア|25|Device_RemoteFunc|Device_Error|デバイスが割り込みチャンネルを作成|
-|destroy_intr_chan|コア|26|なし|Device_Error|デバイスが割り込みチャネルを破棄した|
-|device_abort|アボート|1|Device_Link|Device_Error|デバイスが進行中の呼び出しを中止する|
-|device_intr_srq|インタラプト|30|Device_SrqParms|なし|デバイスがサービス要求の送信に使用|
+|関数名|説明|チャネル|プログラム番号|バージョン番号|プロシージャ番号|引数|戻り値|
+|------|-------|---------------|---|------|----|--|--|
+|create_link|デバイスへのリンクを開く|コア|395183|1|10|Create_LinkParms|Create_LinkResp|
+|device_write|デバイスがメッセージを受信する|コア|395183|1|11|Device_WriteParms|Device_WriteResp|
+|device_read|デバイスが応答を送信する|コア|395183|1|12|Device_ReadParms|Device_ReadResp|
+|destroy_link|デバイスへのリンクのクローズ|コア|395183|1|23|Device_Link|Device_Error|
+|device_readstb|デバイスがステータスバイトを送信する|コア|395183|1|13|Device_GenericParms|Device_ReadStbResp|
+|device_trigger|デバイストリガを実行する|コア|395183|1|14|Device_GenericParms|Device_Error|
+|device_clear|デバイスクリアを実行する|コア|395183|1|15|Device_GenericParms|Device_Error|
+|device_remote|デバイスをリモート状態にする|コア|395183|1|16|Device_GenericParms|Device_Error|
+|device_local|デバイスをローカル状態にする|コア|395183|1|17|Device_GenericParms|Device_Error|
+|device_lock|デバイスをロックする|コア|395183|1|18|Device_LockParms|Device_Error|
+|device_unlock|デバイスのロックを解除する|コア|395183|1|19|Device_Link|Device_Error|
+|device_enable_srq|デバイスからのサービスリクエストの送信を有効／無効にする|コア|395183|1|20|Device_EnableSrqParms|Device_Error|
+|device_docmd|デバイスがコマンドを実行する|コア|395183|1|22|Device_DocmdParms|Device_DocmdResp|
+|create_intr_chan|デバイスがインタラプトチャンネルを作成|コア|395183|1|25|Device_RemoteFunc|Device_Error|
+|destroy_intr_chan|デバイスがインタラプトチャネルを破棄した|コア|395183|1|26|なし|Device_Error|
+|device_abort|デバイスが進行中の呼び出しを中止する|アボート|395184|1|1|Device_Link|Device_Error|
+|device_intr_srq|デバイスがサービスリクエストの送信に使用|インタラプト|395185|1|30|Device_SrqParms|なし|
 
 ### VXI-11 のデータフォーマット
 
@@ -184,6 +215,8 @@ XDR はネットワークを流れるデータの構造を明確にするため�
 ![](654.png)
 ![](655.png)
 ![](656.png)
+![](657.png)
+![](658.png)
 
 ### VXI-11 のエラー番号
 
@@ -204,14 +237,6 @@ XDR はネットワークを流れるデータの構造を明確にするため�
 |21|無効なアドレス|
 |23|処理を中断した|
 |29|チャネルが既に確立されている|
-
-### VXI-11 のプログラム番号
-
-|チャネル名|プログラム番号|バージョン番号|プロトコル|
-|---------|------------|-------------|--------|
-|コア|395183|1|TCP|
-|アボート|395184|1|TCP|
-|インタラプト|395185|1|TCP|
 
 # VXI-11.Netについて
 
