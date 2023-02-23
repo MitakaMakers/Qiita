@@ -131,7 +131,7 @@ RPC は分散環境におけるクライアントとサーバ間の通信を、�
 
 ![RPC 応答のヘッダフォーマット](364_RPC_Reply_HeaderFormat.png)
 
-mtype の番号と意味
+msg_type の番号と意味
 |番号|定数名|意味|
 |--|--|--|
 |0|CALL|関数の呼び出し|
@@ -153,7 +153,7 @@ accept_stat の番号と意味
 |4|GARBAGE_ARGS|プロシージャはパラメータをデコードできません|
 
 ### ONC RPC の認証機構
-VXI-11 では認証を使いません。AUTH_NONE / AUTH_NULL を設定します。
+ONC RPC では Sun Microsystems 社の UNIX を想定した認証の仕組みが定義されています。VXI-11 では認証を使わないため、AUTH_NONE / AUTH_NULL を設定します。
 
 cred_flavor の番号と意味
 |番号|定数名|意味|
