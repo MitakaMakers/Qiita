@@ -1,16 +1,15 @@
 # HiSLIP 通信プロトコルの概要と仕組み
 タグ：C#
 
-HiSLIP（ハイスリップ）はオシロスコープ等の計測器の制御に使われるイーサネット通信プロトコルです。HiSLIP プロトコルは、古くから電子計測器の通信インタフェースとして使われる GP-IB（じーぴーあいびー）からネットワーク環境に容易に移行することを目的としています。
+HiSLIP（読み方：はいすりっぷ）はオシロスコープ等の計測器の制御に使われるイーサネット通信プロトコルです。HiSLIP プロトコルは、古くから電子計測器の通信インタフェースとして使われる GP-IB（読み方：じーぴーあいびー）からネットワーク環境に容易に移行することを目的としています。
 
-HiSLIP を説明するには、GP-IB の知識を必要とします。そこでまず GP-IB を紹介し、次に HiSLIP の概要を説明します。最後にサンプルプログラムと関連規格を紹介します。
-対象読者としてイーサネットの基本（IPアドレスとTCP ポート番号）がわかる 18 歳の新人技術者を想定しています。
+HiSLIP を説明するには、GP-IB の知識を必要とします。そこでまず GP-IB を紹介し、次に HiSLIP の概要を説明します。対象読者としてイーサネットの基本（IPアドレスとTCP ポート番号）がわかる 18 歳の新人技術者を想定しています。
 
 # GP-IB について
 
 GP-IB は1960年代に HP 社が計測機器や制御機器などの間でデータ通信を行うために設計した通信規格です。
  
-コネクタや電気信号のタイミングを定義した [IEEE488.1-1978](https://standards.ieee.org/ieee/488/6465/) (あい・とりぷるいー・よんはちはち・ぽいんとわん、通称ぽいんとわん)と、コマンド形式や共通コマンドを定義した [IEEE488.2-1987](https://standards.ieee.org/ieee/488.2/717/) (あい・とりぷるいー・よんはちはち・ぽいんとつー、通称ぽいんとつー)の２つの規格があります。日本語版は [JIS C 1901:1987 計測器用インタフェースシステム](https://kikakurui.com/c1/C1901-1987-01.html) です。
+コネクタや電気信号のタイミングを定義した [IEEE488.1-1978](https://standards.ieee.org/ieee/488/6465/) (読み方：あい・とりぷるいー・よんはちはち・ぽいんとわん、通称：ぽいんとわん)と、コマンド形式や共通コマンドを定義した [IEEE488.2-1987](https://standards.ieee.org/ieee/488.2/717/) (読み方：あい・とりぷるいー・よんはちはち・ぽいんとつー、通称：ぽいんとつー)の２つの規格があります。日本語版は [JIS C 1901:1987 計測器用インタフェースシステム](https://kikakurui.com/c1/C1901-1987-01.html) です。
 
 ### 計測機器の接続例
 「[JIS C 1901:1987 計測器用インタフェースシステム](https://kikakurui.com/c1/C1901-1987-01.html) 付属書A 計測システムの一例」より引用
@@ -74,11 +73,11 @@ GP-IB の用語の内、VXI-11 に関係する用語を説明します。
 
 # HiSLIP について
 
-2010 年に測定器業界団体がイーサネット通信で GP-IB の機能を実現するために作った通信プロトコルです。
+2010 年にイーサネット通信で GP-IB の機能を実現するために作られた通信プロトコルです。
 
 同様の目的で 1995 年に作られた VXI-11 プロトコルは 10BASE-T を想定していましたが、HiSLIPが、より高速な10GBASE-T 等を想定しています。仕様書は [VXI-11 REVISION 1.0](https://www.vxibus.org/specifications.html) で公開されています。
 
-
+ポート番号
 
 HiSLIP はトランスポート層に TCP、セッション層に TLS を利用し、VXI-11 はアプリケーション層に相当します。
 
@@ -92,17 +91,12 @@ HiSLIP はトランスポート層に TCP、セッション層に TLS を利用�
 |2|データリンク層|Ethernet|IEEE 802.3|
 |1|物理層|10BASE-T|IEEE 802.3|
 
+### ポート番号
+
 ### 同期チャネル、非同期チャネル
 
 ![Network instrument Channels](561.png)
 
-|役割|プログラム番号|バージョン番号|プロトコル|ポート番号|
-|--------|--------------|--------------|----------|----------|
-|ポートマップ|10000|2|TCP|111|
-|ポートマップ|10000|2|UDP|111|
-|コアチャネル|395183|1|TCP|任意|
-|アボートチャネル|395184|1|TCP|任意|
-|インタラプトチャネル|395185|1|TCP|任意|
 
 ### リンク番号とロック
 
@@ -113,27 +107,36 @@ HiSLIP はトランスポート層に TCP、セッション層に TLS を利用�
 ### HiSLIP のシーケンス
 ![](508_VXI_11_Figure_B_12.png)
 
-### HiSLIP の関数とプロシージャ番号
+### HiSLIP のメッセージ種別と番号
 
-|関数名|説明|チャネル|プログラム番号|バージョン番号|プロシージャ番号|引数|戻り値|
-|------|-------|---------------|---|------|----|--|--|
-|create_link|デバイスへのリンクを開く|コア|395183|1|10|Create_LinkParms|Create_LinkResp|
-|device_write|デバイスがメッセージを受信する|コア|395183|1|11|Device_WriteParms|Device_WriteResp|
-|device_read|デバイスが応答を送信する|コア|395183|1|12|Device_ReadParms|Device_ReadResp|
-|destroy_link|デバイスへのリンクのクローズ|コア|395183|1|23|Device_Link|Device_Error|
-|device_readstb|デバイスがステータスバイトを送信する|コア|395183|1|13|Device_GenericParms|Device_ReadStbResp|
-|device_trigger|デバイストリガを実行する|コア|395183|1|14|Device_GenericParms|Device_Error|
-|device_clear|デバイスクリアを実行する|コア|395183|1|15|Device_GenericParms|Device_Error|
-|device_remote|デバイスをリモート状態にする|コア|395183|1|16|Device_GenericParms|Device_Error|
-|device_local|デバイスをローカル状態にする|コア|395183|1|17|Device_GenericParms|Device_Error|
-|device_lock|デバイスをロックする|コア|395183|1|18|Device_LockParms|Device_Error|
-|device_unlock|デバイスのロックを解除する|コア|395183|1|19|Device_Link|Device_Error|
-|device_enable_srq|デバイスからのサービスリクエストの送信を有効／無効にする|コア|395183|1|20|Device_EnableSrqParms|Device_Error|
-|device_docmd|デバイスがコマンドを実行する|コア|395183|1|22|Device_DocmdParms|Device_DocmdResp|
-|create_intr_chan|デバイスがインタラプトチャンネルを作成|コア|395183|1|25|Device_RemoteFunc|Device_Error|
-|destroy_intr_chan|デバイスがインタラプトチャネルを破棄した|コア|395183|1|26|なし|Device_Error|
-|device_abort|デバイスが進行中の呼び出しを中止する|アボート|395184|1|1|Device_Link|Device_Error|
-|device_intr_srq|デバイスがサービスリクエストの送信に使用|インタラプト|395185|1|30|Device_SrqParms|なし|
+|メッセージ種別|チャンネル|メッセージ番号|説明|
+|--|--|--|--|
+|Initialize|同期|0|初期化|
+|InitializeResponse|同期|1|初期化レスポンス|
+|FatalError|同期|2|致命的なエラー|
+|Error|非同期|3|エラー|
+|AsyncLock|非同期|4|非同期ロック|
+|AsyncLockResponse|非同期|5|AsyncLockResponse|
+|Data|非同期|6|データ|
+|DataEnd|非同期|7|データ終了|
+|DeviceClearComplete|非同期|8|デバイスクリア完了|
+|DeviceClearAcknowledge|非同期|9|デバイスクリアアクノリッジ|
+|AsyncRemoteLocalControl|非同期|10|非同期リモート・ローカル・コントロール|
+|AsyncRemoteLocalResponse|非同期|11|非同期リモートローカルレスポンス|
+|Trigger|非同期|12|トリガー|
+|Interrupted|非同期|13|中断|
+|AsyncInterrupted|非同期|14|非同期割り込み|
+|AsyncMaximumMessageSize|非同期|15|非同期最大メッセージサイズ|
+|AsyncMaximumMessageSizeResponse|非同期|16|非同期MaximumMessageSizeResponse|
+|AsyncInitialize|非同期|17|非同期初期化|
+|AsyncInitializeResponse|非同期|18|AsyncInitializeResponse|
+|AsyncDeviceClear|非同期|19|非同期デバイスクリア|
+|AsyncServiceRequest|非同期|20|非同期ServiceRequest|
+|AsyncStatusQuery|非同期|21|非同期ステータスクエリ（AsyncStatusQuery|
+|AsyncStatusResponse|非同期|22|AsyncStatusResponse|
+|AsyncDeviceClearAcknowledge|非同期|23|AsyncDeviceClearAcknowledge|
+|AsyncLockInfo|非同期|24|AsyncLockInfo|
+|AsyncLockInfoResponse|非同期|25|AsyncLockInfoResponse（非同期ロック情報レスポンス|
 
 ### HiSLIP のデータフォーマット
 
@@ -202,5 +205,5 @@ GP-IB のリモート機能やトリガ機能は不要で RS-232 のようにコ
 
 # 参考文献
 
-もっと詳しく知りたい人のために日本語の解説記事を挙げます。
+本ページで引用した参考文献を挙げます。
 - [JIS C 1901:1987 計測器用インタフェースシステム](https://webdesk.jsa.or.jp/books/W11M0090/index/?bunsyo_id=JIS+C+1901%3A1987) 日本規格協会 税込4840円
