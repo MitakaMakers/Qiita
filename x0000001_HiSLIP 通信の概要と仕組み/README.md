@@ -94,7 +94,7 @@ HiSLIPは [TCP ポート番号 4880](https://www.iana.org/assignments/service-na
 
 |機能|VXI-11|HiSLIP|
 |--|--|--|
-|GPIB 互換|互換あり|互換|
+|GPIB 互換|互換|互換|
 |ポート番号|動的構成|4880ポート固定|
 |IPv6サポート|なし|あり|
 |機器のロック|排他ロック|排他ロックまたは共有ロック|
@@ -104,54 +104,41 @@ HiSLIPは [TCP ポート番号 4880](https://www.iana.org/assignments/service-na
 
 ![](561.png)    
 
-### 同期モードとオーバーラップモード(TODO)
-
-メッセージ識別子とRMT
-(TODO)
-
-### メッセージ番号(TODO)
-
-|メッセージ種別|チャンネル|メッセージ番号|説明|
-|--|--|--|--|
-|Initialize|同期|0|初期化|
-|InitializeResponse|同期|1|初期化レスポンス|
-|FatalError|同期|2|致命的なエラー|
-|Error|非同期|3|エラー|
-|AsyncLock|非同期|4|非同期ロック|
-|AsyncLockResponse|非同期|5|AsyncLockResponse|
-|Data|非同期|6|データ|
-|DataEnd|非同期|7|データ終了|
-|DeviceClearComplete|非同期|8|デバイスクリア完了|
-|DeviceClearAcknowledge|非同期|9|デバイスクリアアクノリッジ|
-|AsyncRemoteLocalControl|非同期|10|非同期リモート・ローカル・コントロール|
-|AsyncRemoteLocalResponse|非同期|11|非同期リモートローカルレスポンス|
-|Trigger|非同期|12|トリガー|
-|Interrupted|非同期|13|中断|
-|AsyncInterrupted|非同期|14|非同期割り込み|
-|AsyncMaximumMessageSize|非同期|15|非同期最大メッセージサイズ|
-|AsyncMaximumMessageSizeResponse|非同期|16|非同期MaximumMessageSizeResponse|
-|AsyncInitialize|非同期|17|非同期初期化|
-|AsyncInitializeResponse|非同期|18|AsyncInitializeResponse|
-|AsyncDeviceClear|非同期|19|非同期デバイスクリア|
-|AsyncServiceRequest|非同期|20|非同期ServiceRequest|
-|AsyncStatusQuery|非同期|21|非同期ステータスクエリ（AsyncStatusQuery|
-|AsyncStatusResponse|非同期|22|AsyncStatusResponse|
-|AsyncDeviceClearAcknowledge|非同期|23|AsyncDeviceClearAcknowledge|
-|AsyncLockInfo|非同期|24|AsyncLockInfo|
-|AsyncLockInfoResponse|非同期|25|AsyncLockInfoResponse（非同期ロック情報レスポンス|
-
 ### データフォーマット(TODO)
 
 HiSLIP のデータ構成
 
 ![](551.png)
 
-+ メッセージ番号
-+ コントロールコード
-+ メッセージ・パラメータ
-+ ペイロード長
++ プロローグ：HiSLIPデバイスが不正なメッセージを受信したとき、または同期がとれていないときを検出するのを容易にするためのパターンである。値は、16ビット値として符号化されたASCII 'HS'とする。'H'は最上位のネットワーク順序の位置にあり、'S'は2バイト目にある。
++ メッセージタイプ：このフィールドはこのメッセージを識別する。HiSLIP メッセージの説明については、表 3「HiSLIP メッセージ」を参照してください。各メッセージ・タイプの数値については、表4「メッセージ・タイプの値の定義」を参照してください。
++ 制御コード：この 8 ビットのフィールドは、メッセージの一般的なパラメータである。このフィールドがメッセージに対して定義されていない場合、0が送信される。
++ メッセージ・パラメータ：この32ビットフィールドは、メッセージによって様々な用途がある。このフィールドがメッセージに定義されていない場合、0 を送信する。
++ ペイロード長：このフィールドは、メッセージに含まれるペイロードデータの長さをオクテット単位で示す。このフィールドは、符号なし 64 ビット整数である。最大データ転送サイズは実装によって制限されるかもしれない。詳細は6.10節「最大メッセージサイズ取引」を参照のこと。メッセージタイプがペイロードを使用しない場合、長さはゼロに設定されなければならない。
 
-HiSLIP の主なメッセージのデータ構成
+### 同期モードとオーバーラップモード(TODO)
+
+GPIB、VXI-11、USB-TMC 機器との互換性を保つため、HiSLIP プロトコルは 2 つの異なる動作モードをサポートしています。
+
++ オーバーラップモード：オーバーラップモードでは、入出力データおよびトリガーメッセージは、クライアントとサーバーの間で任意にバッファリングされます。例えば、一連の独立したクエリーメッセージを、いつ完了するかは関係なくサーバーに送信することができます。それぞれの応答は、クエリが送信された順番に返される。このように、クライアントがレスポンスを消費する速度とは無関係に、サーバによって複数のクエリ操作が開始され、実施されることがある。
++ シンクロナイズドモード：同期モードでは、クライアントは別の問い合わせを送信する前に、各問い合わせメッセージの結果を読むことが要求される2。クライアントがそれを怠ると、プロトコルは中断されたメッセージを生成します。
+ 
+### 主なメッセージ番号(TODO)
+
+|メッセージ種別|チャンネル|メッセージ番号|説明|
+|--|--|--|--|
+|Initialize|同期|0|初期化|
+|InitializeResponse|同期|1|初期化レスポンス|
+|FatalError|同期|2|致命的なエラー|
+|Error|両方|3|エラー|
+|Data|同期|6|データ|
+|DataEnd|同期|7|データ終了|
+|Interrupted|同期|13|中断|
+|AsyncInterrupted|非同期|14|非同期割り込み|
+|AsyncInitialize|非同期|17|非同期初期化|
+|AsyncInitializeResponse|非同期|18|AsyncInitializeResponse|
+
+## HiSLIP の主なメッセージのデータ構成
 
 ![](651.png)
 
