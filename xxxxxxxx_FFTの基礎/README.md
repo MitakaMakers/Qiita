@@ -1,12 +1,26 @@
-工学的用途
+# 機械・電気工学的用途
 
-パワースペクトラム
-リニアスペクトラム
-Linear
-Power
-PSD (Power Spectral Density)
-ESD (Energy Spectral Density)
-ASD (Amplitude Spectral Density)
++ 【用途1】室内音響、スピーカー設計、環境騒音解析
++ 【用途2】機械的衝撃応答試験、落下試験
+　　　振動測定
++ 【用途3】機構や建築物の構造動的解析、ねじり解析
++ 【用途4】回転機械の状態の予測モニタリング
+　　耐久性、疲労解析、ベアリング故障検出
++ 【用途5】燃焼分析
++ 【用途6】交流電流の高調波、有効電力の
+　　交流電流の高調波
+　　交流電流の有効電力・無効電力・皮相電力
+
++ パワースペクトラム
++ リニアスペクトラム
++ Linear
++ Power
++ PSD (Power Spectral Density)
++ ESD (Energy Spectral Density)
++ ASD (Amplitude Spectral Density)
 
 
-数学的解説
+# 数学的解説
+
+
+# 歴史
