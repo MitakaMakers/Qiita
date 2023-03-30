@@ -7,16 +7,20 @@
 光の色と周波数の関係
 
 ![プリズムの絵](02_prism.png)
+CC by mitakalab
 
 音階と周波数の関係
 
 ![フルートとギターの音の波形](03_piano.png)
+CC by mitakalab
 
 # フーリエ変換の考え方
 
 フーリエ変換は波をパズルのようにいろいろな小さな波の組み合わせに分解して解析する方法です。それぞれの小さな波は、違う大きさや速さを持っています。フーリエ変換を使うと、複雑な波を簡単に理解できるようになります。例えば、音楽の演奏をイメージしてみてください。楽器が一緒に演奏すると、それぞれの楽器から出る音が重なり合って、1つの複雑な音になります。フーリエ変換は、その複雑な音を、それぞれの楽器の音（小さな波）に分解することができます。このように、フーリエ変換は波の形や特徴を分析して理解するための手法です。
 
 ![フーリエ級数展開の考え方](20_fourier.png)
+
+CC by mitakalab
 
 # フーリエ変換の利用例
 
@@ -26,35 +30,69 @@
 3. 音声認識: 音声をテキストに変換する際に、フーリエ変換が音声データを分析します。
 4. 音楽情報検索: 音楽データベースから類似の曲を検索する際に、フーリエ変換が役立ちます。
 
+![https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F25990%2F15290128-eb52-eebe-de8d-c96731271fe9.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=dafd75344db5b03b54ea86151118151d](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F25990%2F15290128-eb52-eebe-de8d-c96731271fe9.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=dafd75344db5b03b54ea86151118151d)
+CC by MTG (The Discrete Fourier Transform 1 of 2)
+
 ### 自動車・二輪車・建築機械・鉄道車両・工作機械・航空宇宙
 1. 音響測定: 騒音や振動の計測で、フーリエ変換が使われて解析が行われます。
 2. 振動解析: モーターやギヤの振動を解析し、安全性や性能を評価できます。
 
-### 建設・電力・石油ガス・鉄道
+![https://image.itmedia.co.jp/l/im/mn/articles/2007/21/l_ay4328_kurisakisan06_fig01_w590.jpg](https://image.itmedia.co.jp/l/im/mn/articles/2007/21/l_ay4328_kurisakisan06_fig01_w590.jpg)
+
+https://monoist.itmedia.co.jp/mn/articles/2007/21/news004.html
+
+### 建設・石油ガス・鉄道
+1. 音響測定: 騒音や振動の計測で、フーリエ変換が使われて解析が行われます。
+2. 振動解析: 建物や橋の振動を解析し、安全性や性能を評価できます。
+
+![https://www.dewejapan.com/img/appli/app_trans08.png](https://www.dewejapan.com/img/appli/app_trans08.png)
+
+https://www.dewejapan.com/applications/trans01.html
+
+### 電力
 1. 音響測定: 騒音や振動の計測で、フーリエ変換が使われて解析が行われます。
 2. 振動解析: 建物や橋の振動を解析し、安全性や性能を評価できます。
 
 ### 通信
 1. 通信技術: 携帯電話やインターネットのデータ送受信に、フーリエ変換が使われています。
 
+![https://www.plc-j.org/images/plc_hencho3.gif](https://www.plc-j.org/images/plc_hencho3.gif)
+
+https://www.plc-j.org/about_plcsys3.html
+
 ### 医療機器
 1. 超音波検査: 超音波をフーリエ変換で解析することで、構造や組織を画像として映し出します。
 2. CT検査: X線透過像でフーリエ変換が使われて構造や組織を調べます。
+
+![http://www.ecei.tohoku.ac.jp/~hkanai/theme/vibration.jpg](http://www.ecei.tohoku.ac.jp/~hkanai/theme/vibration.jpg)
+
+http://www.ecei.tohoku.ac.jp/~hkanai/frame-right_j.html
+
+![http://meg.aalip.jp/scilab/resource/sci66.gif](http://meg.aalip.jp/scilab/resource/sci66.gif)
+
+http://meg.aalip.jp/scilab/fft.html
 
 ### 軍事
 1. レーダー技術: 雷雨や航空機の位置を特定するために、フーリエ変換が使われます。
 2. ソナー技術: 海中の物体や生物を探知するために、フーリエ変換が使われます。
 
+![https://www.marubun.co.jp/wp-content/uploads/a7ijkd000000dtyd/a7ijkd000000duc2.gif](https://www.marubun.co.jp/wp-content/uploads/a7ijkd000000dtyd/a7ijkd000000duc2.gif)
+
+https://www.marubun.co.jp/technicalsquare/9164/
+
 ### 地学・天文学
 1. 地震学: 地震波の解析で、フーリエ変換が使われて地震の強さや震源地を特定します。
 2. 天文学: 電波望遠鏡のデータ解析で、フーリエ変換が役立ちます。
 
+![https://www.data.jma.go.jp/eqev/data/kyoshin/kaisetsu/images/sample_fourie.png](https://www.data.jma.go.jp/eqev/data/kyoshin/kaisetsu/images/sample_fourie.png)
+
+https://www.data.jma.go.jp/eqev/data/kyoshin/kaisetsu/outou.html
+
 フーリエ変換は、さまざまな分野で波形や信号を解析するために使われており、私たちの生活を豊かにしています。
 
-![男性がMRI（CTスキャン）に入っているイラストです](kenkoushindan_mri_man.png)
 # フーリエ変換の種類
 
-フーリエ変換には、連続時間信号に適用される(1)フーリエ級数展開 と(2)狭義のフーリエ変換、離散時間信号に適用される(3)離散時間フーリエ変換と(4)離散フーリエ変換(DFT）の4つの種類があります。工学・産業分野では離散フーリエ変換をその規則性を利用して高速化した(5)高速フーリエ変換(FFT)が使われます。
+フーリエ変換には、連続時間信号に適用される (1) フーリエ級数展開 と (2) 狭義のフーリエ変換、離散時間信号に適用される (3) 離散時間フーリエ変換と (4) 離散フーリエ変換(DFT）の4つの種類があります。工学・産業分野では離散フーリエ変換を高速化した (5) 高速フーリエ変換(FFT)が使われます。
 
 * 連続時間信号に適用
   * (1) フーリエ級数展開
@@ -64,39 +102,42 @@
   * (4) 離散フーリエ変換(DFT)
     * (5) 高速フーリエ変換(FFT)
 
-# FFTの数学的な仕組み
+# 高速フーリエ変換(FFT)の数学的な仕組み
 
-他の方が解説されているのでそちらを御覧ください
+数学的な説明は他の方が詳しく解説しているのでそちらを御覧ください。簡単に説明するとFFTを計算すると実部、虚部、位相、振幅という数値が得られます。
 
-A. 離散フーリエ変換(DFT)の仕組みを完全に理解する - Qiita
+* 実部と虚部は、複素数の構成要素です。FFTによって得られた周波数成分は、実部と虚部の組み合わせで表現されます。
+* 位相は、周波数成分の波形の開始位置を表したもので、波の始点からどれだけ進んでいるかを表します。
+* 振幅は、周波数成分の強さを表したもので、FFTによって得られた周波数成分の実部と虚部から計算されます。
 
-[https://qiita.com/TumoiYorozu/items/5855d75a47ef2c7e62c8](https://qiita.com/TumoiYorozu/items/5855d75a47ef2c7e62c8)
-
-B. FFT（高速フーリエ変換）を完全に理解する話 - Qiita
+FFT（高速フーリエ変換）を完全に理解する話 - Qiita
 
 [https://qiita.com/ageprocpp/items/0d63d4ed80de4a35fe79](https://qiita.com/ageprocpp/items/0d63d4ed80de4a35fe79)
 
 # FFTの種類と適用事例
 
-FFTの中にも工学的な用途に応じていくつかあります。
+FFT ではリニアスペクトラム、パワースペクトラム、パワースペクトラム密度、クロススペクトラム、伝達関数といった演算ができます。
 
-* リニアスペクトラム
-* パワースペクトラム
-* パワースペクトラム密度 (Power Spectral Density)
-* クロススペクトラム
-* 伝達関数：ボード線図
+* リニアスペクトラム：FFTによって得られた周波数成分をそのまま強さで表したものです。
+* パワースペクトラム：リニアスペクトラムを2乗したもので、信号の強さをより明確に表現します。
+* パワースペクトラム密度：パワースペクトラムを周波数帯域幅で割ったもので、正確な強さを表現します。
+* クロススペクトラム：2つの信号の周波数解析を行い、それぞれの周波数成分の関係性を解析することができます。
+* 伝達関数：入力信号と出力信号の周波数応答を表し、システムの特性を解析することができます。伝達関数をボード線図にすることで、システムの特性を直感的に理解することができます。
 
-## リニアスペクトラム
+## リニアスペクトラムの適用事例
 (振動解析)
 (音響解析)
+(電力品質の測定)
 
-## パワースペクトラム、パワースペクトラム密度
+## パワースペクトラム、パワースペクトラム密度の適用事例
 (騒音解析)
+, JIS Z 0232の附属
+) 包装貨物－振動試験方法, JIS Z 0232：2004
 
-## クロススペクトラム
+## クロススペクトラムの適用事例
 (電力解析)
 
-## 伝達関数
+## 伝達関数の適用事例
 (ボード線図)
 
 # FFTの窓関数
@@ -107,9 +148,9 @@ FFT の窓関数とは、波の一部分を見るための「小さな窓」の�
 
 ![窓関数](https://image.itmedia.co.jp/edn/articles/2007/14/jn200706yokokawa04.png)
 
-# FFT の性能評価
+# FFT と窓関数の性能評価
 
-FFT の性能評価で詳しく考慮すべきパラメータは以下の通りです。
+FFT と窓関数の性能評価で考慮すべきパラメータは以下の通りです。
 
 + 計算精度（Computational Accuracy）:計算精度は、FFT が波動の特徴をどれだけ正確に計算できるかを示します。数値誤差の影響を最小限に抑えることで、より正確な波動解析が可能になります。
 + 計算速度（Computational Speed）:計算速度は、FFT がどれだけ迅速に波動の特徴を計算できるかを示します。リアルタイム信号処理や大量のデータを扱う場合、高い計算速度が求められます。
@@ -129,4 +170,14 @@ FFT の性能評価で詳しく考慮すべきパラメータは以下の通り�
 |カイザー窓|普通|良い|良い|
 
 # 次回予定
-トラッキング解析、オクターブ解析、短時間フーリエ変換、といった２次元、３次元グラフの事例を紹介します。
+トラッキング解析、オクターブ解析、短時間フーリエ変換、といった実際の使用例を紹介します。
+
+![http://www.mobitec.co.jp/admin/wp-content/uploads/2020/08/nv_result.png](http://www.mobitec.co.jp/admin/wp-content/uploads/2020/08/nv_result.png)
+
+https://www.mobitec.co.jp/blog/%E8%87%AA%E5%8B%95%E8%BB%8A%E3%81%AE%E5%AE%9F%E5%83%8D%E8%A9%95%E4%BE%A1%E4%BA%8B%E4%BE%8B/
+
+# 参考資料
+音楽アプリのための音声解析入門
+https://qiita.com/icoxfog417/items/d376200407e97ce29ee5
+
+https://www.econet.bi/?alloisomer/2363608
