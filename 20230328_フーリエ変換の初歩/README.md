@@ -18,7 +18,9 @@ CC by mitakalab
 
 フーリエ変換は波をパズルのようにいろいろな小さな波の組み合わせに分解して解析する方法です。それぞれの小さな波は、違う大きさや速さを持っています。フーリエ変換を使うと、複雑な波を簡単に理解できるようになります。例えば、音楽の演奏をイメージしてみてください。楽器が一緒に演奏すると、それぞれの楽器から出る音が重なり合って、1つの複雑な音になります。フーリエ変換は、その複雑な音を、それぞれの楽器の音（小さな波）に分解することができます。このように、フーリエ変換は波の形や特徴を分析して理解するための手法です。
 
-![フーリエ級数展開の考え方](20_fourier.png)
+![https://assets.st-note.com/production/uploads/images/24974033/rectangle_large_type_2_17b9d1132f3d6c217b6d79fa94b38202.png?width=800](https://assets.st-note.com/production/uploads/images/24974033/rectangle_large_type_2_17b9d1132f3d6c217b6d79fa94b38202.png?width=800)
+
+![https://www.nti-audio.com/portals/0/pic/news/FFT-Time-Frequency-View-540.png](https://www.nti-audio.com/portals/0/pic/news/FFT-Time-Frequency-View-540.png)
 
 CC by mitakalab
 
@@ -30,14 +32,13 @@ CC by mitakalab
 3. 音声認識: 音声をテキストに変換する際に、フーリエ変換が音声データを分析します。
 4. 音楽情報検索: 音楽データベースから類似の曲を検索する際に、フーリエ変換が役立ちます。
 
-![https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F25990%2F15290128-eb52-eebe-de8d-c96731271fe9.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=dafd75344db5b03b54ea86151118151d](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F25990%2F15290128-eb52-eebe-de8d-c96731271fe9.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=dafd75344db5b03b54ea86151118151d)
-CC by MTG (The Discrete Fourier Transform 1 of 2)
+![https://www.yamaha.com/ja/about/research/wp-content/themes/yamahardd/images/technologies/aco-g-aanalysis_02.jpg](https://www.yamaha.com/ja/about/research/wp-content/themes/yamahardd/images/technologies/aco-g-aanalysis_02.jpg)
 
 ### 自動車・二輪車・建築機械・鉄道車両・工作機械・航空宇宙
 1. 音響測定: 騒音や振動の計測で、フーリエ変換が使われて解析が行われます。
 2. 振動解析: モーターやギヤの振動を解析し、安全性や性能を評価できます。
 
-![https://image.itmedia.co.jp/l/im/mn/articles/2007/21/l_ay4328_kurisakisan06_fig01_w590.jpg](https://image.itmedia.co.jp/l/im/mn/articles/2007/21/l_ay4328_kurisakisan06_fig01_w590.jpg)
+![l_ay4328_kurisakisan06_fig01_w590.jpg](l_ay4328_kurisakisan06_fig01_w590.jpg)
 
 https://monoist.itmedia.co.jp/mn/articles/2007/21/news004.html
 
@@ -53,6 +54,11 @@ https://www.dewejapan.com/applications/trans01.html
 1. 音響測定: 騒音や振動の計測で、フーリエ変換が使われて解析が行われます。
 2. 振動解析: 建物や橋の振動を解析し、安全性や性能を評価できます。
 
+![spectrum.png](spectrum.png)
+
+エンジニア徒然草
+http://mitaka1954.cocolog-nifty.com/blog/2014/08/4-2d18.html
+
 ### 通信
 1. 通信技術: 携帯電話やインターネットのデータ送受信に、フーリエ変換が使われています。
 
@@ -64,19 +70,15 @@ https://www.plc-j.org/about_plcsys3.html
 1. 超音波検査: 超音波をフーリエ変換で解析することで、構造や組織を画像として映し出します。
 2. CT検査: X線透過像でフーリエ変換が使われて構造や組織を調べます。
 
-![http://www.ecei.tohoku.ac.jp/~hkanai/theme/vibration.jpg](http://www.ecei.tohoku.ac.jp/~hkanai/theme/vibration.jpg)
+![vibration.jpg](vibration.jpg)
 
 http://www.ecei.tohoku.ac.jp/~hkanai/frame-right_j.html
-
-![http://meg.aalip.jp/scilab/resource/sci66.gif](http://meg.aalip.jp/scilab/resource/sci66.gif)
-
-http://meg.aalip.jp/scilab/fft.html
 
 ### 軍事
 1. レーダー技術: 雷雨や航空機の位置を特定するために、フーリエ変換が使われます。
 2. ソナー技術: 海中の物体や生物を探知するために、フーリエ変換が使われます。
 
-![https://www.marubun.co.jp/wp-content/uploads/a7ijkd000000dtyd/a7ijkd000000duc2.gif](https://www.marubun.co.jp/wp-content/uploads/a7ijkd000000dtyd/a7ijkd000000duc2.gif)
+![https://www.marubun.co.jp/wp-content/uploads/a7ijkd000000dtyd/a7ijkd000000dul6.gif](https://www.marubun.co.jp/wp-content/uploads/a7ijkd000000dtyd/a7ijkd000000dul6.gif)
 
 https://www.marubun.co.jp/technicalsquare/9164/
 
@@ -102,6 +104,10 @@ https://www.data.jma.go.jp/eqev/data/kyoshin/kaisetsu/outou.html
   * (4) 離散フーリエ変換(DFT)
     * (5) 高速フーリエ変換(FFT)
 
+![https://www.momoyama-usagi.com/wp-content/uploads/ss-shori10-3.gif](https://www.momoyama-usagi.com/wp-content/uploads/ss-shori10-3.gif)
+
+![http://zakii.la.coocan.jp/fourie/21_ft_to_dft.files/image005.png](http://zakii.la.coocan.jp/fourie/21_ft_to_dft.files/image005.png)
+
 # 高速フーリエ変換(FFT)の数学的な仕組み
 
 数学的な説明は他の方が詳しく解説しているのでそちらを御覧ください。簡単に説明するとFFTを計算すると実部、虚部、位相、振幅という数値が得られます。
@@ -113,6 +119,8 @@ https://www.data.jma.go.jp/eqev/data/kyoshin/kaisetsu/outou.html
 FFT（高速フーリエ変換）を完全に理解する話 - Qiita
 
 [https://qiita.com/ageprocpp/items/0d63d4ed80de4a35fe79](https://qiita.com/ageprocpp/items/0d63d4ed80de4a35fe79)
+
+![https://kenyu-life.com/wp-content/uploads/2019/07/fft05_18.jpg](https://kenyu-life.com/wp-content/uploads/2019/07/fft05_18.jpg)
 
 # FFTの種類と適用事例
 
@@ -134,15 +142,23 @@ FFT ではリニアスペクトラム、パワースペクトラム、パワー�
 , JIS Z 0232の附属
 ) 包装貨物－振動試験方法, JIS Z 0232：2004
 
+![https://we-are-imv.com/assets/images/business/testlab/environmental/transport-standard/img_transport_01_l.gif](https://we-are-imv.com/assets/images/business/testlab/environmental/transport-standard/img_transport_01_l.gif)
+
 ## クロススペクトラムの適用事例
 (電力解析)
 
 ## 伝達関数の適用事例
 (ボード線図)
 
+![https://kaiseki-kke.jp/blog/wp-content/uploads/2019/10/Fig-1-2-1024x632.png](https://kaiseki-kke.jp/blog/wp-content/uploads/2019/10/Fig-1-2-1024x632.png)
+
 # FFTの窓関数
 
 FFT の窓関数とは、波の一部分を見るための「小さな窓」の役割を果たします。波を解析するとき、通常は無限に続く波を扱うことが難しいため、波の一部分だけを切り取って解析します。しかし、切り取る際に波が急に切れてしまうと、解析結果に誤差が生じることがあります。窓関数は、その誤差を減らすために使われます。窓関数を使うと、切り取る波の端を滑らかにすることができます。これにより、解析結果がより正確になります。さまざまな形の窓関数があり、それぞれ特性が異なります。例えば、矩形窓、ハン窓、ハミング窓などがあります。これらの窓関数は、それぞれ異なる特性を持っていて、解析の目的に応じて選ばれます。まとめると、窓関数は波の一部分を滑らかに切り取るための「小さな窓」であり、FFT で波を解析する際に誤差を減らす役割を果たします。
+
+離散フーリエ変換（DFT）
+
+![https://www.nfcorp.co.jp/files/063_fig2-2-1024x435.jpg](https://www.nfcorp.co.jp/files/063_fig2-2-1024x435.jpg)
 
 「EDN Japan > FFTアナライザーの構造や窓関数の使い方」より引用
 
@@ -178,6 +194,12 @@ https://www.mobitec.co.jp/blog/%E8%87%AA%E5%8B%95%E8%BB%8A%E3%81%AE%E5%AE%9F%E5%
 
 # 参考資料
 音楽アプリのための音声解析入門
+
 https://qiita.com/icoxfog417/items/d376200407e97ce29ee5
+
+ミリ波レーダの基礎1
+
+https://www.marubun.co.jp/technicalsquare/9164/
+
 
 https://www.econet.bi/?alloisomer/2363608
