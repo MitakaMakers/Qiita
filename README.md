@@ -35,7 +35,7 @@ Qiita article
 - [ ] USBTMC 通信の概要
 - [ ] Microsoft OS 記述子
 - [ ] MSC,UASP
-- [ ] CDC
+- [ ]
 - [ ] RS232通信の基礎
 - [ ] VISA_C ライブラリの概要
 - [ ] VISA_Net ライブラリの概要
@@ -57,3 +57,4 @@ Qiita article
 - [ ] 2Sの整理術
 - [ ] TOPPERSプロジェクト
 - [ ] Pycon
+- [ ] スティーブジョブス、イーロンマスク
