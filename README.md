@@ -11,8 +11,8 @@ Qiita article
 - [ ] Git for Windows, TortoiseGitのインストール手順
 - [ ] VSCode のインストール手順(Jupyter)
 - [ ] VSCode のインストール手順(Python）
-- [ ] 18-642 Embedded System Software Engineering
-## 電気計測制御の学習資料
+- [ ] コードサイニング証明書
+## 電気計測制御の基本
 - [ ] 数学と物理学と情報学
 - [ ] 計測制御システムの歴史
 - [ ] 生産システム
@@ -20,7 +20,6 @@ Qiita article
 - [ ] 電力技術の基礎
 - [ ] 電子計測制御の基本
 - [ ] 計測器の基本
-- [ ] 電気法令と資格
 - [ ] 計測工学と適合法令
 - [ ] インタフェース変換器
 - [ ] Matlab
@@ -44,15 +43,16 @@ Qiita article
 - [ ] VISA_Net ライブラリの概要
 - [ ] PXI
 - [ ] 産業用シリアルバス
-## オープンソース開発者向けマニュアル
-- [ ] コードサイニング証明書
+## プログラミングの実例
 - [ ] WDF2CSV
 - [ ] エクセルコマンド
-- [ ] 治具紹介
 - [ ] MATLAB から.NET ライブラリの呼び出し例
 - [ ] Python から.NET ライブラリの呼び出し例
+- [ ] 電気法令と資格
+- [ ] 治具紹介
 ## 書評やエッセイ
 - [ ] 巨人の肩に載る
+- [ ] 18-642 Embedded System Software Engineering
 - [ ] 当たり前とは
 - [ ] ITエンジニアのジョブと資格
 - [ ] Googleのソフトウェア開発
