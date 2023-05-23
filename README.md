@@ -40,8 +40,8 @@
 - [ ] 電気法令と資格
 - [ ] 虚数と複素数
 - [ ] Matlab
-- [ ] VXIバス
-- [ ] SoftEther VPN
+- [ ] PXI
+- [ ] 産業用シリアルバス
 
 Qiita article
 [https://qiita.com/mitakalab](https://qiita.com/mitakalab)
