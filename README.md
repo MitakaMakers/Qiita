@@ -13,7 +13,9 @@ Qiita article
 - [ ] VSCode のインストール手順(Python）
 - [ ] 18-642 Embedded System Software Engineering
 - [ ] ITエンジニアのジョブと資格
-## 電気計測制御
+- [ ] Googleのソフトウェア開発
+- [ ] 2Sの整理術
+- [ ] ## 電気計測制御の紹介
 - [ ] フーリエ変換の初歩
 - [ ] 計測制御システムの歴史
 - [ ] 生産システム
@@ -49,7 +51,5 @@ Qiita article
 - [ ] 治具紹介
 - [ ] MATLAB から.NET ライブラリの呼び出し例
 - [ ] Python から.NET ライブラリの呼び出し例
-- [ ] Googleのソフトウェア開発
-- [ ] 2Sの整理術
 - [ ] TOPPERSプロジェクト
 - [ ] Pycon
