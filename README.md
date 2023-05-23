@@ -2,6 +2,9 @@
 - [x] 新入社員向け定番パソコンソフト
 - [x] VXI-11通信プロトコルの紹介
 
+Qiita article
+[https://qiita.com/MitakaMakers](https://qiita.com/MitakaMakers)
+
 # 記事アイデア
 - [ ] GP-IB 通信 (IEEE 488.1-2003) の仕様
 - [ ] GP-IB 通信 (IEEE 488.2-1992) の仕様
@@ -43,5 +46,3 @@
 - [ ] PXI
 - [ ] 産業用シリアルバス
 
-Qiita article
-[https://qiita.com/mitakalab](https://qiita.com/mitakalab)
