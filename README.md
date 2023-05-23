@@ -1,6 +1,6 @@
 # Qiita
 Qiita article
-- https://qiita.com/MitakaMa
+- https://qiita.com/mmake
 - [x] 新入社員向け定番パソコンソフト
 - [x] VXI-11通信プロトコルの紹介
 
