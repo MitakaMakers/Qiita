@@ -14,6 +14,7 @@ Qiita article
 - [ ] VSCode のインストール手順(Jupyter)
 - [ ] VSCode のインストール手順(Python）
 - [ ] コードサイニング証明書
+- [ ] DBerverの使い方
 ## 電気計測制御の初歩
 - [ ] 数学と物理学と情報学
 - [ ] 計測の歴史
