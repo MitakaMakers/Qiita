@@ -35,7 +35,6 @@ Qiita article
 - [ ] USBTMC 通信の概要
 - [ ] Microsoft OS 記述子
 - [ ] MSC,UASP
-- [ ]
 - [ ] RS232通信の基礎
 - [ ] VISA_C ライブラリの概要
 - [ ] VISA_Net ライブラリの概要
@@ -47,6 +46,10 @@ Qiita article
 - [ ] MATLAB から.NET ライブラリの呼び出し例
 - [ ] Python から.NET ライブラリの呼び出し例
 - [ ] 電気法令と資格
+## デバッグの実例
+- [ ] Windows サンドボックス
+- [ ] WSL2でUSBTMC デバイスを認識させる
+- [ ] ラズベリーパイをUSBTMCデバイスにする
 - [ ] 治具紹介
 ## 書評やエッセイ
 - [ ] 巨人の肩に載る
