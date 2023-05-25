@@ -1,8 +1,8 @@
 # Qiita
 Qiita article
 - https://qiita.com/mmake
-- [x] 新入社員向け定番パソコンソフト
-- [x] VXI-11通信プロトコルの紹介
+- [x] [新入社員向け定番パソコンソフト](https://qiita.com/mmake/items/0b786105aa389176bfc6)
+- [x] [VXI-11通信プロトコルの紹介](https://qiita.com/mmake/items/ee837fd1b8f43e464856)
 
 # 記事アイデア
 ## プログラマ向けマニュアル
