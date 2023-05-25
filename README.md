@@ -40,7 +40,7 @@ Qiita article
 ## 規格の学習資料
 - [ ] GP-IB 通信 (IEEE 488.1-2003) の仕様
 - [ ] GP-IB 通信 (IEEE 488.2-1992) の仕様
-- [ ] HiSLIP 通信の概要と仕組み
+- [ ] [HiSLIP通信の概要と仕組み](./xxxxx001_HiSLIP通信の概要と仕組み/README.md)
 - [ ] SCPI コマンドの概要
 - [ ] AutoIP
 - [ ] mDNS
@@ -64,6 +64,7 @@ Qiita article
 - [ ] WSL2でUSBTMC デバイスを認識させる
 - [ ] ラズベリーパイをUSBTMCデバイスにする
 - [ ] 治具紹介
+- [ ] [DLLExport](./xxxxxxxx_DLLExport/README.md)
 ## 書評やエッセイ
 - [ ] 巨人の肩に載る
 - [ ] 18-642 Embedded System Software Engineering
