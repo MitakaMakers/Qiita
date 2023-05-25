@@ -15,6 +15,12 @@ Qiita article
 - [ ] VSCode のインストール手順(Jupyter)
 - [ ] VSCode のインストール手順(Python）
 - [ ] コードサイニング証明書
+- [ ] C#
+- [ ] Python
+- [ ] VBA
+- [ ] Matlab
+- [ ] LabView
+- [ ] PLC
 ## 電気計測制御の初歩
 - [ ] 数学と物理学と情報学
 - [ ] 計測の歴史
@@ -25,12 +31,6 @@ Qiita article
 - [ ] 計測器の基本
 - [ ] 計測工学と適合法令
 - [ ] インタフェース変換器
-- [ ] PLC
-- [ ] Matlab
-- [ ] LabView
-- [ ] C#
-- [ ] Python
-- [ ] VBA
 ## 規格の学習資料
 - [ ] GP-IB 通信 (IEEE 488.1-2003) の仕様
 - [ ] GP-IB 通信 (IEEE 488.2-1992) の仕様
