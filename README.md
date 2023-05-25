@@ -14,13 +14,15 @@ Qiita article
 - [ ] Git for Windows, TortoiseGitのインストール手順
 - [ ] VSCode のインストール手順(Jupyter)
 - [ ] VSCode のインストール手順(Python）
+- [ ] nuget
 - [ ] コードサイニング証明書
 - [ ] C#
 - [ ] Python
-- [ ] VBA
+- [ ] C/C++ ABI
+- [ ] ExcelVBA
 - [ ] Matlab
 - [ ] LabView
-- [ ] PLC
+- [ ] ラダー
 ## 電気計測制御の初歩
 - [ ] 数学と物理学と情報学
 - [ ] 計測の歴史
