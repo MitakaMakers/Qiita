@@ -28,6 +28,9 @@ Qiita article
 - [ ] PLC
 - [ ] Matlab
 - [ ] LabView
+- [ ] C#
+- [ ] Python
+- [ ] VBA
 ## 規格の学習資料
 - [ ] GP-IB 通信 (IEEE 488.1-2003) の仕様
 - [ ] GP-IB 通信 (IEEE 488.2-1992) の仕様
