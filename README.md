@@ -67,7 +67,6 @@ Qiita article
 - [ ] 治具紹介
 - [ ] [DLLExport](./xxxxxxxx_DLLExport/README.md)
 ## 書評やエッセイ
-- [ ] 巨人の肩に載る
 - [ ] 18-642 Embedded System Software Engineering
 - [ ] 当たり前とは
 - [ ] ITエンジニアのジョブと資格
@@ -76,4 +75,9 @@ Qiita article
 - [ ] 人の学習プロセス
 - [ ] Pycon
 - [ ] スティーブジョブス、イーロンマスク
+## キーワード
+- [ ] 巨人の肩に載る
 - [ ] 技術にも品質がある 枯れた技術と枯れてない技術
+- [ ] SRP(Single Responsibility Principle：単一責任原則) 
+- [ ] DRY(Don’t Repeat Your Self：繰り返しを避けること)原則
+- [ ] OAOO(Once and Only Once:1度、ただ1度)原則
