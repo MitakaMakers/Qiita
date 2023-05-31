@@ -20,6 +20,7 @@ Qiita article
 - [ ] VSCode のインストール手順(Python）
 - [ ] nuget
 - [ ] コードサイニング証明書
+- [ ] プログラム言語の選び方
 - [ ] C#
 - [ ] Python
 - [ ] C/C++ ABI
