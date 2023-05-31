@@ -68,7 +68,6 @@ Qiita article
 - [ ] [DLLExport](./xxxxxxxx_DLLExport/README.md)
 ## 書評やエッセイ
 - [ ] 18-642 Embedded System Software Engineering
-- [ ] 当たり前とは
 - [ ] ITエンジニアのジョブと資格
 - [ ] Googleのソフトウェア開発
 - [ ] 2Sの整理術
@@ -76,8 +75,10 @@ Qiita article
 - [ ] Pycon
 - [ ] スティーブジョブス、イーロンマスク
 ## キーワード
+- [ ] 人月の神話
+- [ ] 銀の弾丸
 - [ ] 巨人の肩に載る
-- [ ] 技術にも品質がある 枯れた技術と枯れてない技術
+- [ ] 技術にも品質がある
 - [ ] SRP(Single Responsibility Principle：単一責任原則) 
 - [ ] DRY(Don’t Repeat Your Self：繰り返しを避けること)原則
 - [ ] OAOO(Once and Only Once:1度、ただ1度)原則
