@@ -5,7 +5,7 @@ Qiita article
 - [x] [VXI-11通信プロトコルの紹介](https://qiita.com/mmake/items/ee837fd1b8f43e464856)
 
 # 記事アイデア
-## プログラマ向けマニュアル
+## プログラマ向け初級マニュアル
 - [ ] 新入社員向けソフトウェアの基本用語
 - [ ] 新入社員向けソフトウェア開発プロセス
 - [ ] 新入社員向けバグ登録票の書き方
@@ -14,18 +14,12 @@ Qiita article
 - [ ] - [ ] プログラマ2年目向けのトラブル解析ソフトウェア紹介
 - [ ] プログラマ3年目向けのソフトウエア評価プロセス
 - [ ] プログラマ3年目向けのプロジェクト管理手法
-- [ ] DBerverの使い方
-- [ ] VSCode の紹介
 - [ ] Git for Windows, TortoiseGitのインストール手順
 - [ ] VSCode のインストール手順(Jupyter)
 - [ ] VSCode のインストール手順(Python）
 - [ ] nuget
 - [ ] コードサイニング証明書
 - [ ] プログラム言語の選び方
-- [ ] C#
-- [ ] Python
-- [ ] C/C++ ABI
-- [ ] ExcelVBA
 ## 電気計測制御の初歩
 - [ ] 数学と物理学と情報学
 - [ ] 計測の歴史
@@ -57,9 +51,14 @@ Qiita article
 - [ ] VISA_Net ライブラリの概要
 - [ ] PXI
 - [ ] 産業用シリアルバス
-## プログラミングの実例
+## プログラミング上級編
 - [ ] バイナリファイルからCSVファイルへの変換
-- [ ] 浮動小数点の誤差
+- [ ] Python
+- [ ] [numpy](https://numpy.org/)の紹介
+- [ ] [pandas] の紹介
+- [ ] [scipy] の紹介
+- [ ] [sci-kit-learn] の紹介
+- [ ] 浮動小数点の扱い
 - [ ] エクセルコマンド
 - [ ] リサンプリング
 - [ ] PP圧縮
@@ -68,12 +67,18 @@ Qiita article
 - [ ] ゼロクロス検出
 - [ ] ストリーミングアルゴリズム
 - [ ] [ScottPlot](https://scottplot.net/) の紹介
+- [ ] C#
+- [ ] Python
+- [ ] C/C++ ABI
+- [ ] ExcelVBA
 ## デバッグの実例
 - [ ] Windows サンドボックスでネットワークやUSBデバイスを使う
 - [ ] WSL2でUSBTMC デバイスを認識させる
 - [ ] ラズベリーパイをUSBTMCデバイスにする
 - [ ] 治具紹介
 - [ ] [DLLExport](./xxxxxxxx_DLLExport/README.md)
+- [ ] DBerverの使い方
+- [ ] VSCode の紹介
 ## 書評やエッセイ
 - [ ] 18-642 Embedded System Software Engineering
 - [ ] ITエンジニアのジョブと資格
