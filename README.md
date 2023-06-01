@@ -66,8 +66,7 @@ Qiita article
 - [ ] 移動平均
 - [ ] ゼロクロス検出
 - [ ] ストリーミングアルゴリズム
-- [ ] MATLAB から.NET ライブラリの呼び出し例
-- [ ] Python から.NET ライブラリの呼び出し例
+- [Math.Net](https://numerics.mathdotnet.com/Compatibility) の紹介  
 ## デバッグの実例
 - [ ] Windows サンドボックスでネットワークやUSBデバイスを使う
 - [ ] WSL2でUSBTMC デバイスを認識させる
