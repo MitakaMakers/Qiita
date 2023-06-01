@@ -10,7 +10,8 @@ Qiita article
 - [ ] 新入社員向けソフトウェア開発プロセス
 - [ ] 新入社員向けバグ登録票の書き方
 - [ ] 新入社員向けプログラム学習法
-- [ ] プログラマ2年目向けのトラブル解析ソフトウェア紹介
+- [ ] 新入社員向け著作権について
+- [ ] - [ ] プログラマ2年目向けのトラブル解析ソフトウェア紹介
 - [ ] プログラマ3年目向けのソフトウエア評価プロセス
 - [ ] プログラマ3年目向けのプロジェクト管理手法
 - [ ] DBerverの使い方
@@ -66,8 +67,9 @@ Qiita article
 - [ ] 移動平均
 - [ ] ゼロクロス検出
 - [ ] ストリーミングアルゴリズム
-- [ ] [Math.NET Numerics](https://numerics.mathdotnet.com/) の紹介  
-- [ ] [ScottPlot](https://scottplot.net/) の紹介  
+- [ ] [Numpy.NET](https://github.com/SciSharp/Numpy.NET/) の紹介  
+- [ ] [ScottPlot](https://scottplot.net/) の紹介
+- [ ] [ExcelLibrary](https://github.com/gustafl/ExcelLibrary)の紹介
 ## デバッグの実例
 - [ ] Windows サンドボックスでネットワークやUSBデバイスを使う
 - [ ] WSL2でUSBTMC デバイスを認識させる
