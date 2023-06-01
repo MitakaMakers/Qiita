@@ -67,9 +67,7 @@ Qiita article
 - [ ] 移動平均
 - [ ] ゼロクロス検出
 - [ ] ストリーミングアルゴリズム
-- [ ] [Numpy.NET](https://github.com/SciSharp/Numpy.NET/) の紹介  
 - [ ] [ScottPlot](https://scottplot.net/) の紹介
-- [ ] [ExcelLibrary](https://github.com/gustafl/ExcelLibrary)の紹介
 ## デバッグの実例
 - [ ] Windows サンドボックスでネットワークやUSBデバイスを使う
 - [ ] WSL2でUSBTMC デバイスを認識させる
