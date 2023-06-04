@@ -58,7 +58,7 @@ RPC はネットワーク環境のクライアントとサーバ間の通信を�
 
 ONC RPC は異なるコンピュータ間で相互通信できるようデータの構造を XDR として規定しています。XDR の詳細仕様は [RFC 1014 XDR: External Data Representation Standard](https://www.ietf.org/rfc/rfc1014.txt) で公開されています。
 
-![](031_RPC_Layer.png)
+![XDR の OSI 階層モデル](031_RPC_Layer.png)
 
 XDR が対応しているデータ型は以下の通りです。
 
@@ -81,13 +81,13 @@ XDR が対応しているデータ型は以下の通りです。
 |区別された共用体型|共用体の区別値と実際の値の順番でコード化されます。|
 |ボイド型|0 バイト|
 
-整数型は以下のような形になります。
+整数型は以下のようなメモリ配置になります。
 
-![](551_RFC1014_3.1_Integer_Format.png)
+![XDR の整数型のメモリ配置](551_RFC1014_3.1_Integer_Format.png)
 
-文字列型は下のような形になります。
+文字列型は下のようなメモリ配置になります。
 
-![](552_RFC1014_3.10_String_Format.png)
+![XDR の文字列型のメモリ配置](552_RFC1014_3.10_String_Format.png)
 
 # ONC RPC のデータ構造
 
@@ -148,7 +148,7 @@ RPC でリモートの関数を呼び出す時のフォーマットは以下の�
 
 ポートマッパは  [RFC 1057: RPC: Remote Procedure Call Protocol specification Version 2](https://www.ietf.org/rfc/rfc1057.txt) 内で定義されているプログラム番号に対応する TCP または UDP のポート番号を返すサービスです。ポートマッパ自身は TCP または UDP の 111 番ポートを使います。
 
-![](402_Portmap.png)
+![ポートマッパの動作フロー](402_Portmap.png)
 
 ## ポートマッパの関数
 
@@ -167,7 +167,7 @@ RPC でリモートの関数を呼び出す時のフォーマットは以下の�
 
 ポートマッパの PMAPPROC_GETPORT 関数の呼び出しメッセージを以下に示します。
 
-![](451_RFC1057_A1_PMAPPROC_GETPORT_args.png)
+![PMAPPROC_GETPORT 関数の呼び出しメッセージ](451_RFC1057_A1_PMAPPROC_GETPORT_args.png)
 
 各項目の説明は以下の通りです。
 
@@ -182,7 +182,7 @@ RPC でリモートの関数を呼び出す時のフォーマットは以下の�
 
 ポートマッパの PMAPPROC_GETPORT 関数の応答メッセージを以下に示します。
 
-![](453_RFC1057_A1_PMAPPROC_GETPORT_result.png)
+![PMAPPROC_GETPORT 関数の応答メッセージ](453_RFC1057_A1_PMAPPROC_GETPORT_result.png)
 
 各項目の説明は以下の通りです。
 
@@ -194,7 +194,7 @@ RPC でリモートの関数を呼び出す時のフォーマットは以下の�
 
 最後に ポートマッパのパケットキャプチャの例を示します。
 
-![](610_wireshark.png)
+![wireshark のキャプチャ](610_wireshark.png)
 
 # 参考文献
 本ページで引用した参考文献を挙げます。
