@@ -1,11 +1,10 @@
-# ONC RPC の概要と仕組み
-タグ：C#
+# ONC RPC の概要
 
-RPC(Remote Procedure Call) とは遠隔にあるコンピュータの関数を実行するためのソフトウェア技術です。ここでは 1988 年に策定された ONC RPC（いわゆる SunRPC ）を解説します。対象読者としてイーサネットの基本（IPアドレスとTCP, UDP）とプログラムの基本（関数、変数、引数、戻り値）がわかる 18 歳の新人技術者を想定しています。
+RPC(Remote Procedure Call) とは遠隔にあるコンピュータの関数を実行するためのソフトウェア技術です。ここでは 1980 年代から1990 年代に広く普及した ONC RPC（いわゆる SunRPC）を解説します。対象読者としてイーサネットの基本（IPアドレスとTCP通信）とプログラムの基本（関数、変数、引数、戻り値）がわかる 18 歳の新人技術者を想定しています。
 
 # RPC の背景と目的
 
-RPC(Remote Procedure Call) は遠隔にあるコンピュータの関数を実行するための技術です。次の目的を達成するために考案されました。
+RPC(Remote Procedure Call) は遠隔にあるコンピュータの関数を実行するための技術です。次の目的を達成するために開発されました。
 - 遠隔地にあるコンピュータや方式の異なるマシン間で透過的なデータのやり取りを可能にする
 - 様々なサービスについて一貫性のある環境を提供する
 - 高いレベルの機能を実現しプログラマの負担を減らす
@@ -17,7 +16,7 @@ RPC の技術的な特徴は以下の通りです。
 - 関数・引数・戻り値があり、通常の関数呼び出しと同様に実行できる
 - 同期式通信を基本とし、非同期式通信もできる
 
-多くの会社が RPC を実現するためのソフトウェアを開発しています。ONC RPC は 1988 年にサンマイクロシステムズが [RFC 1057: RPC: Remote Procedure Call Protocol specification Version 2](https://www.ietf.org/rfc/rfc1057.txt) として公開しました。当時のソースコードは [4.3BSD-Reno/lib/librpc/](https://github.com/dank101/4.3BSD-Reno/tree/master/lib/librpc) で閲覧できます。
+多くの会社が RPC を実現するためのプロトコルを策定しました。ONC RPC は 1988 年にサンマイクロシステムズが [RFC 1057: RPC: Remote Procedure Call Protocol specification Version 2](https://www.ietf.org/rfc/rfc1057.txt) として公開しました。当時のソースコードは [4.3BSD-Reno/lib/librpc/](https://github.com/dank101/4.3BSD-Reno/tree/master/lib/librpc) で閲覧できます。
 
 RPCの歴史
 |年|企業|プロトコル名|概要|
@@ -29,7 +28,7 @@ RPCの歴史
 |2003 年|サン・マイクロシステムズ|JAX-RPC|Java 言語向け RPC プロトコル|
 |2015 年|グーグル|gRPC|HTTP/2 を使った RPC プロトコル|
 
-# RPC の通信手順
+# 基本的な RPC の通信手順
 
 一般的なプログラムでの関数呼び出しは
 
@@ -54,11 +53,15 @@ RPC はネットワーク環境のクライアントとサーバ間の通信を�
 
 ![リモート関数呼び出し](353_RPC_RemoteProcedureCall_Sequence.png)
 
-# ONC RPC での引数や戻り値の表現
+# ONC RPC のデータ表現
 
 ONC RPC は異なるコンピュータ間で相互通信できるようデータの構造を XDR として規定しています。XDR の詳細仕様は [RFC 1014 XDR: External Data Representation Standard](https://www.ietf.org/rfc/rfc1014.txt) として公開されています。
 
-|型名|サイズ|
+![](031_RPC_Layer.png)
+
+XDR が対応しているデータ型は以下の通りです。
+
+|データ型|サイズ|
 |----|----|
 |符号付き整数型|4 バイト|
 |符号なし整数型|4 バイト|
@@ -77,15 +80,15 @@ ONC RPC は異なるコンピュータ間で相互通信できるようデータ
 |区別された共用体型|共用体の区別値と実際の値の順番でコード化されます|
 |ボイド型|0 バイト|
 
-整数型は XDR(=RPC) では以下のように表現します。
+整数型は XDR では以下のように表現します。
 
 ![](551_RFC1014_3.1_Integer_Format.png)
 
-文字列型は XDR(=RPC) では以下のように表現します。
+文字列型は XDR では以下のように表現します。
 
 ![](552_RFC1014_3.10_String_Format.png)
 
-# RPC のデータ構造
+# ONC RPC のデータ構造
 
 RPC でリモートの関数を呼び出す時のヘッダフォーマットは以下の通りです。
 
@@ -140,11 +143,11 @@ RPC でリモートの関数を呼び出す時のヘッダフォーマットは�
 + verf.flavor, verf.body：クライアント認証の結果に関するパラメータです。認証を使わない場合、すべて 0 になります。
 + データ：関数の戻り値を示します。
 
-# RPC の事例：ポートマッパについて
+# RPC の事例：ポートマッパ
 
-ポートマッパは  [RFC 1057: RPC: Remote Procedure Call Protocol specification Version 2](https://www.ietf.org/rfc/rfc1057.txt) 内で定義されている、RPC 関数に対応する TCP/UDP のポート番号を検索するサービスです。ポートマッパ自身は TCP または UDP の 111 番ポートを使います。
+ポートマッパは  [RFC 1057: RPC: Remote Procedure Call Protocol specification Version 2](https://www.ietf.org/rfc/rfc1057.txt) 内で定義されている、プログラム番号に対応する TCP/UDP のポート番号を検索するサービスです。ポートマッパ自身は TCP または UDP の 111 番ポートを使います。
 
-![](521.png)
+![](402_Portmap.png)
 
 ## ポートマッパの引数や戻り値
 
@@ -155,27 +158,43 @@ RPC でリモートの関数を呼び出す時のヘッダフォーマットは�
 |PMAPPROC_NULL|10000|2|0|void|void|この関数はテスト用です。何も実行しません。|
 |PMAPPROC_SET|10000|2|1|mapping 構造体|bool|ポートマッパにポート番号を登録します。|
 |PMAPPROC_UNSET|10000|2|2|mapping 構造体|bool|ポートマッパに登録されているポート番号を削除します。|
-|PMAPPROC_GETPORT|10000|2|3|mapping 構造体|unsigned int|対象関数のポート番号を返します。|
+|PMAPPROC_GETPORT|10000|2|3|mapping 構造体|unsigned int|対象プログラムのポート番号を返します。|
 |PMAPPROC_DUMP|10000|2|4|void|pmaplist 構造体の配列|ポートマッパの登録プログラム一覧を返します。|
 |PMAPPROC_CALLIT|10000|2|5|call_args 構造体|call_result 構造体|別の関数を呼び出します。|
 
-## PMAPPROC_GETPORT のデータ構造例
+## PMAPPROC_GETPORT のデータ構造
 
-![](451_PORTMAP_Message.png)
+![](451_RFC1057_A1_PMAPPROC_GETPORT_args.png)
 
-![](452_PORTMAP_Message.png)
+ポートマッパの PMAPPROC_GETPORT 関数の引数とメッセージを上に示します。各項目の数値は以下の通りです。
 
-![](453_PORTMAP_Message.png)
++ xid：一意の識別子を指定します。
++ prog, vers：ポート番号を取得したいプログラム番号とバージョン番号を指定します。
++ prot：プロトコル種別を指定します。
 
-## ONC RPC のデータ構造
+|値|定数名|意味|
+|----|----|----|
+|6|IPPROTO_TCP|TCP プロトコル|
+|17|IPPROTO_UDP|UDP プロトコル|
 
-![](371.png)
+![](453_RFC1057_A1_PMAPPROC_GETPORT_result.png)
 
+ポートマッパの PMAPPROC_GETPORT 関数の戻り値のメッセージを上に示します。各項目の数値は以下の通りです。
+
+- xid：関数呼び出し時の識別子を示します。
+- port：対応するポート番号を示します。
+
+
+## RPC の通信フロー
+
+最後に ポートマッパのパケットキャプチャの例を示します。
+
+![](610_wireshark.png)
 
 # 参考文献
 本ページで引用した参考文献を挙げます。
 
 - [RFC 1057 RPC: Remote Procedure Call Protocol specification ersion 2](https://www.ietf.org/rfc/rfc1057.txt)
+- [4.3BSD-Reno/lib/librpc/](https://github.com/dank101/4.3BSD-Reno/tree/master/lib/librpc)
 - [RFC 1014 XDR: External Data Representation Standard](https://www.ietf.org/rfc/rfc1014txt)
 - [Service Name and Transport Protocol Port Number Registry](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)
-- [4.3BSD-Reno/lib/librpc/](https://github.com/dank101/4.3BSD-Reno/tree/master/lib/librpc)
