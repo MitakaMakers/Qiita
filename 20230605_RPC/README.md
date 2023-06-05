@@ -14,9 +14,9 @@ RPC(Remote Procedure Call) は分散コンピューティング分野のソフ�
 RPC の技術的な特徴は以下の通りです。
 - クライアント・サーバモデル
 - 関数・引数・戻り値があり、通常の関数呼び出しと同様に実行できる
-- 同期式通信を基本とし、非同期式通信もできる
+- インタフェース記述言語（IDL）がありソースコードの自動生成ができる
 
-1980年代以降、多くの会社が RPC を実現するためのプロトコルを策定しました。ONC RPC は 1988 年にサンマイクロシステムズが [RFC 1057: RPC: Remote Procedure Call Protocol specification Version 2](https://www.ietf.org/rfc/rfc1057.txt) として策定しました。当時のソースコードは [4.3BSD-Reno/lib/librpc/](https://github.com/dank101/4.3BSD-Reno/tree/master/lib/librpc) で閲覧できます。
+1980年代以降、多くの会社が RPC を実現するためのプロトコルを策定しました。ONC RPC は 1988 年にサンマイクロシステムズが [RFC 1057: RPC: Remote Procedure Call Protocol Specification Version 2](https://www.ietf.org/rfc/rfc1057.txt) として策定しました。当時のソースコードは [4.3BSD-Reno/lib/librpc/](https://github.com/dank101/4.3BSD-Reno/tree/master/lib/librpc) で閲覧できます。その後仕様が整理され [RFC 1831: RPC: Remote Procedure Call Protocol Specification Version 2](https://www.ietf.org/rfc/rfc1831.txt) として再発行されました。
 
 RPC プロトコルの歴史を以下に示します。
 
@@ -24,10 +24,11 @@ RPC プロトコルの歴史を以下に示します。
 |----|----|----|----|
 |1976 年|スタンフォード研究所|RFC 707 High-Level Framework for Network-Based Resource Sharing|RPCのコンセプトの提案|
 |1981 年|ゼロックス|Courier|最初の商用実用化の１つ|
-|1988 年|サン・マイクロシステムズ|RFC 1057 Remote Procedure Call (ONC RPC)|最初のオープンソースの RPC プロトコル|
+|1988 年|サン・マイクロシステムズ|RFC 1057 Remote Procedure Call Protocol Specification Version 2|最初のオープンソースの RPC プロトコル|
+|1995 年|サン・マイクロシステムズ|RPC 1831 Remote Procedure Call Protocol Specification Version 2|ONC RPC として再発行|
 |1995 年|マイクロソフト|MS-RPC|Windows 向け RPC プロトコル|
-|2003 年|サン・マイクロシステムズ|JAX-RPC|Java 言語向け RPC プロトコル|
-|2015 年|グーグル|gRPC|HTTP/2 を使った RPC プロトコル|
+|2003 年|サン・マイクロシステムズ|Java RMI|Java 言語向け RPC プロトコル|
+|2015 年|グーグル|gRPC|HTTP/2 を使った複数言語向け RPC プロトコル|
 
 # 基本的な RPC のプロトコル
 
@@ -56,7 +57,7 @@ RPC はネットワーク環境のクライアントとサーバ間の通信を�
 
 # ONC RPC のデータ表現
 
-ONC RPC は異なるコンピュータ間で相互通信できるようデータの構造を XDR として規定しています。XDR の詳細仕様は [RFC 1014 XDR: External Data Representation Standard](https://www.ietf.org/rfc/rfc1014.txt) で公開されています。
+ONC RPC は異なるコンピュータ間で相互通信できるようデータの構造を XDR として規定しています。XDR の詳細仕様は [RFC 1832 XDR: External Data Representation Standard](https://www.ietf.org/rfc/rfc1832.txt) で公開されています。
 
 ![XDR の OSI 階層モデル](031_RPC_Layer.png)
 
@@ -144,9 +145,26 @@ RPC でリモートの関数を呼び出す時のフォーマットは以下の�
 + verf.flavor, verf.body：クライアント認証の結果に関するパラメータです。認証を使わない場合、すべて 0 になります。
 + データ：関数の戻り値を示します。
 
+# インタフェース記述言語（IDL）の例
+
+ONC RPC のスタブの処理について rpcgen という自動生成ツールが用意されています。例えばインタフェース記述言語（IDL）で以下のような記述をし、ping.x として保存します。
+
+![](310_RFC1057_11.1_An_Example_Service.png)
+
+rpcgenコマンドを使うと ping.x から次の4つのC言語のソースファイルが生成されます。
+
+- ping.h：そのプログラムで使う定数、データ構造、スタブ手続きのインタフェー ス。
+- ping_clnt.c：クライアント側のスタブ処理。
+- ping_xdr.c：ping.x で定義したデータ構造について、整列化（マーシャリング）と非整列化（アンマーシャリング）を行なう手続き。
+- ping_svc.c：サーバ側の main 関数とディスパッチ手続き。
+
+これらのファイルをコンパイルする事で、クライアント側とサーバ側の処理を比較的簡単に開発できます。
+
+![](312.png)
+
 # RPC の事例：ポートマッパ
 
-ポートマッパは  [RFC 1057: RPC: Remote Procedure Call Protocol specification Version 2](https://www.ietf.org/rfc/rfc1057.txt) 内で定義されているプログラム番号に対応する TCP または UDP のポート番号を返すサービスです。ポートマッパ自身は TCP または UDP の 111 番ポートを使います。
+ポートマッパは  [RFC 1833: Binding Protocols for ONC RPC Version 2](https://www.ietf.org/rfc/rfc1833.txt) 内で定義されているプログラム番号に対応する TCP または UDP のポート番号を返すサービスです。ポートマッパ自身は TCP または UDP の 111 番ポートを使います。
 
 ![ポートマッパの動作フロー](402_Portmap.png)
 
@@ -189,6 +207,11 @@ RPC でリモートの関数を呼び出す時のフォーマットは以下の�
 - xid：関数呼び出し時の識別子を示します。
 - port：プログラム番号に対応する TCP または UDP のポート番号を示します。
 
+## ソースコードの例
+
+IDLを使わずに C# で書いた以下のファイルをご覧ください。
+- [クライアント側処理](https://github.com/MitakaMakers/Ivi.Visa/blob/main/src/ClientPortmap.cs)
+- [サーバ側処理](https://github.com/MitakaMakers/Ivi.Visa/blob/main/src/ServerPortmap.cs)
 
 ## ポートマッパの通信フロー
 
