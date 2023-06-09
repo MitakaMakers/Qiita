@@ -1,34 +1,36 @@
-# ONC RPC の概要
+# RPCとは
+タグ：C# RPC IDL UNIX Portmap 
 
-RPC(Remote Procedure Call) とは遠隔にあるコンピュータの関数を実行するためのソフトウェアの技術です。ここでは 1990 年代に広く普及した ONC RPC（いわゆる SunRPC）を解説します。対象読者としてイーサネットの基本（IPアドレスとTCP通信）とC言語プログラムの基本（関数、引数、戻り値、コンパイル）がわかる 18 歳の新人技術者を想定しています。
+RPC(Remote Procedure Call) とは遠隔にあるコンピュータの関数を実行するためのソフトウェアの技術です。ここでは 1990 年代に広く普及した ONC RPC（いわゆる SunRPC）の通信技術を解説します。対象読者としてイーサネットの基本（IPアドレスとTCP通信）とプログラムの基本（関数、変数、引数、戻り値）がわかる 18 歳の新人技術者を想定しています。
 
 # RPC の背景と目的
 
 RPC(Remote Procedure Call) は分散コンピューティング分野のソフトウェア技術です。次の目的を達成するために開発されました。
 - 遠隔地にあるコンピュータや方式の異なるマシン間で透過的なデータのやり取りを可能にする
-- 様々なサービスについて一貫性のある環境を提供する
+- 様々なサービスに対応できる一貫性のある環境を提供する
 - 高いレベルの機能を実現しプログラマの負担を減らす
 
-![](021_RemoteProcedureCall.png)
+![021_RemoteProcedureCall.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/96d12805-673c-5fff-dfa0-a392d23a5bc1.png)
 
 RPC の技術的な特徴は以下の通りです。
 - クライアント・サーバモデル
 - 関数・引数・戻り値があり、通常の関数呼び出しと同様に実行できる
-- インタフェース記述言語（IDL）がありソースコードの自動生成ができる
+- インタフェース記述言語（IDL）を使ってソースコードの自動生成ができる
 
-1980年代以降、多くの会社が RPC を実現するためのプロトコルを策定しました。ONC RPC は 1988 年にサンマイクロシステムズが [RFC 1057: RPC: Remote Procedure Call Protocol Specification Version 2](https://www.ietf.org/rfc/rfc1057.txt) として策定しました。当時のソースコードは [4.3BSD-Reno/lib/librpc/](https://github.com/dank101/4.3BSD-Reno/tree/master/lib/librpc) で閲覧できます。その後仕様が整理され [RFC 1831: RPC: Remote Procedure Call Protocol Specification Version 2](https://www.ietf.org/rfc/rfc1831.txt) として再発行されました。
-
+1980年代以降、多くの会社が RPC を実現するためのプロトコルを策定しました。ONC RPC は 1988 年にサンマイクロシステムズが [RFC 1057: RPC: Remote Procedure Call Protocol Specification Version 2](https://www.ietf.org/rfc/rfc1057.txt) として策定しました。当時のソースコードは [4.3BSD-Reno/lib/librpc/](https://github.com/dank101/4.3BSD-Reno/tree/master/lib/librpc) で閲覧できます。
 RPC プロトコルの歴史を以下に示します。
 
 |年|企業|プロトコル名|概要|
 |----|----|----|----|
 |1976 年|スタンフォード研究所|RFC 707 High-Level Framework for Network-Based Resource Sharing|RPCのコンセプトの提案|
-|1981 年|ゼロックス|Courier|最初の商用実用化の１つ|
-|1988 年|サン・マイクロシステムズ|RFC 1057 Remote Procedure Call Protocol Specification Version 2|最初のオープンソースの RPC プロトコル|
-|1995 年|サン・マイクロシステムズ|RPC 1831 Remote Procedure Call Protocol Specification Version 2|ONC RPC として再発行|
+|1981 年|ゼロックス|Courier|初期の RPC プロトコルの１つ|
+|1988 年|サン・マイクロシステムズ|RFC 1057 Remote Procedure Call Protocol Specification Version 2|オープンソースの Unix 向け RPC プロトコル|
+|1991 年|オブジェクト・マネージメント・グループ|CORBA|オブジェクト指向言語向け RPC の仕様|
+|1995 年|サン・マイクロシステムズ|RPC 1831 Remote Procedure Call Protocol Specification Version 2|RFC 1057 の仕様を洗練し、ONC RPC として再発行|
 |1995 年|マイクロソフト|MS-RPC|Windows 向け RPC プロトコル|
 |2003 年|サン・マイクロシステムズ|Java RMI|Java 言語向け RPC プロトコル|
-|2015 年|グーグル|gRPC|HTTP/2 を使った複数言語向け RPC プロトコル|
+|2006 年|マイクロソフト|Windows Communication Foundation|.Net 言語向け RPC プロトコル|
+|2015 年|グーグル|gRPC|HTTP/2 を使った RPC プロトコル|
 
 # 基本的な RPC のプロトコル
 
@@ -40,9 +42,9 @@ RPC プロトコルの歴史を以下に示します。
 
 という順序で行われます。
 
-![ローカル関数呼び出し](352_RPC_LocalFunctionCall_Sequence.png)
+![352_RPC_LocalFunctionCall_Sequence.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/4f11c034-2465-8146-fbb7-4add77640ccd.png)
 
-RPC はネットワーク環境のクライアントとサーバ間の通信を、一般的な関数呼び出しのように見せることを目的しています。関数呼び出しをクライアントとサーバ間の通信に変換する動作は以下の通りです。
+RPC はネットワーク環境のクライアントとサーバ間の通信を、一般的な関数呼び出しのように見せることを目的としています。関数呼び出しをクライアントとサーバ間の通信に変換する手順は以下の通りです。
 
 1. クライアント側の親プログラムは、その処理を実行する関数が自分のプログラム内に存在するかのように、特定の関数を呼び出します。
 2. 呼び出した関数名、引数などは「スタブ (Stub)」と呼ばれるプログラムによって、RPC のプロトコルで定められた RPC メッセージ(callメッセージ)に組み立てられます
@@ -53,15 +55,15 @@ RPC はネットワーク環境のクライアントとサーバ間の通信を�
 7. そのRPCメッセージがクライアント側に転送されます。
 8. クライアント側のスタブ・プログラムが戻り値（結果）を取り出して、処理を依頼した親プログラムに戻します。
 
-![リモート関数呼び出し](353_RPC_RemoteProcedureCall_Sequence.png)
+![353_RPC_RemoteProcedureCall_Sequence.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/3193d723-23f0-e52c-cb35-c67813fd54d7.png)
 
 # ONC RPC のデータ表現
 
-ONC RPC は異なるコンピュータ間で相互通信できるようデータの構造を XDR として規定しています。XDR の詳細仕様は [RFC 1832 XDR: External Data Representation Standard](https://www.ietf.org/rfc/rfc1832.txt) で公開されています。
+ONC RPC は異なるコンピュータ間で相互通信できるようデータの構造を XDR として規定しています。XDR の詳細仕様は [RFC 1832 XDR: External Data Representation Standard](https://www.ietf.org/rfc/rfc1832.txt) で閲覧できます。
 
-![XDR の OSI 階層モデル](031_RPC_Layer.png)
+![031_RPC_Layer.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/0a1494e7-df9a-669e-2217-12f66c8ea7c7.png)
 
-XDR が対応しているデータ型は以下の通りです。
+XDR が対応しているデータ型は以下の通りです。主に C 言語のデータ型を対象としています。
 
 |データ型|サイズ|
 |----|----|
@@ -84,17 +86,17 @@ XDR が対応しているデータ型は以下の通りです。
 
 整数型は以下のようなメモリ配置になります。
 
-![XDR の整数型のメモリ配置](551_RFC1014_3.1_Integer_Format.png)
+![551_RFC1014_3.1_Integer_Format.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/29a18c00-08d9-1f4a-499d-118248004b87.png)
 
 文字列型は下のようなメモリ配置になります。
 
-![XDR の文字列型のメモリ配置](552_RFC1014_3.10_String_Format.png)
+![552_RFC1014_3.10_String_Format.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/17c3111f-e241-f19a-a75c-d89052057ab9.png)
 
 # ONC RPC のデータ構造
 
 RPC でリモートの関数を呼び出す時のフォーマットは以下の通りです。
 
-![関数呼び出しのヘッダフォーマット](362_RFC1057_Call_HeaderFormat.png)
+![362_RFC1057_Call_HeaderFormat.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/376d43c0-99e1-72ec-a9fb-de0a99463d69.png)
 
 + LAST_FLAG：トランスポートプロトコルが TCP の場合のみ付きます。呼び出しデータが複数のメッセージに分割されているかを示します。
 + flag_header：トランスポートプロトコルが  TCP の場合のみ付きます。flag_header を除いたメッセージ全体の長さを示します。
@@ -113,9 +115,9 @@ RPC でリモートの関数を呼び出す時のフォーマットは以下の�
 
 応答を返す時のフォーマット
 
-![RPC 応答のヘッダフォーマット](364_RFC1057_Reply_HeaderFormat.png)
+![364_RFC1057_Reply_HeaderFormat.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/cc2000d6-cc04-4120-1a8f-f508e5a0dc76.png)
 
-+ LAST_FLAG：トランスポートプロトコルが TCP の場合のみつきます。呼び出しデータが複数のメッセージに分割されているかを示します。
++ LAST_FLAG：トランスポートプロトコルが TCP の場合のみつきます。応答データが複数のメッセージに分割されているかを示します。
 + flag_header：トランスポートプロトコルが TCP の場合のみつきます。flag_header を除いたメッセージ全体の長さを示します。
 + xid：xid は応答に対応する呼び出しメッセージのトランザクション識別子を示します。
 + msg_type：msg_type は呼び出しメッセージか応答メッセージの区別を示します。
@@ -145,28 +147,50 @@ RPC でリモートの関数を呼び出す時のフォーマットは以下の�
 + verf.flavor, verf.body：クライアント認証の結果に関するパラメータです。認証を使わない場合、すべて 0 になります。
 + データ：関数の戻り値を示します。
 
-# インタフェース記述言語（IDL）の例
+# インタフェース記述言語（IDL）
 
-RPC のスタブの処理のプログラム作成について rpcgen という自動生成ツールが用意されています。例えばインタフェース記述言語（IDL）で以下のような記述をし、ping.x として保存します。
+RPC のプログラム開発について rpcgen という自動生成ツールが用意されています。例えばインタフェース記述言語（IDL）を使って以下のような記述をします。
 
-![](310_RFC1057_11.1_An_Example_Service.png)
+```ping.x
+program PING_PROG {
+	/* Latest version */
+	version PING_VERS_PINGBACK {
+		void
+		PINGPROC_NULL(void) = 0;
+		/*
+		 * Ping the client, return the round-trip time
+		 * (in microseconds). Returns -1 if the operation
+		 * timed out.
+		 */
+		int
+		PINGPROC_PINGBACK(void) = 1;
+	} = 2;
+	/* Original version */
+	version PING_VERS_ORIG {
+		void
+		PINGPROC_NULL(void) = 0;
+	} = 1;
+} = 1;
 
-rpcgenコマンドを使うと ping.x から次の4つのC言語のソースファイルが生成されます。
+const PING_VERS = 2;      /* latest version */
+```
+
+rpcgen コマンドを使うと、4 つの C 言語のソースファイルが生成されます。
 
 - ping.h：そのプログラムで使う定数、データ構造、スタブ手続きのインタフェー ス。
 - ping_clnt.c：クライアント側のスタブ処理。
 - ping_xdr.c：ping.x で定義したデータ構造について、整列化（マーシャリング）と非整列化（アンマーシャリング）を行なう手続き。
 - ping_svc.c：サーバ側の main 関数とディスパッチ手続き。
 
-これらのファイルをコンパイルする事で、クライアント側とサーバ側の処理を比較的簡単に開発できます。
+このファイルを使う事でクライアント側とサーバ側のスタブを短時間で実装できます。
 
-![](312.png)
+![312.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/38811499-c5a2-f95d-91f6-e94eb7199d27.png)
 
 # RPC の事例：ポートマッパ
 
-ポートマッパは  [RFC 1833: Binding Protocols for ONC RPC Version 2](https://www.ietf.org/rfc/rfc1833.txt) で定義されているプログラム番号に対応する TCP または UDP のポート番号を返すサービスです。ポートマッパ自身は TCP または UDP の 111 番ポートを使います。
+ポートマッパは RPC プログラム番号に対応する TCP または UDP のポート番号を返すサービスです。[RFC 1833: Binding Protocols for ONC RPC Version 2](https://www.ietf.org/rfc/rfc1833.txt) で規定されてます。ポートマッパ自身は TCP または UDP の 111 番ポートを使います。
 
-![ポートマッパの動作フロー](402_Portmap.png)
+![402_Portmap.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/21498a16-d772-494a-2f06-24fe1f84d981.png)
 
 ## ポートマッパの関数
 
@@ -185,7 +209,7 @@ rpcgenコマンドを使うと ping.x から次の4つのC言語のソースフ�
 
 ポートマッパの PMAPPROC_GETPORT 関数の呼び出しメッセージを以下に示します。
 
-![PMAPPROC_GETPORT 関数の呼び出しメッセージ](451_RFC1057_A1_PMAPPROC_GETPORT_args.png)
+![451_RFC1057_A1_PMAPPROC_GETPORT_args.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/2a710c19-0650-ce8e-3c74-5cbad4142428.png)
 
 各項目の説明は以下の通りです。
 
@@ -200,7 +224,7 @@ rpcgenコマンドを使うと ping.x から次の4つのC言語のソースフ�
 
 ポートマッパの PMAPPROC_GETPORT 関数の応答メッセージを以下に示します。
 
-![PMAPPROC_GETPORT 関数の応答メッセージ](453_RFC1057_A1_PMAPPROC_GETPORT_result.png)
+![453_RFC1057_A1_PMAPPROC_GETPORT_result.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/6ebddf99-3a27-03e6-8307-160c51ee9b94.png)
 
 各項目の説明は以下の通りです。
 
@@ -217,12 +241,12 @@ IDLを使わずに C# で書いた以下のファイルをご覧ください。
 
 最後に ポートマッパのパケットキャプチャの例を示します。
 
-![wireshark のキャプチャ](610_wireshark.png)
+![610_wireshark.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/abd0f37c-1838-a0f0-7f10-84b01d8cddee.png)
 
 # 参考文献
-本ページで引用した参考文献を挙げます。
-
-- [RFC 1057 RPC: Remote Procedure Call Protocol specification ersion 2](https://www.ietf.org/rfc/rfc1057.txt)
+本ページの作成にあたり参照した資料を挙げます。
+- [RFC 1831 RPC: Remote Procedure Call Protocol specification ersion 2](https://www.ietf.org/rfc/rfc1831.txt)
 - [4.3BSD-Reno/lib/librpc/](https://github.com/dank101/4.3BSD-Reno/tree/master/lib/librpc)
-- [RFC 1014 XDR: External Data Representation Standard](https://www.ietf.org/rfc/rfc1014txt)
-- [Service Name and Transport Protocol Port Number Registry](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)
+- [RFC 1832 XDR: External Data Representation Standard](https://www.ietf.org/rfc/rfc1832.txt)
+- [RFC 1833: Binding Protocols for ONC RPC Version 2](https://www.ietf.org/rfc/rfc1833.txt) 
+- [SunRPCとNFS](https://www.coins.tsukuba.ac.jp/~yas/coins/dsys-2006/2007-01-30/)
