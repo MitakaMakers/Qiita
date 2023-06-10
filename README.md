@@ -3,6 +3,7 @@ Qiita article
 - https://qiita.com/mmake
 - [x] [新入社員向け定番パソコンソフト](https://qiita.com/mmake/items/0b786105aa389176bfc6)
 - [x] [VXI-11通信プロトコルの紹介](https://qiita.com/mmake/items/ee837fd1b8f43e464856)
+- [x] [3分で「わかった気」になるRPC](https://qiita.com/mmake/items/35e3395bb8e73e9d23d5)
 
 # 記事アイデア
 ## プログラマ向け初級マニュアル
@@ -89,6 +90,7 @@ Qiita article
 - [ ] Pycon
 - [ ] スティーブジョブス、イーロンマスク
 ## キーワード
+- [ ] プログラマと生産性
 - [ ] マジックナンバー
 - [ ] スパンコントロール
 - [ ] 人月の神話
