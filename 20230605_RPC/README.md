@@ -209,7 +209,7 @@ rpcgen コマンドを使うと、4 つの C 言語のソースファイルが�
 
 ポートマッパの PMAPPROC_GETPORT 関数の呼び出しメッセージを以下に示します。
 
-![451_RFC1057_A1_PMAPPROC_GETPORT_args.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/2a710c19-0650-ce8e-3c74-5cbad4142428.png)
+![451_RFC1057_A1_PMAPPROC_GETPORT_args.png](451_RFC1057_A1_PMAPPROC_GETPORT_args.png)
 
 各項目の説明は以下の通りです。
 
@@ -224,7 +224,7 @@ rpcgen コマンドを使うと、4 つの C 言語のソースファイルが�
 
 ポートマッパの PMAPPROC_GETPORT 関数の応答メッセージを以下に示します。
 
-![453_RFC1057_A1_PMAPPROC_GETPORT_result.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/6ebddf99-3a27-03e6-8307-160c51ee9b94.png)
+![453_RFC1057_A1_PMAPPROC_GETPORT_result.png](453_RFC1057_A1_PMAPPROC_GETPORT_result.png)
 
 各項目の説明は以下の通りです。
 
