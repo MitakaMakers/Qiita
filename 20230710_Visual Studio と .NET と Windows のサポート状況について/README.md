@@ -1,109 +1,113 @@
-# Windows ‚Æ Visual Studio ‚Æ .NET ‚ÌƒTƒ|[ƒgó‹µ‚É‚Â‚¢‚Ä
+# Windows ã¨ Visual Studio ã¨ .NET ã®ã‚µãƒãƒ¼ãƒˆçŠ¶æ³ã«ã¤ã„ã¦
 
-”Ì”„—pƒ\ƒtƒgƒEƒFƒA‚É‚Â‚¢‚Ä“®ì•ÛØ‚·‚é Windows ƒo[ƒWƒ‡ƒ“‚ğ–¾Šm‚É‚·‚é‚½‚ßAWindows ‚Æ Visual Studio ‚Æ .NET ‚Ìƒ}ƒCƒNƒƒ\ƒtƒg‚ÌƒTƒ|[ƒgó‹µ‚ğ‚Ü‚Æ‚ß‚Ü‚µ‚½B‘¼‚Ì•û‚ÌQl‚É‚È‚ê‚ÎK‚¢‚Å‚·B
+è²©å£²ç”¨ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ã«ã¤ã„ã¦å‹•ä½œä¿è¨¼ã™ã‚‹ Windows ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’æ˜ç¢ºã«ã™ã‚‹ãŸã‚ã€Windows ã¨ Visual Studio ã¨ .NET ã®ãƒã‚¤ã‚¯ãƒ­ã‚½ãƒ•ãƒˆã®ã‚µãƒãƒ¼ãƒˆçŠ¶æ³ã‚’ã¾ã¨ã‚ã¾ã—ãŸã€‚ä»–ã®æ–¹ã®å‚è€ƒã«ãªã‚Œã°å¹¸ã„ã§ã™ã€‚
 
-# Windows ‚Æ Visual Studio ‚Æ .NET ‚ÌŠeƒo[ƒWƒ‡ƒ“‚ÌƒTƒ|[ƒgó‹µ(2023”N7Œ”Å)
+# Windows ã¨ Visual Studio ã¨ .NET ã®å„ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã®ã‚µãƒãƒ¼ãƒˆçŠ¶æ³(2023å¹´7æœˆç‰ˆ)
 
-ƒTƒ|[ƒg‚ª—LŒø‚Èƒo[ƒWƒ‡ƒ“‚Í Windows 11, Windows 10, Visual Studio 2022-2013, NET Framework 4.7 ˆÈ~, NET Framework 3.5, .NET6.0, .NET 7.0 ‚Å‚·B
-||ƒŠƒŠ[ƒX“ú|ƒƒCƒ“ƒXƒgƒŠ[ƒ€ƒTƒ|[ƒg‚ÌI—¹“ú|‰„’·ƒTƒ|[ƒg‚ÌI—¹“ú|
+
+ã‚µãƒãƒ¼ãƒˆãŒæœ‰åŠ¹ãªãƒãƒ¼ã‚¸ãƒ§ãƒ³ã¯ Windows 11, 10, Visual Studio 2013, 2015, 2017, 2019, 2022, NET Framework 3.5, 4.6.2, 4.7, 4.8, 6.0, 7.0 ã§ã™ã€‚
+
+||ãƒªãƒªãƒ¼ã‚¹æ—¥|ãƒ¡ã‚¤ãƒ³ã‚¹ãƒˆãƒªãƒ¼ãƒ ã‚µãƒãƒ¼ãƒˆã®çµ‚äº†æ—¥|å»¶é•·ã‚µãƒãƒ¼ãƒˆã®çµ‚äº†æ—¥|
 |---|---|---|---|
-|Windows 11|2021”N11Œ4“ú|–¢’è|–¢’è|
-|Windows 10|2015”N7Œ29“ú|2025”N10Œ14“ú|2025”N10Œ14“ú|
-|Windows 8.1|2012”N10Œ30“ú|2018”N1Œ9“ú|2023”N1Œ10“ú|
-|Windows 7|2009”N10Œ22“ú|2015”N1Œ13“ú|2020”N1Œ14“ú|
-|Windows Vista|	2007”N1Œ25“ú|2012”N4Œ10“ú|2017”N4Œ11“ú|
-|Windows XP|2001”N12Œ31“ú|2009”N4Œ14“ú|2014”N4Œ8“ú|
-|Windows 2000|2000”N3Œ31“ú|2005”N6Œ30“ú|2010”N7Œ13“ú|
-|Visual Studio 2022|2021”N11Œ8“ú|2027”N1Œ12“ú|2032”N1Œ13“ú|
-|Visual Studio 2019|2019”N4Œ2“ú|2024”N4Œ9“ú|2029”N4Œ10“ú|
-|Visual Studio 2017|2017”N3Œ7“ú|2022”N4Œ12“ú|2027”N4Œ13“ú|
-|Visual Studio 2015|2015”N7Œ20“ú|2020”N10Œ13“ú|2025”N10Œ14“ú|
-|Visual Studio 2013|2014”N1Œ15“ú|2019”N4Œ9“ú|2024”N4Œ9“ú|
-|Visual Studio 2012|2012”N10Œ31“ú|2018”N1Œ9“ú|2023”N1Œ10“ú|
-|Visual Studio 2010|2010”N6Œ29“ú|2015”N7Œ14“ú|2020”N7Œ14“ú|
-|Visual Studio 2008|2008”N2Œ19“ú|2013”N4Œ9“ú|2018”N4Œ10“ú|
-|Visual Studio 2005|2006”N1Œ27“ú|2011”N4Œ12“ú|2016”N4Œ12“ú|
-|Visual Studio 2003|2003”N7Œ10“ú|2008”N10Œ14“ú|2013”N10Œ8“ú|
-|Visual Studio 2002|2002”N4Œ15“ú|2007”N7Œ10“ú|2009”N7Œ14“ú|
-|Visual Basic 6.0|1998”N9Œ5“ú|2005”N3Œ31“ú|2008”N4Œ8“ú|
-|Visual C++ 6.0|1998”N9Œ25“ú|2004”N9Œ30“ú|2005”N9Œ30“ú|
-|.NET 7|2022”N11Œ8“ú|-|–¢’è||
-|.NET 6.0 (LTS)|2021”N11Œ9“ú|-|2024”N11Œ12“ú|
-|.NET 5.0|2020”N11Œ10“ú|-|2022”N5Œ10“ú|
-|.NET Core 3.1 (LTS)|2019”N12Œ3“ú|-|2022”N12Œ13“ú|
-|.NET Core 3.0|2019”N9Œ23“ú|-|2020”N3Œ3“ú|
-|.NET Core 2.2|2018”N12Œ4“ú|-|2019”N12Œ23“ú|
-|.NET Core 2.1(LTS)|2018”N5Œ30“ú|-|2021”N8Œ21“ú|
-|.NET Core 2.0|2017”N8Œ14“ú|-|2018”N10Œ1“ú|
-|.NET Core 1.1|2016”N11Œ16“ú|-|2019”N6Œ27“ú|
-|.NET Core 1.0|2016”N6Œ27“ú|-|2019”N6Œ27“ú|
-|.NET Framework 4.8.1|2022”N8Œ9“ú|-|–¢’è|
-|.NET Framework 4.8|2019”N4Œ18“ú|-|–¢’è|
-|.NET Framework 4.7.2|2018”N4Œ30“ú|-|–¢’è|
-|.NET Framework 4.7.1|2017”N10Œ17“ú|-|–¢’è|
-|.NET Framework 4.7|2017”N4Œ11“ú|-|–¢’è|
-|.NET Framework 4.6.2|2016”N8Œ2“ú|-|2027”N1Œ12“ú|
-|.NET Framework 4.6.1|2015”N11Œ30“ú|-|2022”N4Œ26“ú|
-|.NET Framework 4.6|2015”N7Œ29“ú|-|2022”N4Œ26“ú|
-|.NET Framework 4.5.2|2014”N5Œ5“ú|-|2022”N4Œ26“ú|
-|.NET Framework 4.5.1|2014”N1Œ15“ú|-|2016”N1Œ12“ú|
-|.NET Framework 4.5|2012”N10Œ9“ú|-|2016”N1Œ12“ú|
-|.NET Framework 4.0|2010”N4Œ12“ú|-|2016”N1Œ12“ú|
-|.NET Framework 3.5 Service Pack 1|2007”N11Œ19“ú|-|2029”N1Œ9“ú|
-|.NET Framework 3.0|2006”N11Œ21“ú|-|2011”N7Œ12“ú|
-|.NET Framework 2.0|2006”N2Œ17“ú|-|2011”N7Œ12“ú|
+|Windows 11|2021å¹´11æœˆ4æ—¥|æœªå®š|æœªå®š|
+|Windows 10|2015å¹´7æœˆ29æ—¥|2025å¹´10æœˆ14æ—¥|2025å¹´10æœˆ14æ—¥|
+|Windows 8.1|2012å¹´10æœˆ30æ—¥|2018å¹´1æœˆ9æ—¥|2023å¹´1æœˆ10æ—¥|
+|Windows 7|2009å¹´10æœˆ22æ—¥|2015å¹´1æœˆ13æ—¥|2020å¹´1æœˆ14æ—¥|
+|Windows Vista|	2007å¹´1æœˆ25æ—¥|2012å¹´4æœˆ10æ—¥|2017å¹´4æœˆ11æ—¥|
+|Windows XP|2001å¹´12æœˆ31æ—¥|2009å¹´4æœˆ14æ—¥|2014å¹´4æœˆ8æ—¥|
+|Windows 2000|2000å¹´3æœˆ31æ—¥|2005å¹´6æœˆ30æ—¥|2010å¹´7æœˆ13æ—¥|
+|Visual Studio 2022|2021å¹´11æœˆ8æ—¥|2027å¹´1æœˆ12æ—¥|2032å¹´1æœˆ13æ—¥|
+|Visual Studio 2019|2019å¹´4æœˆ2æ—¥|2024å¹´4æœˆ9æ—¥|2029å¹´4æœˆ10æ—¥|
+|Visual Studio 2017|2017å¹´3æœˆ7æ—¥|2022å¹´4æœˆ12æ—¥|2027å¹´4æœˆ13æ—¥|
+|Visual Studio 2015|2015å¹´7æœˆ20æ—¥|2020å¹´10æœˆ13æ—¥|2025å¹´10æœˆ14æ—¥|
+|Visual Studio 2013|2014å¹´1æœˆ15æ—¥|2019å¹´4æœˆ9æ—¥|2024å¹´4æœˆ9æ—¥|
+|Visual Studio 2012|2012å¹´10æœˆ31æ—¥|2018å¹´1æœˆ9æ—¥|2023å¹´1æœˆ10æ—¥|
+|Visual Studio 2010|2010å¹´6æœˆ29æ—¥|2015å¹´7æœˆ14æ—¥|2020å¹´7æœˆ14æ—¥|
+|Visual Studio 2008|2008å¹´2æœˆ19æ—¥|2013å¹´4æœˆ9æ—¥|2018å¹´4æœˆ10æ—¥|
+|Visual Studio 2005|2006å¹´1æœˆ27æ—¥|2011å¹´4æœˆ12æ—¥|2016å¹´4æœˆ12æ—¥|
+|Visual Studio 2003|2003å¹´7æœˆ10æ—¥|2008å¹´10æœˆ14æ—¥|2013å¹´10æœˆ8æ—¥|
+|Visual Studio 2002|2002å¹´4æœˆ15æ—¥|2007å¹´7æœˆ10æ—¥|2009å¹´7æœˆ14æ—¥|
+|Visual Basic 6.0|1998å¹´9æœˆ5æ—¥|2005å¹´3æœˆ31æ—¥|2008å¹´4æœˆ8æ—¥|
+|Visual C++ 6.0|1998å¹´9æœˆ25æ—¥|2004å¹´9æœˆ30æ—¥|2005å¹´9æœˆ30æ—¥|
+|[.NET 8 preview](https://dotnet.microsoft.com/ja-jp/download/dotnet/8.0)|æœªå®š|-|æœªå®š|
+|[.NET 7](https://dotnet.microsoft.com/ja-jp/download/dotnet/7.0)|2022å¹´11æœˆ8æ—¥|-|æœªå®š||
+|[.NET 6.0 (LTS)](https://dotnet.microsoft.com/ja-jp/download/dotnet/6.0)|2021å¹´11æœˆ9æ—¥|-|2024å¹´11æœˆ12æ—¥|
+|[.NET 5.0](https://dotnet.microsoft.com/ja-jp/download/dotnet/5.0)|2020å¹´11æœˆ10æ—¥|-|2022å¹´5æœˆ10æ—¥|
+|[.NET Core 3.1 (LTS)](https://dotnet.microsoft.com/ja-jp/download/dotnet/3.1)|2019å¹´12æœˆ3æ—¥|-|2022å¹´12æœˆ13æ—¥|
+|[.NET Core 3.0](https://dotnet.microsoft.com/ja-jp/download/dotnet/3.0)|2019å¹´9æœˆ23æ—¥|-|2020å¹´3æœˆ3æ—¥|
+|[.NET Core 2.2](https://dotnet.microsoft.com/ja-jp/download/dotnet/2.2)|2018å¹´12æœˆ4æ—¥|-|2019å¹´12æœˆ23æ—¥|
+|[.NET Core 2.1(LTS)](https://dotnet.microsoft.com/ja-jp/download/dotnet/2.1)|2018å¹´5æœˆ30æ—¥|-|2021å¹´8æœˆ21æ—¥|
+|[.NET Core 2.0](https://dotnet.microsoft.com/ja-jp/download/dotnet/2.0)|2017å¹´8æœˆ14æ—¥|-|2018å¹´10æœˆ1æ—¥|
+|[.NET Core 1.1](https://dotnet.microsoft.com/ja-jp/download/dotnet/1.1)|2016å¹´11æœˆ16æ—¥|-|2019å¹´6æœˆ27æ—¥|
+|[.NET Core 1.0](https://dotnet.microsoft.com/ja-jp/download/dotnet/1.0)|2016å¹´6æœˆ27æ—¥|-|2019å¹´6æœˆ27æ—¥|
+|[.NET Framework 4.8.1](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net481)|2022å¹´8æœˆ9æ—¥|-|æœªå®š|
+|[.NET Framework 4.8](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net48)|2019å¹´4æœˆ18æ—¥|-|æœªå®š|
+|[.NET Framework 4.7.2](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net472)|2018å¹´4æœˆ30æ—¥|-|æœªå®š|
+|[.NET Framework 4.7.1](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net471)|2017å¹´10æœˆ17æ—¥|-|æœªå®š|
+|[.NET Framework 4.7](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net47)|2017å¹´4æœˆ11æ—¥|-|æœªå®š|
+|[.NET Framework 4.6.2](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net462)|2016å¹´8æœˆ2æ—¥|-|2027å¹´1æœˆ12æ—¥|
+|[.NET Framework 4.6.1](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net461)|2015å¹´11æœˆ30æ—¥|-|2022å¹´4æœˆ26æ—¥|
+|[.NET Framework 4.6](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net46)|2015å¹´7æœˆ29æ—¥|-|2022å¹´4æœˆ26æ—¥|
+|[.NET Framework 4.5.2](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net452)|2014å¹´5æœˆ5æ—¥|-|2022å¹´4æœˆ26æ—¥|
+|[.NET Framework 4.5.1](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net451)|2014å¹´1æœˆ15æ—¥|-|2016å¹´1æœˆ12æ—¥|
+|[.NET Framework 4.5](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net45)|2012å¹´10æœˆ9æ—¥|-|2016å¹´1æœˆ12æ—¥|
+|[.NET Framework 4.0](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net40)|2010å¹´4æœˆ12æ—¥|-|2016å¹´1æœˆ12æ—¥|
+|[.NET Framework 3.5 Service Pack 1](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net35-sp1)|2007å¹´11æœˆ19æ—¥|-|2029å¹´1æœˆ9æ—¥|
+|[.NET Framework 3.0](https://www.microsoft.com/ja-jp/download/details.aspx?id=3005)|2006å¹´11æœˆ21æ—¥|-|2011å¹´7æœˆ12æ—¥|
+|[.NET Framework 2.0](https://www.microsoft.com/ja-jp/download/details.aspx?id=16614)|2006å¹´2æœˆ17æ—¥|-|2011å¹´7æœˆ12æ—¥|
 
-“Á’¥“I‚Èƒo[ƒWƒ‡ƒ“‚ğˆÈ‰º‚É‹“‚°‚Ü‚·B
-+ Windows 11F32 ƒrƒbƒg”Å‚ª”p~‚³‚ê‚½Å‰‚Ìƒo[ƒWƒ‡ƒ“
-+ Windows 7FSHA-256 ƒfƒWƒ^ƒ‹–¼‚É‘Î‰‚µ‚Ä‚¢‚éˆê”ÔŒÃ‚¢ƒo[ƒWƒ‡ƒ“
-+ Visual Studio 2017FWindows XP —p‚ÌƒR[ƒhì¬‚ğƒTƒ|[ƒg‚·‚éÅŒã‚Ìƒo[ƒWƒ‡ƒ“
-+ Visual Studio 2005FUnicode ‘Î‰ ‚µ‚½Å‰‚Ìƒo[ƒWƒ‡ƒ“
-+ Visual Studio 2003FJava ‘i×‚Ì˜a‰ğğŒ‚É‚æ‚è”p~
-+ Visual Studio 2002FJava ‘i×‚Ì˜a‰ğğŒ‚É‚æ‚è”p~
+ç‰¹å¾´çš„ãªãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’ä»¥ä¸‹ã«æŒ™ã’ã¾ã™ã€‚
++ Windows 11ï¼š32 ãƒ“ãƒƒãƒˆç‰ˆãŒå»ƒæ­¢ã•ã‚ŒãŸæœ€åˆã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³
++ Windows 7ï¼šSHA-256 ãƒ‡ã‚¸ã‚¿ãƒ«ç½²åã«å¯¾å¿œã—ã¦ã„ã‚‹ä¸€ç•ªå¤ã„ãƒãƒ¼ã‚¸ãƒ§ãƒ³
++ Visual Studio 2017ï¼šWindows XP ç”¨ã®ã‚³ãƒ¼ãƒ‰ä½œæˆã‚’ã‚µãƒãƒ¼ãƒˆã™ã‚‹æœ€å¾Œã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³
++ Visual Studio 2005ï¼šUnicode å¯¾å¿œ ã—ãŸæœ€åˆã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³
++ Visual Studio 2003ï¼šJava è¨´è¨Ÿã®å’Œè§£æ¡ä»¶ã«ã‚ˆã‚Šå»ƒæ­¢
++ Visual Studio 2002ï¼šJava è¨´è¨Ÿã®å’Œè§£æ¡ä»¶ã«ã‚ˆã‚Šå»ƒæ­¢
++ .NET Core 1.0ï¼šLinux ã‚„ Mac ã«å¯¾å¿œã—ãŸæœ€åˆã® .NET
 
-# Visual Studio ‚ª‘Î‰‚·‚é OS ƒo[ƒWƒ‡ƒ“‚Ì•\(2023”N7Œ”Å)
+# Visual Studio ãŒå¯¾å¿œã™ã‚‹ OS ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã®è¡¨(2023å¹´7æœˆç‰ˆ)
 
-ˆÈ‰º‚Ì•\‚Ì“à Yes ‚Í”­”„ƒpƒbƒP[ƒW‚É–¾‹L‚³‚ê‚Ä‚¢‚éƒo[ƒWƒ‡ƒ“B ƒJƒbƒR•t‚«‚Ì Yes  ‚Í u‚»‚êˆÈ~‚ÌƒIƒyƒŒ[ƒeƒBƒ“ƒOƒVƒXƒeƒ€v‚ÉŠY“–‚µƒ}ƒCƒNƒƒ\ƒtƒg‚Ìƒz[ƒ€ƒy[ƒW‚É‹LÚ‚³‚ê‚Ä‚¢‚éƒo[ƒWƒ‡ƒ“B
+ä»¥ä¸‹ã®è¡¨ã®å†… Yes ã¯ç™ºå£²ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã«æ˜è¨˜ã•ã‚Œã¦ã„ã‚‹ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã€‚ ã‚«ãƒƒã‚³ä»˜ãã® Yes  ã¯ ã€Œãã‚Œä»¥é™ã®ã‚ªãƒšãƒ¬ãƒ¼ãƒ†ã‚£ãƒ³ã‚°ã‚·ã‚¹ãƒ†ãƒ ã€ã«è©²å½“ã—ãƒã‚¤ã‚¯ãƒ­ã‚½ãƒ•ãƒˆã®ãƒ›ãƒ¼ãƒ ãƒšãƒ¼ã‚¸ã«è¨˜è¼‰ã•ã‚Œã¦ã„ã‚‹ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã€‚
 
 ||Win11|Win10|Win8|Win7|Vista|XP|2000|98|
 |---|---|---|---|---|---|---|---|---|
-|Visual Studio 2022 ŠJ”­ŠÂ‹«|Yes|Yes|-|-|-|-|-|-|
-|Visual Studio 2019 ŠJ”­ŠÂ‹«|Yes|Yes|Yes|Yes|-|-|-|-|
-|Visual Studio 2017 ŠJ”­ŠÂ‹«|-|Yes|Yes|Yes|-|-|-|-|
-|Visual Studio 2015 ŠJ”­ŠÂ‹«|-|Yes|Yes|Yes|-|-|-|-|
-|Visual Studio 2013 ŠJ”­ŠÂ‹«|-|-|Yes|Yes|-|-|-|-|
-|Visual Studio 2012 ŠJ”­ŠÂ‹«|-|-|Yes|Yes|-|-|-|-|
-|Visual Studio 2010 ŠJ”­ŠÂ‹«|-|-|(Yes)|Yes|Yes|Yes|-|-|
-|Visual Studio 2008 ŠJ”­ŠÂ‹«|-|-|(Yes)|(Yes)|(Yes)|Yes|Yes|-|
-|Visual Studio 2005 ŠJ”­ŠÂ‹«|-|-|-|(Yes)|(Yes)|Yes|Yes|-|
-|Visual Studio 2003 ŠJ”­ŠÂ‹«|-|-|-|-|-|Yes|Yes|-|
-|Visual Studio 2002 ŠJ”­ŠÂ‹«|-|-|-|-|-|Yes|Yes|-|
-|Visual Basic 6.0 ŠJ”­ŠÂ‹«|-|-|-|-|-|(Yes)|(Yes)|Yes|
-|Visual Studio 97 ŠJ”­ŠÂ‹«|-|-|-|-|-|-|-|Yes|
-|Visual C++ 2022 Ä”Ğ•zƒpƒbƒP[ƒW|Yes|Yes|Yes|Yes|Yes|-|-|-|
-|Visual C++ 2019 Ä”Ğ•zƒpƒbƒP[ƒW|Yes|Yes|Yes|Yes|Yes|(Yes)|-|-|
-|Visual C++ 2017 Ä”Ğ•zƒpƒbƒP[ƒW|Yes|Yes|Yes|Yes|Yes|Yes|-|-|
-|Visual C++ 2015 Ä”Ğ•zƒpƒbƒP[ƒW|(Yes)|Yes|Yes|Yes|Yes|Yes|-|-|
-|Visual C++ 2013 Ä”Ğ•zƒpƒbƒP[ƒW|-|-|Yes|Yes|Yes|Yes|-|-|
-|Visual C++ 2012 Ä”Ğ•zƒpƒbƒP[ƒW|-|-|Yes|Yes|Yes|Yes|-|-|
-|Visual C++ 2010 Ä”Ğ•zƒpƒbƒP[ƒW|-|-|-|Yes|Yes|Yes|-|-|
-|Visual C++ 2008 Ä”Ğ•zƒpƒbƒP[ƒW|-|-|-|Yes|Yes|Yes|-|-|
-|Visual C++ 2005 Ä”Ğ•zƒpƒbƒP[ƒW|-|-|-|Yes|Yes|Yes|-|-|
-|Visual Basic 6.0ƒ‰ƒ“ƒ^ƒCƒ€|Yes|Yes|Yes|Yes|Yes|Yes|Yes|Yes|
-|.NET 7|Yes|Yes|-|-|-|-|-|-|
-|.NET 6.0 (LTS)|Yes|Yes|Yes|Yes|-|-|-|-|
-|.NET 5.0|Yes|Yes|Yes|Yes|-|-|-|-|
-|.NET Core 3.1 (LTS)|Yes|Yes|Yes|Yes|-|-|-|-|
-|.NET Framework 4.8.1|Yes|Yes|-|-|-|-|-|-|
-|.NET Framework 4.8|Yes|Yes|Yes|Yes|-|-|-|-|
-|.NET Framework 4.7.2|-|Yes|Yes|Yes|-|-|-|-|
-|.NET Framework 4.7.1|-|Yes|Yes|Yes|-|-|-|-|
-|.NET Framework 4.7|-|Yes|Yes|Yes|-|-|-|-|
-|.NET Framework 4.6.2|-|Yes|Yes|Yes|-|-|-|-|
-|.NET Framework 4.6.1|-|Yes|Yes|Yes|-|-|-|-|
-|.NET Framework 4.6|-|Yes|Yes|Yes|Yes|-|-|-|
-|.NET Framework 4.5.2|-|-|Yes|Yes|Yes|-|-|-|
-|.NET Framework 4.5.1|-|-|Yes|Yes|Yes|-|-|-|
-|.NET Framework 4.5|-|-|Yes|Yes|Yes|-|-|-|
-|.NET Framework 4.0|-|-|-|Yes|Yes|Yes|-|-|
-|.NET Framework 3.5|(Yes)|(Yes)|(Yes)|(Yes)|Yes|Yes|-|-|
+|Visual Studio 2022 é–‹ç™ºç’°å¢ƒ|Yes|Yes|-|-|-|-|-|-|
+|Visual Studio 2019 é–‹ç™ºç’°å¢ƒ|Yes|Yes|Yes|Yes|-|-|-|-|
+|Visual Studio 2017 é–‹ç™ºç’°å¢ƒ|-|Yes|Yes|Yes|-|-|-|-|
+|Visual Studio 2015 é–‹ç™ºç’°å¢ƒ|-|Yes|Yes|Yes|-|-|-|-|
+|Visual Studio 2013 é–‹ç™ºç’°å¢ƒ|-|-|Yes|Yes|-|-|-|-|
+|Visual Studio 2012 é–‹ç™ºç’°å¢ƒ|-|-|Yes|Yes|-|-|-|-|
+|Visual Studio 2010 é–‹ç™ºç’°å¢ƒ|-|-|(Yes)|Yes|Yes|Yes|-|-|
+|Visual Studio 2008 é–‹ç™ºç’°å¢ƒ|-|-|(Yes)|(Yes)|(Yes)|Yes|Yes|-|
+|Visual Studio 2005 é–‹ç™ºç’°å¢ƒ|-|-|-|(Yes)|(Yes)|Yes|Yes|-|
+|Visual Studio 2003 é–‹ç™ºç’°å¢ƒ|-|-|-|-|-|Yes|Yes|-|
+|Visual Studio 2002 é–‹ç™ºç’°å¢ƒ|-|-|-|-|-|Yes|Yes|-|
+|Visual Basic 6.0 é–‹ç™ºç’°å¢ƒ|-|-|-|-|-|(Yes)|(Yes)|Yes|
+|Visual Studio 97 é–‹ç™ºç’°å¢ƒ|-|-|-|-|-|-|-|Yes|
+|[Visual C++ 2022 å†é ’å¸ƒãƒ‘ãƒƒã‚±ãƒ¼ã‚¸](https://learn.microsoft.com/ja-JP/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-2017-2019-and-2022)|Yes|Yes|Yes|Yes|Yes|-|-|-|
+|[Visual C++ 2019 å†é ’å¸ƒãƒ‘ãƒƒã‚±ãƒ¼ã‚¸](https://learn.microsoft.com/ja-JP/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-2017-2019-and-2022)|Yes|Yes|Yes|Yes|Yes|(Yes)|-|-|
+|[Visual C++ 2017 å†é ’å¸ƒãƒ‘ãƒƒã‚±ãƒ¼ã‚¸](https://learn.microsoft.com/ja-JP/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-2017-2019-and-2022)|Yes|Yes|Yes|Yes|Yes|Yes|-|-|
+|[Visual C++ 2015 å†é ’å¸ƒãƒ‘ãƒƒã‚±ãƒ¼ã‚¸](https://www.microsoft.com/ja-jp/download/details.aspx?id=53840)|(Yes)|(Yes)|Yes|Yes|Yes|Yes|-|-|
+|[Visual C++ 2013 å†é ’å¸ƒãƒ‘ãƒƒã‚±ãƒ¼ã‚¸](https://www.microsoft.com/ja-jp/download/details.aspx?id=40784)|-|-|Yes|Yes|Yes|Yes|-|-|
+|[Visual C++ 2012 å†é ’å¸ƒãƒ‘ãƒƒã‚±ãƒ¼ã‚¸](https://www.microsoft.com/ja-jp/download/details.aspx?id=30679)|-|-|Yes|Yes|Yes|Yes|-|-|
+|[Visual C++ 2010 å†é ’å¸ƒãƒ‘ãƒƒã‚±ãƒ¼ã‚¸](https://www.microsoft.com/ja-jp/download/details.aspx?id=26999)|-|-|-|Yes|Yes|Yes|-|-|
+|[Visual C++ 2008 å†é ’å¸ƒãƒ‘ãƒƒã‚±ãƒ¼ã‚¸](https://www.microsoft.com/ja-jp/download/details.aspx?id=26368)|-|-|-|Yes|Yes|Yes|-|-|
+|[Visual C++ 2005 å†é ’å¸ƒãƒ‘ãƒƒã‚±ãƒ¼ã‚¸](https://www.microsoft.com/ja-jp/download/details.aspx?id=26347)|-|-|-|Yes|Yes|Yes|-|-|
+|[Visual Basic 6.0 SP6 ãƒ©ãƒ³ã‚¿ã‚¤ãƒ ](https://www.vector.co.jp/soft/win95/util/se342080.html)|Yes|Yes|Yes|Yes|Yes|Yes|Yes|Yes|
+|[.NET 7](https://dotnet.microsoft.com/ja-jp/download/dotnet/7.0)|Yes|Yes|-|-|-|-|-|-|
+|[.NET 6.0 (LTS)](https://dotnet.microsoft.com/ja-jp/download/dotnet/6.0)|Yes|Yes|Yes|Yes|-|-|-|-|
+|[.NET 5.0](https://dotnet.microsoft.com/ja-jp/download/dotnet/5.0)|Yes|Yes|Yes|Yes|-|-|-|-|
+|[.NET Core 3.1 (LTS)](https://dotnet.microsoft.com/ja-jp/download/dotnet/3.1)|Yes|Yes|Yes|Yes|-|-|-|-|
+|[.NET Framework 4.8.1](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net481)|Yes|Yes|-|-|-|-|-|-|
+|[.NET Framework 4.8](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net48)|Yes|Yes|Yes|Yes|-|-|-|-|
+|[.NET Framework 4.7.2](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net472)|-|Yes|Yes|Yes|-|-|-|-|
+|[.NET Framework 4.7.1](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net471)|-|Yes|Yes|Yes|-|-|-|-|
+|[.NET Framework 4.7](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net47)|-|Yes|Yes|Yes|-|-|-|-|
+|[.NET Framework 4.6.2](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net462)|-|Yes|Yes|Yes|-|-|-|-|
+|[.NET Framework 4.6.1](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net461)|-|Yes|Yes|Yes|-|-|-|-|
+|[.NET Framework 4.6](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net46)|-|Yes|Yes|Yes|Yes|-|-|-|
+|[.NET Framework 4.5.2](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net452)|-|-|Yes|Yes|Yes|-|-|-|
+|[.NET Framework 4.5.1](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net451)|-|-|Yes|Yes|Yes|-|-|-|
+|[.NET Framework 4.5](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net45)|-|-|Yes|Yes|Yes|-|-|-|
+|[.NET Framework 4.0](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net40)|-|-|-|Yes|Yes|Yes|-|-|
+|[.NET Framework 3.5](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net35-sp1)|(Yes)|(Yes)|(Yes)|(Yes)|Yes|Yes|-|-|
