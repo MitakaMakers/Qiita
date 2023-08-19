@@ -97,37 +97,16 @@ Ins は OS に同梱されているバージョン、Opt は Windows の機能�
 |[.NET 7.0](https://dotnet.microsoft.com/ja-jp/download/dotnet/7.0)|Yes|Yes|-|-|-|-|-|
 |[.NET 6.0](https://dotnet.microsoft.com/ja-jp/download/dotnet/6.0)|Yes|Yes|Yes|Yes|-|-|-|
 |[.NET Core 3.1](https://dotnet.microsoft.com/ja-jp/download/dotnet/3.1)|Yes|Yes|Yes|Yes|-|-|-|
-|[.NET Framework 4.8.1](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net481)|Ins|Ins|-|-|-|-|-|
-|[.NET Framework 4.8](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net48)|Yes|Yes|Yes|Yes|-|-|-|
-|[.NET Framework 4.7.2](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net472)|-|Yes|Yes|Yes|-|-|-|
-|[.NET Framework 4.7.1](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net471)|-|Yes|Yes|Yes|-|-|-|
-|[.NET Framework 4.7](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net47)|-|Yes|Yes|Yes|-|-|-|
-|[.NET Framework 4.6.2](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net462)|-|Yes|Yes|Yes|-|-|-|
-|[.NET Framework 4.6.1](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net461)|-|Yes|Yes|Yes|-|-|-|
-|[.NET Framework 4.6](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net46)|-|Yes|Yes|Yes|Yes|-|-|
+|[.NET Framework 4.8.1](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net481)|[22H2](https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-481)|[22H2](https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-481)|-|-|-|-|-|
+|[.NET Framework 4.8](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net48)|[RTM](https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-48)|[1903](https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-48)|Yes|Yes|-|-|-|
+|[.NET Framework 4.7.2](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net472)|-|[1803](https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-472)|Yes|Yes|-|-|-|
+|[.NET Framework 4.7.1](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net471)|-|[1709](https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-471)|Yes|Yes|-|-|-|
+|[.NET Framework 4.7](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net47)|-|[1703](https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-47)|Yes|Yes|-|-|-|
+|[.NET Framework 4.6.2](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net462)|-|[1607](https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-462)|Yes|Yes|-|-|-|
+|[.NET Framework 4.6.1](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net461)|-|[1511](https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-461)|Yes|Yes|-|-|-|
+|[.NET Framework 4.6](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net46)|-|[RTM](https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-46)|Yes|Yes|Yes|-|-|
 |[.NET Framework 4.5.2](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net452)|-|-|Yes|Yes|Yes|-|-|
-|[.NET Framework 4.5.1](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net451)|-|-|Yes|Yes|Yes|-|-|
-|[.NET Framework 4.5](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net45)|-|-|Yes|Yes|Yes|-|-|
+|[.NET Framework 4.5.1](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net451)|-|-|[8.1](https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-451)|Yes|Yes|-|-|
+|[.NET Framework 4.5](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net45)|-|-|[8](https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-45)|Yes|Yes|-|-|
 |[.NET Framework 4.0](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net40)|-|-|-|Yes|Yes|Yes|-|
-|[.NET Framework 3.5 Service Pack 1	](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net35-sp1)|Opt|Opt|Opt|Ins|Yes|Yes|Yes|-|
-
-# Windows 10 に同梱されている .NET Framework のバージョン
-
-Windows 10 はさらに細かいバージョンを持ち、インストールされている .NET Framework がそれぞれ異なります。以下に表で示します。
-
-|ソフトウェア名|バージョン|.NET Framework|
-|---|---|---|
-|Windows 10 September 2022 Release|22H2|4.8.1|
-|Windows 10 November 2021 Update|21H2|4.8|
-|Windows 10 May 2021 Update|21H1|4.8|
-|Windows 10 October 2020 Update|20H2|4.8|
-|Windows 10 May 2020 Update|2004|4.8|
-|Windows 10 November 2019 Update|1909|4.8|
-|Windows 10 May 2019 Update|1903|4.8|
-|Windows 10 October 2018 Update|1809|4.7.2|
-|Windows 10 April 2018 Update|1803|4.7.2|
-|Windows 10 Fall Creators Update|1709|4.7.1|
-|Windows 10 Creators Update|1703|4.7|
-|Windows 10 Anniversary Update|1607|4.6.2|
-|Windows 10 November Update|1511|4.6.1|
-|Windows 10 RTM|1507|4.6|
+|[.NET Framework 3.5 Service Pack 1	](https://dotnet.microsoft.com/ja-jp/download/dotnet-framework/net35-sp1)|Opt|Opt|Opt|[7](https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-35)|Yes|Yes|Yes|-|
