@@ -1,9 +1,9 @@
-# 無料パソコン録画ソフト ScreenToGif の使い方
+# 3 分でわかるパソコン録画ソフト ScreenToGif の使い方
 tag: screentogif フリーソフト　録画
 
 「ScreenToGif」は Windows 向けのフリーソフトウェアです。画面の一部分を切り取ってGIFアニメーションとして保存することができます。ここでは「情報I」を履修した高校生向けに ScreenToGif を紹介します。
 
-# ScreenToGif の目的
+## ScreenToGif の目的
 
 ScreenToGif は以下のような用途で使われます。
 
@@ -16,7 +16,7 @@ ScreenToGif は以下のような用途で使われます。
 ### ブログ記事のコンテンツの作成
 ウェブサイトのコンテンツに動的な要素を追加するために、短いGIFアニメーションを作成することができます。
 
-# ScreenToGif のシステム要件
+## ScreenToGif のシステム要件
 ScreenToGif Version 2.38.1 は以下の環境で動作します
 
 - オペレーティングシステム: Windows 7, 8, 8.1, 10, 11
@@ -24,7 +24,7 @@ ScreenToGif Version 2.38.1 は以下の環境で動作します
 
 ここでは Windows 11 と ScreenToGif Version 2.38.1 を例にして、インストール方法と使い方を紹介します。
 
-# ScreenToGif のインストール方法
+## ScreenToGif のインストール方法
 
 ScreenToGif の公式ページにアクセスします。ダウンロードページが表示されたら、「インストーラー」をクリックします。
 
