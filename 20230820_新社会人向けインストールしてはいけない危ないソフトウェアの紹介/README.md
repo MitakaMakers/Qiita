@@ -24,7 +24,7 @@
 |4|Adobe Photoshop|アドビ社|画像編集ソフトウェア|[マイクロソフトら3社、司法試験予備校に対し1億1400万円の違法コピー損害賠償を提起](https://ascii.jp/elem/000/000/309/309057/)|
 |5|Auto CAD|オートデスク社|3次元の建築・機械・電気製図ソフトウェア|[違法コピーで北海道に賠償請求方針](https://ameblo.jp/cadboy2/entry-10407516898.html)
 |6|MS SQL Server|マイクロソフト社|データベースソフトウェア|[「MS SQL Server」を不正コピーしていたサーバ運用会社と1億円で和解](https://www.corporate-legal.jp/news/1274)|
-|7|QuarkXPress|クォークインク社|組版ソフトウェア|[組織内におけるソフトウェアの不正コピーで役員の個人責任を認める初の判決](https://www2.accsjp.or.jp/activities/2003/news23.php)|
+|7|Quark XPress|クォークインク社|組版ソフトウェア|[組織内におけるソフトウェアの不正コピーで役員の個人責任を認める初の判決](https://www2.accsjp.or.jp/activities/2003/news23.php)|
 |8|一太郎|ジャストシステム社|文書作成ソフトウェア|[花巻市役所でソフトの違法コピー、9社と和解へ](https://www.nikkei.com/article/DGXNASFK17048_X10C13A5000000/)|
 
 ## 【禁止】深刻なセキュリティの問題を持つソフトウェア
