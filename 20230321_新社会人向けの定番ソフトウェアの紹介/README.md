@@ -76,13 +76,7 @@ Adobe Acrobat Readerは、PDFファイルの閲覧や印刷が容易にできる
 窓の杜 > 7zip
 [https://forest.watch.impress.co.jp/library/software/7zip/](https://forest.watch.impress.co.jp/library/software/7zip/)
 
-# 12. IrfanView
-IrfanViewは、軽快な画像ビューアソフトで、画像の閲覧や編集が簡単にできます。
-
-窓の杜 > IrfanView
-[https://forest.watch.impress.co.jp/library/software/irfanview/](https://forest.watch.impress.co.jp/library/software/irfanview/)
-
-# 13. VLC
+# 12. VLC
 VLCは、多機能な動画プレーヤーで、様々な形式に対応しています。
 
 窓の杜 > VLC media player
