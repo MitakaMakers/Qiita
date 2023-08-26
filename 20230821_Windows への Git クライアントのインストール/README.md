@@ -1,22 +1,28 @@
 # 5 分でわかるGit for Windows のインストール手順
 tag: git for windows tortoisegit 新人エンジニア向け 新人教育
 
-Git はファイルの変更を効率的に管理するための「バージョン管理システム(VCS)」の一種です。プログラム開発する際のソースファイルの変更履歴を管理するために Git は役立ちます。
+Git はファイルの変更を効率的に管理するための「バージョン管理システム(VCS)」の一種です。Git はソフトウェアのソースファイルや設定ファイルを管理するために役立ちます。
 
-この記事では、18 歳の新人エンジニア向けに「Git for Windows」と「TortoiseGit」をインストールする手順を説明します。
+この記事では 18 歳の新人エンジニア向けに「Git for Windows」と「TortoiseGit」をインストールする手順を説明します。
 
-##  Git for Windows と TortoiseGit をインストールする目的
+##  Git for Windows と TortoiseGit を使う目的
 
-Windows に Git for Windows と TortoiseGit をインストールすると以下の機能が使えるようになります。
+Git for Windows と TortoiseGit をインストールすると以下のことができるようになります。
 
-### Windows 環境で Git が使えるようになる
-Git は 元々 Linux システムのために開発されました。Git for Windows をインストールすると、Windows ユーザーもコマンドラインから Git の全機能を利用することができます。
+### Windows 環境で Git が使える
+Git は 元々 Linux システムのために開発されました。Git for Windows をインストールすると、Windows ユーザーも Git の全機能を利用することができます。
 
-### グラフィカルなインターフェースを使えるようになる
-コマンドラインベースの操作は一部のユーザーには難しく感じられます。TortoiseGit をインストールすると Git for Windows の機能をグラフィカルなインターフェースで直感的に利用できるようになります。
+![](02_GitBash.png)
 
-### 統合されたシェル拡張を使えるようになる
-TortoiseGit は Windows Explorer に統合されたシェル拡張を提供します。これにより、ファイルやディレクトリを右クリックするだけで Git に関する操作を行うことができます。
+### グラフィカルなインターフェースが使える
+一部のユーザーにとってコマンドラインベースの操作は難しく感じられます。TortoiseGit をインストールすると Git の機能をグラフィカルなインターフェースで直感的に利用できるようになります。
+
+![](03_GUI.png)
+
+### 統合されたシェル拡張が使える
+TortoiseGit が Windows Explorer に統合されたシェル拡張を提供します。これにより、ファイルやディレクトリを右クリックするだけで Git に関する操作を行うことができます。
+
+![](04_Menu.png)
 
 ##  Git for Windows と TortoiseGit のシステム要件
 
@@ -30,7 +36,6 @@ TortoiseGit 2.14.0 は以下の環境で動作します。
 
 - オペレーティングシステム: Windows 7 SP1, 8, 8.1, 10, 11
 - アーキテクチャ: 32ビット(通常は「x86」と表示される)と64ビット(通常は「x64」と表示される)と ARM64 ビット(通常は「ARM64」と表示される)のWindowsに対応しています。
-- Git for Windows: TortoiseGitはGit for Windowsに依存しているため、これを先にインストールする必要があります。
 
 ここでは Windows 11 と Git for windows v2.41.0.3、TortoiseGit 2.14.0 を例にして、それぞれのインストール手順を紹介します。
 
