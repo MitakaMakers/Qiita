@@ -12,38 +12,38 @@ Git for Windows と TortoiseGit をインストールすると以下のことが
 ### Windows 環境で Git が使える
 Git は 元々 Linux システムのために開発されました。Git for Windows をインストールすると、Windows ユーザーも Git の全機能を利用することができます。
 
-![](02_GitBash.png)
-
 ### グラフィカルなインターフェースが使える
 一部のユーザーにとってコマンドラインベースの操作は難しく感じられます。TortoiseGit をインストールすると Git の機能をグラフィカルなインターフェースで直感的に利用できるようになります。
 
 ![](03_GUI.png)
 
 ### 統合されたシェル拡張が使える
-TortoiseGit が Windows Explorer に統合されたシェル拡張を提供します。これにより、ファイルやディレクトリを右クリックするだけで Git に関する操作を行うことができます。
+TortoiseGit が Windows Explorer に統合されたシェル拡張を提供します。これにより一目でファイルの状態がわかり、ファイルやディレクトリを右クリックするだけで Git に関する操作を行うことができます。
 
 ![](04_Menu.png)
 
 ##  Git for Windows と TortoiseGit のシステム要件
 
-Git for windows v2.41.0.3 は以下の環境で動作します。
+Git for windows は以下の環境で動作します。
 
 - オペレーティングシステム: Windows 7 SP1, 8, 8.1, 10, 11
-- アーキテクチャ: 32ビットと64ビットの Windows に対応しています。
-- 必要なディスクスペース: インストールには通常　100MB　程度の空き容量が必要です
+  - アーキテクチャ: 32ビットと64ビットの Windows に対応しています。
+- 必要なディスクスペース: インストールには通常 100MB 程度の空き容量が必要です
 
-TortoiseGit 2.14.0 は以下の環境で動作します。
+TortoiseGit は以下の環境で動作します。
 
 - オペレーティングシステム: Windows 7 SP1, 8, 8.1, 10, 11
-- アーキテクチャ: 32ビット(通常は「x86」と表示される)と64ビット(通常は「x64」と表示される)と ARM64 ビット(通常は「ARM64」と表示される)のWindowsに対応しています。
+  - アーキテクチャ: 32ビットと64ビットの Windows に対応しています。
 
-ここでは Windows 11 と Git for windows v2.41.0.3、TortoiseGit 2.14.0 を例にして、それぞれのインストール手順を紹介します。
+ここでは Windows 11 (64ビット) と Git for windows version 2.41.0.3、TortoiseGit version 2.14.0 を例にして、インストール手順を紹介します。
 
 ## Git for Windows のインストール手順
 
- Git for Windows の公式ページにアクセスします。ダウンロードボタンが表示されたら、「Download」をクリックします。
+ Git for Windows の公式ページにアクセスしま す。ダウンロードボタンが表示されたら、「Download」をクリックします。
 
-![](01_OffifialSite.png)
+[https://gitforwindows.org/](https://gitforwindows.org/)
+
+![](09_OffifialSite.png)
 
 インストーラをダウンロードしたら、ファイルを実行します。
 
@@ -57,21 +57,24 @@ TortoiseGit 2.14.0 は以下の環境で動作します。
 
 ![](22_installer.png)
 
-インストールする機能の選択画面が表示されたら、「Next」をクリックします。ちなみに初期値は以下の通りです。
+インストールする機能の選択画面が表示されたら、「Next」をクリックします。
+<details><summary>ちなみにインストールする機能は以下の通りです。</summary><div>
 
-|初期値|項目|説明|
-|---|---|---|
-|  |Additional icons|アイコンを追加する|
-|  | On the Desktop|デスクトップにアイコンを追加する|
-|有効|Windows Explorer integration|Windows エクスプローラーと統合する|
-|有効| Open Git Bash here|コンテキストメニューに「Git Bash here」を追加する|
-|有効| Open Git GUI here|コンテキストメニューに「Git GUI here」を追加する|
-|有効|Git LFS (Large File Support)|Git LFS（ラージファイルサポート）|
-|有効|Associate .gi* configuration files with the default text editor|.git 設定ファイルをデフォルトのテキストエディタに関連付ける|
-|有効|Associate .sh files to be run with Bash|Bash で実行する .sh ファイルを関連付ける|
-|  |Check daily for Git for Windows updates|Windows for Git の更新を自動的にチェックする|
-|  |Add a Git Bash Profile to Windows Terminal|Windows ターミナルに Git Bash プロファイルを追加する|
-|  |Scalar (Git add-on to manage large-scale repositories)|Scalar を有効にする|
+|No.|初期値|項目|説明|
+|---|---|---|---|
+|1|  |Additional icons|アイコンを追加する|
+|2|  | On the Desktop|デスクトップにアイコンを追加する|
+|3|有効|Windows Explorer integration|Windows エクスプローラーと統合する|
+|4|有効| Open Git Bash here|コンテキストメニューに「Git Bash here」を追加する|
+|5|有効| Open Git GUI here|コンテキストメニューに「Git GUI here」を追加する|
+|6|有効|Git LFS (Large File Support)|Git LFS（ラージファイルサポート）|
+|7|有効|Associate .gi* configuration files with the default text editor|.git 設定ファイルをデフォルトのテキストエディタに関連付ける|
+|8|有効|Associate .sh files to be run with Bash|Bash で実行する .sh ファイルを関連付ける|
+|9|  |Check daily for Git for Windows updates|Windows for Git の更新を自動的にチェックする|
+|10|  |Add a Git Bash Profile to Windows Terminal|Windows ターミナルに Git Bash プロファイルを追加する|
+|11|  |Scalar (Git add-on to manage large-scale repositories)|Scalar を有効にする|
+
+</div></details>
 
 ![](23_installer.png)
 
@@ -101,11 +104,11 @@ HTTPS 転送に使うライブラリの選択画面が表示されたら、「Ne
 
 改行コードの取り扱いの選択画面が表示されたら「Checkout as-is, commit as-is」を選択し、「Next」をクリックします。
 
-|初期値|項目|説明|
-|---|---|---|
-|有効|Checkout Windows-style, commit Unix-style line endings|Windows スタイルのチェックアウト、Unix スタイルの改行コードのコミット|
-|↓|Checkout as-is, commit Unix-style line endings|そのままチェックアウト、Unix スタイルの改行をコミット|
-|これを選択|Checkout as-is, commit as-is|そのままチェックアウト、そのままコミット|
+|No.|初期値|項目|説明|
+|---|---|---|---|
+|1|有効|Checkout Windows-style, commit Unix-style line endings|Windows スタイルのチェックアウト、Unix スタイルの改行コードのコミット|
+|2|↓|Checkout as-is, commit Unix-style line endings|そのままチェックアウト、Unix スタイルの改行をコミット|
+|3|これを選択|Checkout as-is, commit as-is|そのままチェックアウト、そのままコミット|
 
 ![](30_installer.png)
 
@@ -133,8 +136,6 @@ git pull コマンドの動作の選択画面が表示されたら、「Next」�
 
 ![](37_installer.png)
 
-## Git for Windows のインストール確認
-
 Git for Windows のインストールが完了したら Windows のコマンドプロンプトを開き、「git --version」 と入力し、Gitのバージョンが表示されることを確認します。
 
 ![](41_cmd.png)
@@ -142,6 +143,8 @@ Git for Windows のインストールが完了したら Windows のコマンド�
 ## TortoiseGit のインストール:
 
 TortoiseGit の公式ページにアクセスします。TortoiseGit と Language Pack のインストーラをダウンロードします。あなたの Windows が 32 ビットか 64 ビットかによって、適切なバージョンを選択します。
+
+[https://tortoisegit.org/download/](https://tortoisegit.org/download/)
 
 ![](51_officialsite.png)
 
@@ -185,7 +188,9 @@ TortoiseGit の言語選択画面が表示されたら、このまま Language P
 
 ![](93_installer.png)
 
-TortoiseGit の言語選択画面に戻り、「Refresh」ボタンをクリックします。Language リストで「日本語」を選択し、「次へ」をクリックします。
+TortoiseGit の言語選択画面に戻ります。
+
+「Refresh」ボタンをクリックします。Language リストのプルダウンメニューから「日本語」を選択し、「次へ」をクリックします。
 
 ![](101_installer.png)
 
@@ -197,17 +202,15 @@ TortoiseGit の言語選択画面に戻り、「Refresh」ボタンをクリッ�
 
 ![](103_installer.png)
 
-「ユーザー情報を設定」画面が表示されたら、名前とメールアドレスを入力し、「次へ」をクリックします。ここで設定した名前とメールアドレスが Git のコミットログに記録されます。
-
-![](104_installer.png)
-
-「認証/資格情報ストア」画面が表示されたら、「完了」をクリックします。
+「ユーザー情報を設定」画面が表示されたら、自分の名前とメールアドレスを入力し、「次へ」をクリックします。ここに入力したメールアドレスと名前が Git のログに記録されます。
 
 ![](105_installer.png)
 
-以上で TortoiseGit のインストールと初期設定の完了です。
+「認証/資格情報ストア」画面が表示されたら、「完了」をクリックします。
 
-## TortoiseGit のインストール確認
+![](106_installer.png)
+
+以上で TortoiseGit のインストールと初期設定の完了です。
 
 任意のフォルダを右クリックして、コンテキストメニューに TortoiseGit のメニューが追加されていることを確認します。
 
