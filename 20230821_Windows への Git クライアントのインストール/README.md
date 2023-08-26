@@ -1,4 +1,4 @@
-# 5 分でわかるGit for Windows のインストール手順
+# 3 分でわかるGit for Windows のインストール手順
 tag: git for windows tortoisegit 新人エンジニア向け 新人教育
 
 Git はファイルの変更を効率的に管理するための「バージョン管理システム(VCS)」の一種です。Git はソフトウェアのソースファイルや設定ファイルを管理するために役立ちます。
@@ -213,5 +213,6 @@ TortoiseGit の言語選択画面に戻ります。
 以上で TortoiseGit のインストールと初期設定の完了です。
 
 任意のフォルダを右クリックして、コンテキストメニューに TortoiseGit のメニューが追加されていることを確認します。
+
 
 これで、Windows 環境に Git for Windows と TortoiseGit がインストールされ、Git を利用できるようになります。
