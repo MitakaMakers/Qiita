@@ -12,6 +12,8 @@ Git for Windows と TortoiseGit をインストールすると以下のことが
 ### Windows 環境で Git が使える
 Git は 元々 Linux システムのために開発されました。Git for Windows をインストールすると、Windows ユーザーも Git の全機能を利用することができます。
 
+![](02_Bash.png)
+
 ### グラフィカルなインターフェースが使える
 一部のユーザーにとってコマンドラインベースの操作は難しく感じられます。TortoiseGit をインストールすると Git の機能をグラフィカルなインターフェースで直感的に利用できるようになります。
 
@@ -58,15 +60,15 @@ TortoiseGit は以下の環境で動作します。
 ![](22_installer.png)
 
 インストールする機能の選択画面が表示されたら、「Next」をクリックします。
-<details><summary>ちなみにインストールする機能は以下の通りです。</summary><div>
+<details><summary>各機能の詳細は以下の通りです。</summary><div>
 
 |No.|初期値|項目|説明|
 |---|---|---|---|
 |1|  |Additional icons|アイコンを追加する|
 |2|  | On the Desktop|デスクトップにアイコンを追加する|
 |3|有効|Windows Explorer integration|Windows エクスプローラーと統合する|
-|4|有効| Open Git Bash here|コンテキストメニューに「Git Bash here」を追加する|
-|5|有効| Open Git GUI here|コンテキストメニューに「Git GUI here」を追加する|
+|4|有効| Open Git Bash here|コンテキストメニューに「Open Git Bash here」を追加する|
+|5|有効| Open Git GUI here|コンテキストメニューに「Open Git GUI here」を追加する|
 |6|有効|Git LFS (Large File Support)|Git LFS（ラージファイルサポート）|
 |7|有効|Associate .gi* configuration files with the default text editor|.git 設定ファイルをデフォルトのテキストエディタに関連付ける|
 |8|有効|Associate .sh files to be run with Bash|Bash で実行する .sh ファイルを関連付ける|
@@ -140,7 +142,7 @@ Git for Windows のインストールが完了したら Windows のコマンド�
 
 ![](41_cmd.png)
 
-## TortoiseGit のインストール:
+## TortoiseGit のインストール
 
 TortoiseGit の公式ページにアクセスします。TortoiseGit と Language Pack のインストーラをダウンロードします。あなたの Windows が 32 ビットか 64 ビットかによって、適切なバージョンを選択します。
 
@@ -210,9 +212,23 @@ TortoiseGit の言語選択画面に戻ります。
 
 ![](106_installer.png)
 
-以上で TortoiseGit のインストールと初期設定の完了です。
-
-任意のフォルダを右クリックして、コンテキストメニューに TortoiseGit のメニューが追加されていることを確認します。
-
-
 これで、Windows 環境に Git for Windows と TortoiseGit がインストールされ、Git を利用できるようになります。
+
+## TortoiseGit の設定
+
+任意のフォルダを右クリックして、コンテキストメニューの「TortoiseGit」→「設定」をクリックします。
+
+![](111_explorer.png)
+
+設定ウィンドウの「全般」→「Windows 11 コンテキストメニュー」でコンテキストメニューに表示する項目を変更できます。
+
+![](121_explorer.png)
+
+設定ウィンドウの「Git」で名前とメールアドレス、改行コードの扱いを変更できます。
+
+![](122_explorer.png)
+
+設定ウィンドウの「ネットワーク」で Git で使うプロキシを設定できます。
+
+![](123_explorer.png)
+
