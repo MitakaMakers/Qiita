@@ -1,9 +1,31 @@
-# Qiita
-Qiita article
+# Qiita 公開記事
 - https://qiita.com/mmake
-- [x] [新入社員向け定番パソコンソフト](https://qiita.com/mmake/items/0b786105aa389176bfc6)
+
+## インストールと使い方
+- [x] [7-Zip のインストール](https://qiita.com/mmake/items/e18ef5978f365b2ead3a)
+- [x] [Acrobat Reader のインストール](https://qiita.com/mmake/items/8052ed67a6980af65d26)
+- [x] [Git for Windows と TortoiseGit のインストール](https://qiita.com/mmake/items/63a869272c0dfa1d50a4)
+- [x] [IrfanView のインストール](https://qiita.com/mmake/items/b7af48981043f25bb285)
+- [x] [ScreenToGif の使い方](https://qiita.com/mmake/items/d8d32b1a90b3358ab636)
+- [x] [Sizer の使い方](https://qiita.com/mmake/items/7b27fc34b415e402ade3)
+- [x] [Visual Studio 6.0 のインストール](https://qiita.com/mmake/items/3fb4ae920e2efe4b619c)
+- [x] [VLC media player のインストール](https://qiita.com/mmake/items/2e4c0274b4a0be506355)
+- [x] [WinMerge のインストール](https://qiita.com/mmake/items/5d8710d3c41818406208)
+- [x] [Wireshark のインストール](https://qiita.com/mmake/items/01e5c1a9162b2d53286c)
+
+## プログラマ向け資料
+- [x] [アプリケーション開発で使う定番ソフトウェア](https://qiita.com/mmake/items/b5f987ad1f928371f3c3)
+- [x] [Windows と Visual Studio と .NET のサポート状況](https://qiita.com/mmake/items/946aea0d9a195aa5e3d4)
+- [x] [Windows と Office のサポート状況](https://qiita.com/mmake/items/748232d9f31b0a0c842e)
+
+## GPIB
 - [x] [VXI-11通信プロトコルの紹介](https://qiita.com/mmake/items/ee837fd1b8f43e464856)
 - [x] [3分で「わかった気」になるRPC](https://qiita.com/mmake/items/35e3395bb8e73e9d23d5)
+- [x] [GPIB の概要（HP-IBの論文を読む）](https://qiita.com/mmake/items/617f40a632bc50e8fa26)
+
+## ISMS関連
+- [x] [業務パソコンにインストールしてはいけないソフトウェア](https://qiita.com/mmake/items/a1e314f1c2d6b5181477)
+- [x] [業務で使う定番 Windows ソフトウェア](https://qiita.com/mmake/items/c675c04daf07a09e9340)
 
 # 記事アイデア
 ## プログラマ向け初級マニュアル
@@ -49,7 +71,6 @@ Qiita article
 - [ ] 産業用シリアルバス
 - [ ] 車載バス
 ## プログラミング上級編
-- [ ] Git for Windows, TortoiseGitのインストール手順
 - [ ] VSCode のインストール手順(Jupyter)
 - [ ] VSCode のインストール手順(Python）
 - [ ] nuget
