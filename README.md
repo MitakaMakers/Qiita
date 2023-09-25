@@ -18,14 +18,17 @@
 - [x] [Windows と Visual Studio と .NET のサポート状況](https://qiita.com/mmake/items/946aea0d9a195aa5e3d4)
 - [x] [Windows と Office のサポート状況](https://qiita.com/mmake/items/748232d9f31b0a0c842e)
 
-## GPIB
+## GPIB 通信
 - [x] [VXI-11通信プロトコルの紹介](https://qiita.com/mmake/items/ee837fd1b8f43e464856)
 - [x] [3分で「わかった気」になるRPC](https://qiita.com/mmake/items/35e3395bb8e73e9d23d5)
 - [x] [GPIB の概要（HP-IBの論文を読む）](https://qiita.com/mmake/items/617f40a632bc50e8fa26)
 
-## ISMS関連
-- [x] [業務パソコンにインストールしてはいけないソフトウェア](https://qiita.com/mmake/items/a1e314f1c2d6b5181477)
+## イーサネット通信
+- [x] [計測機器で使われるウェルノウン・ポート](https://qiita.com/mmake/items/6303502f60734cf87a0b)
+
+## ISMS 関連
 - [x] [業務で使う定番 Windows ソフトウェア](https://qiita.com/mmake/items/c675c04daf07a09e9340)
+- [x] [業務パソコンにインストールしてはいけないソフトウェア](https://qiita.com/mmake/items/a1e314f1c2d6b5181477)
 
 # 記事アイデア
 ## プログラマ向け初級マニュアル
