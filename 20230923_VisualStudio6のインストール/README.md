@@ -1,17 +1,17 @@
 # Windows 11 への Visual Studio 6.0 のインストール手順
 Visual Studio VC6 VB6 
 
-Visual Studio 6.0 はマイクロソフトが 1998 年にリリースした統合開発環境です。Visual C++ 6.0 や Visual Basic 6.0 といった複数のプログラム言語の開発環境が含まれます。Visual Studio 6.0 は非常に古いため、そのまま Windows 11 にインストールしようとすると途中で処理が固まって失敗します。この記事では 26 歳の少し仕事がわかってきたエンジニア向けに Visual Studio 6.0 のインストール手順を紹介します。
+Visual Studio 6.0 は Windows 7 以降の OS をサポートしないため、そのまま Windows 11 にインストールしようとすると失敗します。この記事では入社 3 ～ 4 年目の若手エンジニア以上を対象に Visual Studio 6.0 のインストール手順を紹介します。
 
-## Visual Studio 6.0 の目的
+## Visual Studio 6.0 について
 
-Visual Studio 6.0 は昔の統合開発環境です。すでに Microsoftのサポートが終了し、更新パッチの配布も終了しています。一般的な開発プロジェクトでは、新しいバージョンの Visual Studio に移行することを強く推奨します。それでも Visual Studio 6.0 を必要とする状況を 2 つ挙げます。
+Visual Studio 6.0 はマイクロソフトが 1998 年にリリースした統合開発環境です。Visual C++ 6.0 や Visual Basic 6.0 といった複数のプログラム言語の開発環境が含まれます。2008年に Microsoftのサポートが終了し、更新パッチの配布も終了しています。一般的な開発プロジェクトでは新しいバージョンの Visual Studio に移行することが強く推奨されます。それでも Visual Studio 6.0 が必要となる状況を 2 つ挙げます。
 
 ### レガシーアプリケーションのサポート
-一部の企業では20年以上前に作られた古い Windows アプリケーションを保守する必要がある場合があります。これらのアプリケーションは、Visual C++ 6.0 や Visual Basic 6.0 で開発されたものかもしれません。Visual Studio 6.0 は、こういった古いプログラムをサポートするために必要な開発ツールを提供します。
+一部の企業では 20 年以上前に作られた過去の Windows アプリケーションを保守する必要があります。これらのアプリケーションは、Visual C++ 6.0 や Visual Basic 6.0 で開発されたものかもしれません。Visual Studio 6.0 は、こういった昔のプログラムを保守するために必要な開発ツールを提供します。
 
-### VBAマクロのアプリケーション化
-Excel VBA で書かれた社内向けツールを単体アプリケーション(EXE)として作り直す場合、Visual Basic 6.0 は安価なソリューションです。
+### VBA マクロのアプリケーション化
+Excel VBA で書かれたツールを単体アプリケーション(EXE)として作り直す場合、Visual Basic 6.0 は安価なソリューションです。
 
 ## Visual Studio 6.0 のシステム要件
 
@@ -26,7 +26,8 @@ Visual Studio 6.0 は以下の環境で動作します。
 
 この記事では MSDN 版 Visual Studio 6.0 Enterprise Edition を例にして Windows 11 Pro にインストールする手順を説明します。
 
-## 1. Visual Studio 6.0 のインストール
+## インストール手順
+### a. Visual Studio 6.0 のインストール
 Visual Studio 6.0, Enterprise Edition, Disk 1 の CD をパソコンに挿入します。
 
 ![](012.jpg)
@@ -47,7 +48,7 @@ CD-ROM 内の SETUP.EXE を右クリックし、「管理者として実行」�
 
 ![](109_VISUALSTUDIO6.png)
 
-「名前」や「会社名」を入力し、「次へ」をクリックします。
+「名前」を入力し、「次へ」をクリックします。
 
 ![](111_VISUALSTUDIO6.png)
 
@@ -75,11 +76,11 @@ Windowsの再起動後、セットアップウィザードが表示されたら�
 
 ![](201_VISUALSTUDIO6.png)
 
-「セットアップフォルダ」が表示されたら、「次へ」をクリックします。
+「セットアップフォルダの選択」が表示されたら、「次へ」をクリックします。
 
 ![](203_VISUALSTUDIO6.png)
 
-「セットアッププログラムにようこそ」が表示されたら、「継続」をクリックします。
+「セットアッププログラムへようこそ」が表示されたら、「継続」をクリックします。
 
 ![](206_VISUALSTUDIO6.png)
 
@@ -91,7 +92,7 @@ Windowsの再起動後、セットアップウィザードが表示されたら�
 
 ![](210_VISUALSTUDIO6.png)
 
-詳細オプションが表示されたら、「ADO、RDSおよびOLE DBプロバイダ」と「リモートデータオブジェクトとコントロール」のチェックを外します。
+詳細オプションが表示されたら、「ADO、RDSおよびOLE DBプロバイダ」のチェックを外します。
 
 ![](212_VISUALSTUDIO6.png)
 
@@ -99,11 +100,9 @@ Windowsの再起動後、セットアップウィザードが表示されたら�
 
 ![](213_VISUALSTUDIO6.png)
 
-![](217_VISUALSTUDIO6.png)
+「ADO、RDSおよびOLE DBプロバイダ」のチェックが外れたことを確認し、「OK」をクリックします。
 
-「ADO、RDSおよびOLE DBプロバイダ」と「リモートデータオブジェクトとコントロール」のチェックが外れたことを確認し、「OK」をクリックします。
-
-![](216_VISUALSTUDIO6.png)
+![](219_VISUALSTUDIO6.png)
 
 「カスタムオプション」の画面に戻ったら、「継続」をクリックします。
 
@@ -157,7 +156,7 @@ Windowsの再起動後、追加機能のセットアップウィザードが表�
 
 ![](315_VISUALSTUDIO6.png)
 
-## 2. Visual Studio 6.0 Service Pack 6 のインストール
+### b. Visual Studio 6.0 Service Pack 6 のインストール
 
 Visual Studio 6.0 Service Pack 6 の CD をパソコンに挿入します。
 
@@ -191,12 +190,12 @@ MFC 日本語版の置き換えの確認が表示されたら、「いいえ」�
 
 ![](416_VS6SP6.png)
 
-## 4. Visual Basic 6.0 Service Pack 6 累積的な更新プログラムのインストール
+### c. Visual Basic 6.0 Service Pack 6 累積的な更新プログラムのインストール
 
 マイクロソフトの「Visual Basic 6.0 Service Pack 6 累積的な更新プログラム」サイトにアクセスします。<BR>
 https://www.microsoft.com/ja-jp/download/details.aspx?id=7030
 
-「ダウンロード」をクリックします。
+サイトが表示されたら「ダウンロード」をクリックします。
 
 ![](603_VS6SP6UP.png)
 
@@ -212,14 +211,97 @@ https://www.microsoft.com/ja-jp/download/details.aspx?id=7030
 
 ![](611_VS6SP6UP.png)
 
-## 6. Visual Basic 6.0 の起動
+### d. Visual Basic 6.0 の起動
 
 Windows のスタートメニューから「全てのアプリ」→「Microsoft Visual Studio 6.0」を選択し、「Microsoft Visual Basic」を右クリックし、「管理者として実行」で起動します。
 
 ![](703_VB6.png)
 
-## 7. Visual Basic のバージョンを確認
+### e. Visual Basic のバージョンを確認
 
 Visual Basic のメニューから「ヘルプ」→「バージョン情報」をクリックします。  「Microsoft Visual Basic 6.0(SP6)」と表示されればOKです。
 
 ![](705_VB6.png)
+
+## アンインストール手順
+
+### コントロールパネルを開く方法
+スタートボタンをクリックします。
+
+![13.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/6bdeedc8-62a2-e4d8-88ff-0a837a7bc6d6.png)
+
+スタートメニューが表示されたら、右上にある「すべてのアプリ」をクリックします。
+
+![21.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/b625ae94-e15c-0399-6160-b30d34119229.png)
+
+アプリ一覧が表示されたら下にスクロールし、「Windows ツール」をクリックします。
+
+![23.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/8f7d684c-46b7-81a4-fd2f-8ac6280b22f8.png)
+
+Windows ツールが表示されたら、「コントロールパネル」をクリックします。
+
+![25.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/cb771013-9c7f-f7b7-0c20-8c83ce2e0944.png)
+
+コントロールパネルが表示されたら、「プログラムのアンインストール」をクリックします。
+
+![47.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/1122cf31-1af4-4d71-b198-b364bd7ba5ed.png)
+
+### Microsoft Visual Basic 6.0 SP6 用の累積的な更新プログラムのアンインストール【問題あり】
+
+プログラムの一覧から「Microsoft Visual Basic 6.0 SP6 用の累積的な更新プログラム」を右クリックし、「変更」をクリックします。
+
+![](831.png)
+
+使用許諾契約が表示されたら、「同意する」を選択し、「次へ」をクリックします。
+
+![](833.png)
+
+アンインストール中に「ネットワーク上の場所 Tools\Controls\Controls_Backupへアクセスできません。」 というメッセージが表示され、アンインストールできません。
+
+![](835.png)
+
+「キャンセル」をクリックすると、「セットアップに失敗しました」というダイアログが表示されて、アンインストールが中断します。
+
+![](837.png)
+
+**「対処方法をご存じの方は、方法を教えていただけると大変ありがたいです。**
+
+### Microsoft Web 発行 ウィザード のアンインストール
+
+プログラムの一覧から「Microsoft Web 発行 ウィザード」を右クリックし、［アンインストールと変更］をクリックします。
+
+![](851.png)
+
+確認メッセージが表示されたら、「はい」をクリックします。
+
+![](855.png)
+
+アンインストールが完了します。
+
+![](857.png)
+
+### Microsoft Visual Studio 6.0 Enterprise Edition のアンインストール
+
+Visual Studio 6.0, Enterprise Edition, Disk 1 の CD をパソコンに挿入します。
+
+![012.jpg](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3160433/72be49f6-4d1e-ee48-001c-40d7baf11af3.jpeg)
+
+プログラムの一覧から「Microsoft Visual Studio 6.0 Enterprise Edition」を右クリックし、［アンインストール］をクリックします。
+
+![](861.png)
+
+セットアップが表示されたら、「すべて削除」をクリックします。
+
+![](865.png)
+
+確認メッセージが表示されたら、「はい」をクリックします。
+
+![](867.png)
+
+再起動を促すメッセージが表示されたら、「Windows の再起動」をクリックします。
+
+![](869.png)
+
+Windows を再起動すると、アンインストールの完了です。
+
+![](871.png)
