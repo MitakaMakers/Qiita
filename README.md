@@ -12,6 +12,18 @@
 - [x] [VLC media player のインストール](https://qiita.com/mmake/items/2e4c0274b4a0be506355)
 - [x] [WinMerge のインストール](https://qiita.com/mmake/items/5d8710d3c41818406208)
 - [x] [Wireshark のインストール](https://qiita.com/mmake/items/01e5c1a9162b2d53286c)
+- [ ] Visual Studio 6.0 & SP6 のインストール (DVD)
+- [ ] Visual Studio 2002 & SP1 のインストール (DVD)
+- [ ] Visual Studio 2003 & SP1 のインストール (DVD)
+- [ ] Visual Studio 2005 & SP1 のインストール (DVD or MSDN)
+- [ ] Visual Studio 2008 & SP1 のインストール (DVD or MSDN)
+- [ ] Visual Studio 2010 & SP1 のインストール (DVD or MSDN)
+- [ ] Visual Studio 2012 & Update 4 のインストール (要MSDN)
+- [ ] Visual Studio 2013 & Update 5 のインストール (DevEssentials)
+- [ ] Visual Studio 2015 & Update 3 のインストール (DevEssentials)
+- [ ] Visual Studio 2017 のインストール (DevEssentials)
+- [ ] Visual Studio 2019 のインストール (DevEssentials)
+- [ ] Visual Studio 2022 Community のインストール
 
 ## プログラマ向け資料
 - [x] [アプリケーション開発で使う定番ソフトウェア](https://qiita.com/mmake/items/b5f987ad1f928371f3c3)
