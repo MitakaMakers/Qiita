@@ -15,15 +15,15 @@
 - [ ] Visual Studio 6.0 & SP6 のインストール (DVD)
 - [ ] Visual Studio 2002 & SP1 のインストール (DVD)
 - [ ] Visual Studio 2003 & SP1 のインストール (DVD)
-- [ ] Visual Studio 2005 & SP1 のインストール (DVD or MSDN)
-- [ ] Visual Studio 2008 & SP1 のインストール (DVD or MSDN)
-- [ ] Visual Studio 2010 & SP1 のインストール (DVD or MSDN)
-- [ ] Visual Studio 2012 & Update 4 のインストール (要MSDN)
-- [ ] Visual Studio 2013 & Update 5 のインストール (DevEssentials)
-- [ ] Visual Studio 2015 & Update 3 のインストール (DevEssentials)
-- [ ] Visual Studio 2017 のインストール (DevEssentials)
-- [ ] Visual Studio 2019 のインストール (DevEssentials)
-- [ ] Visual Studio 2022 Community のインストール
+- [ ] Visual Studio 2005 & SP1 のインストール (DVD)
+- [ ] Visual Studio 2008 & SP1 のインストール (DVD)
+- [ ] Visual Studio 2010 & SP1 のインストール (DVD)
+- [ ] Visual Studio 2012 & Update 4 のインストール (DVD & 要MSDN)
+- [ ] Visual Studio Community 2013 & Update 5 のインストール (DevEssentials)
+- [ ] Visual Studio Community 2015 & Update 3 のインストール (DevEssentials)
+- [ ] Visual Studio Community 2017 のインストール (DevEssentials)
+- [ ] Visual Studio Community 2019 のインストール (DevEssentials)
+- [ ] Visual Studio Community 2022 のインストール
 
 ## プログラマ向け資料
 - [x] [アプリケーション開発で使う定番ソフトウェア](https://qiita.com/mmake/items/b5f987ad1f928371f3c3)
