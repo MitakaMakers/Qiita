@@ -46,7 +46,8 @@
 ``` C
 unsigned int ibask (int ud, int option, int *value)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibask option
 ```
 
@@ -80,7 +81,8 @@ ibaskは、指定のボードやデバイスに関する各種構成パラメー
 ``` C
 unsigned int ibcac (int ud, int v)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibcac v
 ```
 
@@ -116,7 +118,8 @@ ibcac v
 ``` C
 unsigned int ibclr (int ud)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibclr
 ```
 
@@ -148,7 +151,8 @@ GPIBコマンドを送信します。
 ``` C
 unsigned int ibcmd (int ud, const void *cmdbuf, size_t count)
 ``` 
-``` 対話式制御
+### 対話式制御
+```
 ibcmd cmdbuf
 ```
 
@@ -184,7 +188,8 @@ GPIBコマンドを非同期に送信します。
 ``` C
 unsigned int ibcmda (int ud, const void *cmdbuf, size_t count)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibcmda cmdbuf
 ```
 
@@ -226,7 +231,8 @@ ibonl I/Oが取り消されインタフェースはリセットされて、ド�
 ``` C
 unsigned int ibconfig (int ud, int option, int value)
 ``` 
-``` 対話式制御
+### 対話式制御
+```
 ibconfig option value
 ```
 
@@ -261,7 +267,8 @@ ibconfigは、選択したボードまたはデバイスの構成項目を指定
 ``` C
 int ibdev (int BdIndx, int pad, int sad, int tmo, int eot, int eos)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibdev BdIndx pad sad tmo eot eos
 ```
 
@@ -304,7 +311,8 @@ ibdevが有効なデスクリプタを獲得できない場合は、-1が返さ�
 ``` C
 int ibfind (const char *udname)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibfind udname
 ```
 
@@ -342,7 +350,8 @@ ibfindを使用したデバイスデスクリプタの取得は、既存のア�
 ``` C
 unsigned int ibgts (int ud, int v)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibgts v
 ```
 
@@ -377,7 +386,8 @@ ibgtsにより、udのGPIBインタフェースがスタンドバイコントロ
 ``` C
 unsigned int iblck (int ud, int v, unsigned int LockWaitTime, void * Reserved)
 ```
-``` 対話式制御
+### 対話式制御
+```
 iblck v LockWaitTime
 ```
 
@@ -448,7 +458,8 @@ GPIBの8本の制御ラインのステータスを返します。
 ``` C
 unsigned int iblines (int ud, short *clines)
 ```
-``` 対話式制御
+### 対話式制御
+```
 iblines
 ```
 
@@ -497,7 +508,8 @@ if (lines & ValidREN) {
 ``` C
 unsigned int ibln (int ud, int pad, int sad, short *listen)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibln pad sad
 ```
 
@@ -535,7 +547,8 @@ padパラメータには、有効なプライマリアドレス（0～30の値�
 ``` C
 unsigned int ibloc (int ud)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibloc
 ```
 
@@ -571,7 +584,8 @@ REN（Remote Enable: リモート有効）ラインがibconfig関数のIbcSREオ
 ``` C
 unsigned int ibnotify (int ud, int mask, GpibNotifyCallback_t Callback, void * RefData)
 ```
-``` 対話式制御
+### 対話式制御
+```
 サポートなし
 ```
 
@@ -645,7 +659,8 @@ NI-488.2アプリケーションでの非同期イベント通知の概要につ
 ``` C
 unsigned int ibonl (int ud, int v)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibonl v
 ```
 
@@ -677,7 +692,8 @@ ibonlは、ボードやデバイスをリセットし、ソフトウェア構成
 ``` C
 unsigned int ibpct (int ud)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibpct
 ```
 
@@ -710,7 +726,8 @@ ibpctは、udで指定するデバイスにCIC（Controller-In-Charge: コント
 ``` C
 unsigned int ibppc (int ud, int v)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibppc v
 ```
 
@@ -750,7 +767,8 @@ udがボードデスクリプタの場合、パラレルポール構成値のv�
 ``` C
 unsigned int ibrd (int ud, void *rdbuf, size_t count)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibrd count
 ```
 
@@ -790,7 +808,8 @@ udがボードデスクリプタの場合、ibrdはcountバイトまでのデー
 ``` C
 unsigned int ibrda (int ud, void *rdbuf, size_t count)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibrda count
 ```
 
@@ -840,7 +859,8 @@ ibonl I/Oが取り消されインタフェースはリセットされて、ド�
 ``` C
 unsigned int ibrdf (int ud, const char *flname)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibrdf flname
 ```
 
@@ -880,7 +900,8 @@ udがボードデスクリプタの場合、ibrdfはGPIBデバイスからデー
 ``` C
 unsigned int ibrpp (int ud, char *ppr)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibrpp
 ```
 
@@ -915,7 +936,8 @@ ibrppは、GPIB上のすべてのデバイスに対してパラレルポール�
 ``` C
 unsigned int ibrsp (int ud, char *spr)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibrsp
 ```
 
@@ -951,7 +973,8 @@ ibrspは、デバイスudに対してシリアルポールを実行するのに�
 ``` C
 unsigned int ibsic (int ud)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibsic
 ```
 
@@ -984,7 +1007,8 @@ IFC信号がリセットするのは、デバイスのGPIBインタフェース�
 ``` C
 unsigned int ibstop (int ud)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibstop
 ```
 
@@ -1014,7 +1038,8 @@ ibstop関数は、実行中の非同期の読み取り処理、書き込み処�
 ``` C
 unsigned int ibtrg (int ud)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibtrg
 ```
 
@@ -1046,7 +1071,8 @@ ibtrgは、GET（Group Execute Trigger: グループトリガ実行）メッセ�
 ``` C
 unsigned int ibwait (int ud, int mask)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibwait mask
 ```
 
@@ -1082,7 +1108,8 @@ ibwaitは、マスクによって指定されたイベントを監視し、1つ�
 ``` C
 unsigned int ibwrt (int ud, const void *wrtbuf, size_t count)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibwrt wrtbuf
 ```
 
@@ -1172,7 +1199,8 @@ ibonl I/Oが取り消されインタフェースはリセットされて、ド�
 ``` C
 unsigned int ibwrtf (int ud, const char *flname)
 ```
-``` 対話式制御
+### 対話式制御
+```
 ibwrtf flname
 ```
 
