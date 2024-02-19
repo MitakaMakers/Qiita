@@ -580,7 +580,7 @@ REN（Remote Enable: リモート有効）ラインがibconfig関数のIbcSREオ
 ### 目的
 ユーザのコールバックを呼び出して、1つまたは複数のGPIBイベントをユーザに通知します。
 
- * ibnotifyの形式
+### ibnotifyの形式
 ``` C
 unsigned int ibnotify (int ud, int mask, GpibNotifyCallback_t Callback, void * RefData)
 ```
