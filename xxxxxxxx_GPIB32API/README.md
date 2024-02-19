@@ -612,17 +612,23 @@ ibnotify呼び出しが有効で、待機している1つ以上のGPIBイベン�
 
 ボードやデバイス（つまり、ud）をオフラインにする前に、有効なibnotify呼び出しはすべて、マスクが0であるudに対して後続のibnotify呼び出しでキャンセルする必要があります。
 
+### 発生する可能性のあるエラー
+|エラーコード|説明|
+|---|---|
+|EARM|Callbackの戻り値がCallbackの再登録に失敗しました。|
+|ERST|インタフェースのリセットが原因でイベント通知がキャンセルされました。|
+
 ## ibnotifyのコールバックプロトタイプ
 ``` C
 int __stdcall Callback (int LocalUd, unsigned int LocalIbsta, unsigned int LocalIberr, unsigned int LocalIbcnt, void *RefData)
 ```
 
 ### コールバックパラメータ
-- LocalUd ボードまたはデバイスデスクリプタ
-- LocalIbsta Ibstaの値
-- LocalIberr Iberrの値
-- LocalIbcnt Ibcntの値
-- RefData ユーザ定義のコールバック用参照データ
+- LocalUd: ボードまたはデバイスデスクリプタ
+- LocalIbsta: Ibstaの値
+- LocalIberr: Iberrの値
+- LocalIbcnt: Ibcntの値
+- RefData: ユーザ定義のコールバック用参照データ
 
 ### コールバックの戻り値
 次に通知するGPIBイベントのビットマスク
@@ -644,12 +650,6 @@ NI-488.2アプリケーションでの非同期イベント通知の概要につ
 |EHDL|udが無効または範囲外です。|
 |ELCK|他の処理によりロックされているため、要求された動作が行われませんでした。|
 |ENEB|インタフェースが取り付けられていないか、正しく構成されていません。|
-
-### 発生する可能性のあるエラー
-|エラーコード|説明|
-|---|---|
-|EARM|Callbackの戻り値がCallbackの再登録に失敗しました。|
-|ERST|インタフェースのリセットが原因でイベント通知がキャンセルされました。|
 
 ## ibonl（ボードレベル/デバイスレベル）
 ### 目的
