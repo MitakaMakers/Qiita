@@ -31,7 +31,7 @@ VBAコードのバックアップを取ることは、データ保護の観点�
 
 Excel VBAでソースコードを保存するためのプログラムを書くには、以下の手順を踏む必要があります。まず、現在のワークブック内のすべてのモジュール、シートモジュール、およびクラスモジュールのコードを取得し、それらをテキストファイルとして保存します。以下のVBAコードを使用してこれを実現できます。
 
-''' code
+``` VB
 Sub SaveAllVBA()
     Dim vbaComponent As Object
     Dim fileName As String
@@ -71,7 +71,7 @@ Sub SaveAllVBA()
     
     MsgBox "All VBA code has been exported to " & exportFolder
 End Sub
-'''
+```
 
 ### コードの説明
 保存フォルダの設定: VBAコードを保存するフォルダを指定します。ここでは、現在のワークブックのフォルダに「VBA_Export」というフォルダを作成します。
@@ -88,7 +88,7 @@ Excel VBAでテキストファイルからVBAモジュールをインポート�
 
 以下のVBAコードを使用して、指定したフォルダ内のすべてのVBAモジュールをインポートすることができます。
 
-''' code
+``` VB
 Sub ImportAllVBA()
     Dim vbaComponent As Object
     Dim fileName As String
@@ -135,7 +135,8 @@ Sub ImportAllVBA()
     
     MsgBox "All selected VBA code files have been imported."
 End Sub
-'''
+```
+
 ### コードの説明
 インポートフォルダの設定: インポートするVBAコードファイルが格納されているフォルダを指定します。ここでは、現在のワークブックのフォルダに「VBA_Export」というフォルダを想定しています。
 フォルダの存在確認: Dir関数を使用して、指定したフォルダが存在するかどうかを確認します。
