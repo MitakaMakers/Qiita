@@ -1,0 +1,14 @@
+{
+    "hubDisableAnalytics":true,
+    "hubDisableAutoUpdate": true,
+    "hubDisableCloudProjects":true,
+    "hubDisableElevate":true,
+    "hubDisablePersonalLicense":false,
+    "hubDisableSignin":true,
+    "hubDisableSignInRequired": true,
+    ÅghubDisableVisualStudioDownload":true,
+    ÅghubDisableWelcomeScreen":true,
+    "Windows": "C:\ProgramData\Unity\config",
+    "URL1": "https://docs.unity3d.com/ja/2023.2/Manual/DeployingUnityOffline.html",
+    "URL2": "https://learn.unity.com/tutorial/activating-your-education-grant-license-egl"
+}
